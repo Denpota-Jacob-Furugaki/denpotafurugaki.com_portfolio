@@ -867,3 +867,24 @@ function showTab(tabName) {
     }
 }
 
+// Photography Lightbox
+function openPhotoLightbox(src) {
+    const lightbox = document.getElementById('photoLightbox');
+    const img = document.getElementById('lightboxImage');
+    img.src = src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePhotoLightbox() {
+    const lightbox = document.getElementById('photoLightbox');
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closePhotoLightbox();
+    }
+});
+

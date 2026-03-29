@@ -27,7 +27,17 @@
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link active" data-ja="ホーム" data-en="Home">Home</a>
                 <a href="about.html" class="nav-link" data-ja="プロフィール" data-en="About">About</a>
-                <a href="#work" class="nav-link" data-ja="作品" data-en="My Works">My Works</a>
+                <div class="nav-dropdown">
+                    <a href="#work" class="nav-link" data-ja="作品" data-en="My Works">My Works</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="#software-dev" class="dropdown-item" data-ja="ソフトウェア開発" data-en="Software Development">Software Development</a>
+                        <a href="#case-studies" class="dropdown-item" data-ja="マーケティング" data-en="Marketing">Marketing</a>
+                        <a href="#digital-art" class="dropdown-item" data-ja="デジタルアート" data-en="Digital Art">Digital Art</a>
+                        <a href="#photography" class="dropdown-item" data-ja="写真" data-en="Photography">Photography</a>
+                        <a href="#video-production" class="dropdown-item" data-ja="映像制作" data-en="Video Production">Video Production</a>
+                        <a href="#music" class="dropdown-item" data-ja="音楽" data-en="Music">Music</a>
+                    </div>
+                </div>
                 <a href="#contact" class="nav-link" data-ja="お問い合わせ" data-en="Contacts">Contacts</a>
                 <button id="lang-toggle" class="lang-btn japanese" title="Switch Language / 言語を切り替え">
                     <span class="lang-label en">EN</span>
@@ -99,7 +109,7 @@
                     </div>
 
             <!-- Software Development Tab -->
-            <div class="works-tab-content active" id="software-tab">
+            <div class="works-tab-content active" id="software-tab" data-section-id="software-dev">
                 <div class="works-grid">
                 <!-- Project 1: Velobank -->
                 <div class="work-item" onclick="openModal('modal1')">
@@ -218,9 +228,9 @@
                         </div>
 
             <!-- Case Studies Subsection -->
-            <div class="case-studies-section">
+            <div class="case-studies-section" id="case-studies">
                 <div class="section-header">
-                    <h3 class="subsection-title">Case Studies</h3>
+                    <h3 class="subsection-title" data-ja="Marketing" data-en="Marketing">Marketing</h3>
                     <p class="subsection-subtitle japanese-subtitle" data-ja="主な実績" data-en="Achievements">主な実績</p>
                             </div>
                 
@@ -380,7 +390,7 @@
         </div>
             
             <!-- Digital Art Gallery -->
-            <div class="creative-category">
+            <div class="creative-category" id="digital-art">
                 <h4 class="creative-subheading" data-ja="Digital Art" data-en="Digital Art">Digital Art</h4>
                 <p class="creative-intro" data-ja="デザインとAIを活用したデジタル作品。" data-en="Digital works utilizing design and AI.">デザインとAIを活用したデジタル作品。</p>
                 
@@ -440,8 +450,84 @@
                 </div>
             </div>
             
+            <!-- Photography -->
+            <div class="creative-category photography-category" id="photography">
+                <h4 class="creative-subheading" data-ja="Photography" data-en="Photography">Photography</h4>
+                <p class="creative-intro" data-ja="レンズを通して捉えた瞬間と物語。" data-en="Moments and stories captured through the lens.">レンズを通して捉えた瞬間と物語。</p>
+                
+                <!-- Photography Carousel -->
+                <div class="photo-carousel-wrapper">
+                    <div class="photo-carousel-container">
+                        <div class="photo-carousel-track">
+                            <!-- Slide 1 -->
+                            <div class="photo-slide" onclick="openPhotoLightbox('images/photography/IMG_0034.JPG')">
+                                <img src="images/photography/IMG_0034.JPG" alt="Photography 1">
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="photo-slide" onclick="openPhotoLightbox('images/photography/IMG_0090.JPG')">
+                                <img src="images/photography/IMG_0090.JPG" alt="Photography 2">
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="photo-slide" onclick="openPhotoLightbox('images/photography/IMG_0107.JPG')">
+                                <img src="images/photography/IMG_0107.JPG" alt="Photography 3">
+                            </div>
+                            <!-- Slide 4 -->
+                            <div class="photo-slide" onclick="openPhotoLightbox('images/photography/IMG_0133.JPG')">
+                                <img src="images/photography/IMG_0133.JPG" alt="Photography 4">
+                            </div>
+                            <!-- Slide 5 -->
+                            <div class="photo-slide" onclick="openPhotoLightbox('images/photography/IMG_0162.JPG')">
+                                <img src="images/photography/IMG_0162.JPG" alt="Photography 5">
+                            </div>
+                            <!-- Slide 6 -->
+                            <div class="photo-slide" onclick="openPhotoLightbox('images/photography/IMG_2616.JPG')">
+                                <img src="images/photography/IMG_2616.JPG" alt="Photography 6">
+                            </div>
+                            <!-- Slide 7 -->
+                            <div class="photo-slide" onclick="openPhotoLightbox('images/photography/IMG_2685.JPG')">
+                                <img src="images/photography/IMG_2685.JPG" alt="Photography 7">
+                            </div>
+                            <!-- Slide 8 -->
+                            <div class="photo-slide" onclick="openPhotoLightbox('images/photography/IMG_9225.JPG')">
+                                <img src="images/photography/IMG_9225.JPG" alt="Photography 8">
+                            </div>
+                            <!-- Slide 9 -->
+                            <div class="photo-slide" onclick="openPhotoLightbox('images/photography/IMG_9352.JPG')">
+                                <img src="images/photography/IMG_9352.JPG" alt="Photography 9">
+                            </div>
+                            <!-- Slide 10 -->
+                            <div class="photo-slide" onclick="openPhotoLightbox('images/photography/Jio_Sakura.JPG')">
+                                <img src="images/photography/Jio_Sakura.JPG" alt="Photography 10">
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Arrows -->
+                        <button class="photo-carousel-prev" onclick="movePhotoCarousel(-1)">
+                            <span>‹</span>
+                        </button>
+                        <button class="photo-carousel-next" onclick="movePhotoCarousel(1)">
+                            <span>›</span>
+                        </button>
+                        
+                        <!-- Dots Indicator -->
+                        <div class="photo-carousel-dots">
+                            <span class="photo-carousel-dot active" onclick="currentPhotoSlide(0)"></span>
+                            <span class="photo-carousel-dot" onclick="currentPhotoSlide(1)"></span>
+                            <span class="photo-carousel-dot" onclick="currentPhotoSlide(2)"></span>
+                            <span class="photo-carousel-dot" onclick="currentPhotoSlide(3)"></span>
+                            <span class="photo-carousel-dot" onclick="currentPhotoSlide(4)"></span>
+                            <span class="photo-carousel-dot" onclick="currentPhotoSlide(5)"></span>
+                            <span class="photo-carousel-dot" onclick="currentPhotoSlide(6)"></span>
+                            <span class="photo-carousel-dot" onclick="currentPhotoSlide(7)"></span>
+                            <span class="photo-carousel-dot" onclick="currentPhotoSlide(8)"></span>
+                            <span class="photo-carousel-dot" onclick="currentPhotoSlide(9)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Video Production -->
-            <div class="creative-category video-category">
+            <div class="creative-category video-category" id="video-production">
                 <h4 class="creative-subheading" data-ja="Video Production" data-en="Video Production">Video Production</h4>
                 <p class="creative-intro" data-ja="映像制作スキルを活用したビデオコンテンツ。" data-en="Video content utilizing video production skills.">映像制作スキルを活用したビデオコンテンツ。</p>
                 
@@ -466,7 +552,7 @@
                 </div>
 
             <!-- Music Links -->
-            <div class="creative-category music-category">
+            <div class="creative-category music-category" id="music">
                 <h4 class="creative-subheading" data-ja="Music" data-en="Music">Music</h4>
                 <p class="creative-intro" data-ja="デジタルミュージシャンとしての音楽作品。" data-en="Musical works as a digital musician.">デジタルミュージシャンとしての音楽作品。</p>
                 
@@ -1012,6 +1098,12 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Photo Lightbox -->
+    <div class="photo-lightbox" id="photoLightbox" onclick="closePhotoLightbox()">
+        <button class="photo-lightbox-close" onclick="closePhotoLightbox()">&times;</button>
+        <img id="lightboxImage" src="" alt="">
     </div>
 
     <!-- Scripts -->
