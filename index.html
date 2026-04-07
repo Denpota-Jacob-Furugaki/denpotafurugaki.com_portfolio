@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denpota Furugaki - マーケティングディレクター</title>
-    <meta name="description" content="ソフトウェア開発者 × マーケティングディレクター × デジタルアーティスト。グローバルブランドのデジタル戦略とアプリ開発を専門とするDenpota Furugakiのポートフォリオサイト。">
+    <title>Denpota Furugaki - Digital Nature Portfolio</title>
+    <meta name="description" content="テクノロジーと自然が融合する時代に、ソフトウェア開発・マーケティング・デジタルアートを横断し、人の生活に自然に溶け込むものづくりを追求するクリエイター。">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&family=DotGothic16&family=Kosugi+Maru&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -21,23 +21,16 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="#home" style="text-decoration: none; color: inherit;">
-                <h2>Jake Furugaki</h2>
+                <h2 data-ja="共生、共栄、共義" data-en="Coexistence<br>Coprosperity<br>Co-righteousness">共生、共栄、共義</h2>
                 </a>
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link active" data-ja="ホーム" data-en="Home">Home</a>
-                <a href="about.html" class="nav-link" data-ja="プロフィール" data-en="About">About</a>
-                <div class="nav-dropdown">
-                    <a href="#work" class="nav-link" data-ja="作品" data-en="My Works">My Works</a>
-                    <div class="nav-dropdown-menu">
-                        <a href="#software-tab" class="dropdown-item" data-ja="ソフトウェア開発" data-en="Software Development">Software Development</a>
-                        <a href="#case-studies" class="dropdown-item" data-ja="マーケティング" data-en="Marketing">Marketing</a>
-                        <a href="#digital-art" class="dropdown-item" data-ja="デジタルアート＆写真" data-en="Digital Art & Photography">Digital Art & Photography</a>
-                        <a href="#video-production" class="dropdown-item" data-ja="映像制作" data-en="Video Production">Video Production</a>
-                        <a href="#music" class="dropdown-item" data-ja="音楽" data-en="Music">Music</a>
-                    </div>
-                </div>
-                <a href="#contact" class="nav-link" data-ja="お問い合わせ" data-en="Contacts">Contacts</a>
+                <a href="about.html" class="nav-link" data-ja="自己紹介" data-en="About">About</a>
+                <a href="#software-development" class="nav-link" data-ja="ソフトウェア開発" data-en="Software Development">Software Development</a>
+                <a href="#marketing" class="nav-link" data-ja="マーケティング" data-en="Marketing">Marketing</a>
+                <a href="#art" class="nav-link" data-ja="アート" data-en="Art">Art</a>
+                <a href="#contact" class="nav-link" data-ja="お問い合わせ" data-en="Contact">Contact</a>
                 <button id="lang-toggle" class="lang-btn japanese" title="Switch Language / 言語を切り替え">
                     <span class="lang-label en">EN</span>
                     <span class="lang-label jp">JP</span>
@@ -56,15 +49,15 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">
-                    <span class="title-line">古垣 伝法太</span>
-                    <span class="title-line">Jake Furugaki</span>
+                    <span class="title-line" data-ja="「0→1 を、一人で。」" data-en="From Zero to One, Solo.">From Zero to One, Solo.</span>
+                    <span class="title-line" data-ja="古垣 伝法太" data-en="Denpota Furugaki">Denpota Furugaki</span>
                 </h1>
                 <p class="hero-subtitle">
                     <span class="typing-text" id="typing-text"></span>
                     <span class="cursor">|</span>
                 </p>
                 <div class="hero-buttons">
-                    <a href="#work" class="btn btn-primary">
+                    <a href="#software-development" class="btn btn-primary">
                         <i class="fas fa-rocket"></i>
                         <span data-ja="作品を見る" data-en="View My Work">View My Work</span>
                     </a>
@@ -75,17 +68,12 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow">
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </div>
     </section>
 
 <!-- Video Section -->
     <section class="video-showcase hero-video">
         <div class="container">
-            <video class="showcase-video" controls preload="metadata" playsinline>
+            <video class="showcase-video" autoplay muted loop playsinline>
                 <source src="videos/Weekly%20Denpota%20OP%201.mp4" type="video/mp4">
                 お使いのブラウザは動画をサポートしていません。
             </video>
@@ -93,145 +81,156 @@
     </section>
     
     <!-- My Works Section -->
-    <section id="work" class="work">
+    <section id="software-development" class="work">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-ja="Works" data-en="Works">Works</h2>
+                <h2 class="section-title" data-ja="ソフトウェア開発" data-en="Software Development">Software Development</h2>
                 <p class="section-subtitle japanese-subtitle" data-ja="プロジェクト" data-en="">プロジェクト</p>
             </div>
             
             <!-- Works Tab Navigation -->
             <div class="works-tab-navigation">
-                <button class="works-tab-btn active" onclick="showWorksTab('software')">
-                    <span data-ja="ソフトウェア開発" data-en="Software Development">ソフトウェア開発</span>
+                <button class="works-tab-btn active" onclick="showWorksTab('sw-all')">
+                    <span data-ja="すべて" data-en="All">すべて</span>
                 </button>
-                    </div>
+                <button class="works-tab-btn" onclick="showWorksTab('sw-uiux')">
+                    <span data-ja="UI/UX デザイン" data-en="UI/UX Design">UI/UX デザイン</span>
+                </button>
+                <button class="works-tab-btn" onclick="showWorksTab('sw-ecommerce')">
+                    <span data-ja="E-commerce" data-en="E-commerce">E-commerce</span>
+                </button>
+                <button class="works-tab-btn" onclick="showWorksTab('sw-ai-data')">
+                    <span data-ja="AI & データ" data-en="AI & Data">AI & データ</span>
+                </button>
+                <button class="works-tab-btn" onclick="showWorksTab('sw-cms-crm')">
+                    <span data-ja="CMS / CRM" data-en="CMS / CRM">CMS / CRM</span>
+                </button>
+            </div>
 
-            <!-- Software Development Tab -->
-            <div class="works-tab-content active" id="software-tab" data-section-id="software-dev">
+            <!-- All Tab -->
+            <div class="works-tab-content active" id="sw-all-tab">
                 <div class="works-grid">
-                <!-- Project 1: Velobank -->
-                <div class="work-item" onclick="openModal('modal1')">
-                    <div class="work-image">
-                        <img src="images/projects/aiengine/velobank.webp" alt="Velobank Landing Page">
-                        <div class="work-category">UI/UX Design</div>
+                    <div class="work-item" onclick="openModal('modal1')">
+                        <div class="work-image">
+                            <img src="images/projects/aiengine/velobank.webp" alt="Velobank Landing Page">
+                            <div class="work-category">UI/UX Design</div>
+                        </div>
+                        <div class="work-title">Velobank</div>
+                    </div>
+                    <div class="work-item" onclick="openModal('modal2')">
+                        <div class="work-image">
+                            <img src="images/projects/freshh/freshh-1.webp" alt="Freshh Dashboard">
+                            <div class="work-category">E-commerce</div>
+                        </div>
+                        <div class="work-title">Freshh</div>
+                    </div>
+                    <div class="work-item" onclick="openModal('modal3')">
+                        <div class="work-image">
+                            <img src="images/profile/portfolio-01.webp" alt="InterviewX Platform">
+                            <div class="work-category">AI Platform</div>
+                        </div>
+                        <div class="work-title">InterviewX</div>
+                    </div>
+                    <div class="work-item" onclick="openModal('modal4')">
+                        <div class="work-image">
+                            <img src="images/projects/insighthub/insighthub-1.webp" alt="InsightHub Dashboard">
+                            <div class="work-category">Analytics</div>
+                        </div>
+                        <div class="work-title">InsightHub</div>
+                    </div>
+                    <div class="work-item" onclick="openModal('modal5')">
+                        <div class="work-image">
+                            <img src="images/projects/oem/oem1.webp" alt="OEM Corporate CMS">
+                            <div class="work-category">CMS</div>
+                        </div>
+                        <div class="work-title">OEM Corporate CMS</div>
+                    </div>
+                    <div class="work-item" onclick="openModal('modal6')">
+                        <div class="work-image">
+                            <img src="images/Sugarcrm1.webp" alt="SugarCRM">
+                            <div class="work-category">CRM</div>
+                        </div>
+                        <div class="work-title">SugarCRM</div>
+                    </div>
                 </div>
-                    <div class="work-title">Velobank</div>
-                    </div>
-
-                <!-- Project 2: Freshh -->
-                <div class="work-item" onclick="openModal('modal2')">
-                    <div class="work-image">
-                        <img src="images/projects/freshh/freshh-1.webp" alt="Freshh Dashboard">
-                        <div class="work-category">E-commerce</div>
-                    </div>
-                    <div class="work-title">Freshh</div>
-                    </div>
-
-                <!-- Project 3: InterviewX -->
-                <div class="work-item" onclick="openModal('modal3')">
-                    <div class="work-image">
-                        <img src="images/profile/portfolio-01.webp" alt="InterviewX Platform">
-                        <div class="work-category">AI Platform</div>
-                </div>
-                    <div class="work-title">InterviewX</div>
             </div>
 
-                <!-- Project 4: InsightHub -->
-                <div class="work-item" onclick="openModal('modal4')">
-                    <div class="work-image">
-                        <img src="images/projects/insighthub/insighthub-1.webp" alt="InsightHub Dashboard">
-                        <div class="work-category">Analytics</div>
-            </div>
-                    <div class="work-title">InsightHub</div>
-                        </div>
-
-                <!-- Project 5: OEM Corporate CMS -->
-                <div class="work-item" onclick="openModal('modal5')">
-                    <div class="work-image">
-                        <img src="images/projects/oem/oem1.webp" alt="OEM Corporate CMS">
-                        <div class="work-category">CMS</div>
-                        </div>
-                    <div class="work-title">OEM Corporate CMS</div>
-                </div>
-
-                <!-- Project 6: SugarCRM -->
-                <div class="work-item" onclick="openModal('modal6')">
-                    <div class="work-image">
-                        <img src="images/Sugarcrm1.webp" alt="SugarCRM">
-                        <div class="work-category">CRM</div>
-                        </div>
-                    <div class="work-title">SugarCRM</div>
-                        </div>
-                    </div>
-                </div>
-
-            <!-- Software Development Tab -->
-            <div class="works-tab-content" id="software-tab">
+            <!-- UI/UX Design Tab -->
+            <div class="works-tab-content" id="sw-uiux-tab">
                 <div class="works-grid">
-                <!-- Project 1: Velobank -->
-                <div class="work-item" onclick="openModal('modal1')">
-                    <div class="work-image">
-                        <img src="images/projects/aiengine/velobank.webp" alt="Velobank Landing Page">
-                        <div class="work-category">UI/UX Design</div>
+                    <div class="work-item" onclick="openModal('modal1')">
+                        <div class="work-image">
+                            <img src="images/projects/aiengine/velobank.webp" alt="Velobank Landing Page">
+                            <div class="work-category">UI/UX Design</div>
                         </div>
-                    <div class="work-title">Velobank</div>
-                        </div>
-
-                <!-- Project 2: Freshh -->
-                <div class="work-item" onclick="openModal('modal2')">
-                    <div class="work-image">
-                        <img src="images/projects/freshh/freshh-1.webp" alt="Freshh Dashboard">
-                        <div class="work-category">E-commerce</div>
+                        <div class="work-title">Velobank</div>
                     </div>
-                    <div class="work-title">Freshh</div>
                 </div>
-
-                <!-- Project 3: InterviewX -->
-                <div class="work-item" onclick="openModal('modal3')">
-                    <div class="work-image">
-                        <img src="images/profile/portfolio-01.webp" alt="InterviewX Platform">
-                        <div class="work-category">AI Platform</div>
-                        </div>
-                    <div class="work-title">InterviewX</div>
-                        </div>
-
-                <!-- Project 4: InsightHub -->
-                <div class="work-item" onclick="openModal('modal4')">
-                    <div class="work-image">
-                        <img src="images/projects/insighthub/insighthub-1.webp" alt="InsightHub Dashboard">
-                        <div class="work-category">Analytics</div>
-                    </div>
-                    <div class="work-title">InsightHub</div>
-                </div>
-
-                <!-- Project 5: OEM Corporate CMS -->
-                <div class="work-item" onclick="openModal('modal5')">
-                    <div class="work-image">
-                        <img src="images/projects/oem/oem1.webp" alt="OEM Corporate CMS">
-                        <div class="work-category">CMS</div>
             </div>
-                    <div class="work-title">OEM Corporate CMS</div>
+
+            <!-- E-commerce Tab -->
+            <div class="works-tab-content" id="sw-ecommerce-tab">
+                <div class="works-grid">
+                    <div class="work-item" onclick="openModal('modal2')">
+                        <div class="work-image">
+                            <img src="images/projects/freshh/freshh-1.webp" alt="Freshh Dashboard">
+                            <div class="work-category">E-commerce</div>
+                        </div>
+                        <div class="work-title">Freshh</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI & Data Tab -->
+            <div class="works-tab-content" id="sw-ai-data-tab">
+                <div class="works-grid">
+                    <div class="work-item" onclick="openModal('modal3')">
+                        <div class="work-image">
+                            <img src="images/profile/portfolio-01.webp" alt="InterviewX Platform">
+                            <div class="work-category">AI Platform</div>
+                        </div>
+                        <div class="work-title">InterviewX</div>
+                    </div>
+                    <div class="work-item" onclick="openModal('modal4')">
+                        <div class="work-image">
+                            <img src="images/projects/insighthub/insighthub-1.webp" alt="InsightHub Dashboard">
+                            <div class="work-category">Analytics</div>
+                        </div>
+                        <div class="work-title">InsightHub</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CMS / CRM Tab -->
+            <div class="works-tab-content" id="sw-cms-crm-tab">
+                <div class="works-grid">
+                    <div class="work-item" onclick="openModal('modal5')">
+                        <div class="work-image">
+                            <img src="images/projects/oem/oem1.webp" alt="OEM Corporate CMS">
+                            <div class="work-category">CMS</div>
+                        </div>
+                        <div class="work-title">OEM Corporate CMS</div>
+                    </div>
+                    <div class="work-item" onclick="openModal('modal6')">
+                        <div class="work-image">
+                            <img src="images/Sugarcrm1.webp" alt="SugarCRM">
+                            <div class="work-category">CRM</div>
+                        </div>
+                        <div class="work-title">SugarCRM</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </section>
 
-                <!-- Project 6: SugarCRM -->
-                <div class="work-item" onclick="openModal('modal6')">
-                    <div class="work-image">
-                        <img src="images/Sugarcrm1.webp" alt="SugarCRM">
-                        <div class="work-category">CRM</div>
+    <!-- Marketing Section -->
+    <section id="marketing" class="work">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-ja="マーケティング" data-en="Marketing">Marketing</h2>
+                <p class="section-subtitle japanese-subtitle" data-ja="主な実績" data-en="Achievements">主な実績</p>
             </div>
-                    <div class="work-title">SugarCRM</div>
-                            </div>
-                        </div>
-                            </div>
-                        </div>
-
-            <!-- Case Studies Subsection -->
-            <div class="case-studies-section" id="case-studies">
-                <div class="section-header">
-                    <h3 class="subsection-title" data-ja="Marketing" data-en="Marketing">Marketing</h3>
-                    <p class="subsection-subtitle japanese-subtitle" data-ja="主な実績" data-en="Achievements">主な実績</p>
-                            </div>
                 
                 <!-- Case Studies Tab Navigation -->
                 <div class="case-studies-tab-navigation">
@@ -379,59 +378,117 @@
 
                     </div>
                 </div>
+        </div>
+    </section>
+
+    <!-- Art Section -->
+    <section id="art" class="work">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-ja="アート" data-en="Art">Art</h2>
+                <p class="section-subtitle japanese-subtitle" data-ja="クリエイティブ活動" data-en="">クリエイティブ活動</p>
             </div>
             
-            <!-- Creative Works Section -->
-            <div class="creative-works-section">
-                <div class="section-header">
-                    <h3 class="subsection-title" data-ja="Creative Works" data-en="Creative Works">Creative Works</h3>
-                    <p class="subsection-subtitle japanese-subtitle" data-ja="クリエイティブ活動" data-en="">クリエイティブ活動</p>
-        </div>
-            
-            <!-- Digital Art Gallery -->
-            <div class="creative-category" id="digital-art">
-                <h4 class="creative-subheading" data-ja="Digital Art & Photography" data-en="Digital Art & Photography">Digital Art & Photography</h4>
-                <p class="creative-intro" data-ja="デザイン、AI、写真を活用したクリエイティブ作品。" data-en="Creative works utilizing design, AI, and photography.">デザイン、AI、写真を活用したクリエイティブ作品。</p>
-                
-                <!-- Digital Art Carousel -->
+            <!-- Art Tab Navigation -->
+            <div class="works-tab-navigation">
+                <button class="works-tab-btn active" onclick="showArtTab('art-digital')">
+                    <span data-ja="アブストラクトアート" data-en="Abstract Art">Abstract Art</span>
+                </button>
+                <button class="works-tab-btn" onclick="showArtTab('art-photography')">
+                    <span data-ja="写真" data-en="Photography">Photography</span>
+                </button>
+                <button class="works-tab-btn" onclick="showArtTab('art-video')">
+                    <span data-ja="映像制作" data-en="Video Production">Video Production</span>
+                </button>
+                <button class="works-tab-btn" onclick="showArtTab('art-music')">
+                    <span data-ja="音楽" data-en="Music">Music</span>
+                </button>
+            </div>
+
+            <!-- Digital Art Tab -->
+            <div class="art-tab-content active" id="art-digital-tab">
                 <div class="digital-art-carousel-wrapper">
                     <div class="digital-art-carousel-container">
                         <div class="digital-art-carousel-track">
-                           <!-- Slide 1 -->
                             <div class="digital-art-slide left">
                                 <div class="art-image">
-                                    <img src="images/art/denpota-art4.jpg" alt="Kokeoke Installation">
+                                    <img src="images/abstract_art/denpota-art4.jpg" alt="Kokeoke">
                                 </div>
                                 <div class="art-content">
                                     <h4 class="art-title" data-ja="Kokeoke" data-en="Kokeoke">Kokeoke</h4>
-                                    <p class="art-text" data-ja="苔とデジタルアートの融合による没入型インスタレーション作品。生きた苔の上に枯れた植物を配置し、その背後には色彩豊かなデジタル映像が投影される。自然と技術の対比を通じて、時間の経過と生命の循環を表現。木製の円筒形容器に収められた苔庭は、日本の伝統的な美学とコンテンポラリーアートの融合を象徴する。" data-en="An immersive installation work that merges moss and digital art. Dried plants are arranged on living moss, with vibrant digital projections displayed behind. Through the contrast between nature and technology, the work expresses the passage of time and the cycle of life. The moss garden contained in a wooden cylindrical vessel symbolizes the fusion of traditional Japanese aesthetics with contemporary art.">苔とデジタルアートの融合による没入型インスタレーション作品。生きた苔の上に枯れた植物を配置し、その背後には色彩豊かなデジタル映像が投影される。自然と技術の対比を通じて、時間の経過と生命の循環を表現。木製の円筒形容器に収められた苔庭は、日本の伝統的な美学とコンテンポラリーアートの融合を象徴する。</p>
+                                    <p class="art-text" data-ja="苔とデジタルアートの融合による没入型インスタレーション作品。生きた苔の上に枯れた植物を配置し、その背後には色彩豊かなデジタル映像が投影される。自然と技術の対比を通じて、時間の経過と生命の循環を表現。" data-en="An immersive installation merging living moss with digital art. Dried plants rest on a moss bed while vibrant digital projections play behind, expressing the contrast between nature and technology, and the cycle of life and time.">苔とデジタルアートの融合による没入型インスタレーション作品。生きた苔の上に枯れた植物を配置し、その背後には色彩豊かなデジタル映像が投影される。自然と技術の対比を通じて、時間の経過と生命の循環を表現。</p>
                                 </div>
                             </div>
-                            
-                            <!-- Slide 2 -->
                             <div class="digital-art-slide center">
                                 <div class="art-image">
-                                    <img src="images/art/denpota-art1.jpg" alt="水と炎の融合">
+                                    <img src="images/abstract_art/denpota-art2.jpg" alt="一筆書きで描く未来万博">
                                 </div>
                                 <div class="art-content">
-                                    <h4 class="art-title" data-ja="水と炎の融合 ― 自然の対話を描くアート" data-en="Fusion of Water and Flame — An Artistic Dialogue with Nature">水と炎の融合 ― 自然の対話を描くアート</h4>
-                                    <p class="art-text" data-ja="清らかな川の流れと、燃え上がるマグマのような炎を融合させた作品。「対立するものの中にも調和がある」というテーマで、自然のエネルギーと美しさを表現しました。水の透明感と炎の躍動が混ざり合い、見る人に力強さと静けさを同時に感じさせます。" data-en="A work that fuses the pure flow of a river with the fiery energy of magma-like flames. Based on the theme &quot;Harmony within opposites,&quot; it expresses the dynamic beauty and power of nature. The transparency of water and the vitality of fire intertwine, evoking in the viewer a simultaneous sense of strength and serenity.">清らかな川の流れと、燃え上がるマグマのような炎を融合させた作品。「対立するものの中にも調和がある」というテーマで、自然のエネルギーと美しさを表現しました。水の透明感と炎の躍動が混ざり合い、見る人に力強さと静けさを同時に感じさせます。</p>
+                                    <h4 class="art-title" data-ja="一筆書きで描く未来万博" data-en="One Line, One World">一筆書きで描く未来万博</h4>
+                                    <p class="art-text" data-ja="清水寺の舞台のように力強く支えられた「大屋根リング」を一筆書きで表現。多様な建物や森、人々が集う未来の万博会場をイメージし、多様性と交流、バリアフリーの精神を象徴しています。" data-en="The Grand Roof Ring is drawn in a single continuous stroke, supported like Kiyomizu Temple's stage. Diverse buildings, greenery, and people gather in this future Expo site — embodying diversity, connection, and inclusivity.">清水寺の舞台のように力強く支えられた「大屋根リング」を一筆書きで表現。多様な建物や森、人々が集う未来の万博会場をイメージし、多様性と交流、バリアフリーの精神を象徴しています。</p>
                                 </div>
                             </div>
-                            
-                            <!-- Slide 3 -->
                             <div class="digital-art-slide right">
                                 <div class="art-image">
-                                    <img src="images/art/denpota-art2.jpg" alt="一筆書きで描く未来万博">
+                                    <img src="images/abstract_art/IMG_0107.JPG" alt="光の軌跡">
                                 </div>
                                 <div class="art-content">
-                                    <h4 class="art-title" data-ja="一筆書きで描く未来万博 ― 大屋根リングと多様なパビリオン" data-en="One Line, One World">一筆書きで描く未来万博 ― 大屋根リングと多様なパビリオン</h4>
-                                    <p class="art-text" data-ja="清水寺の舞台のように力強く支えられた「大屋根リング」を一筆書きで表現。片側には海、もう片側には電車やバスで繋がるアクセス路を描き、中央には多様な建物や森、人々が集う未来の万博会場をイメージしました。リングの上にも人々が歩き、多様性と交流、バリアフリーの精神を象徴しています。" data-en="This piece portrays the Grand Roof Ring, drawn in a single continuous stroke and supported like Kiyomizu Temple's stage. The sea and transport routes frame a future Expo site of diverse buildings, greenery, and people. The ring, where people also walk, embodies diversity, connection, and inclusivity.">清水寺の舞台のように力強く支えられた「大屋根リング」を一筆書きで表現。片側には海、もう片側には電車やバスで繋がるアクセス路を描き、中央には多様な建物や森、人々が集う未来の万博会場をイメージしました。リングの上にも人々が歩き、多様性と交流、バリアフリーの精神を象徴しています。</p>
+                                    <h4 class="art-title" data-ja="光の軌跡 ― 夜空に描く抽象" data-en="Trails of Light — Abstractions in the Night Sky">光の軌跡 ― 夜空に描く抽象</h4>
+                                    <p class="art-text" data-ja="長時間露光によって夜の光を抽象的に捉えた実験的作品。街灯や車のライトが流れるように描かれ、深い青の空間の中で白い光の奔流が爆発するように広がる。偶然と意図の間に生まれるアート。" data-en="An experimental long-exposure work that captures night light abstractly. Streetlights and car headlights flow like brushstrokes, with torrents of white light bursting across a deep blue void — art born between chance and intention.">長時間露光によって夜の光を抽象的に捉えた実験的作品。街灯や車のライトが流れるように描かれ、深い青の空間の中で白い光の奔流が爆発するように広がる。偶然と意図の間に生まれるアート。</p>
                                 </div>
                             </div>
-
-                            <!-- Slide 4: Photography -->
                             <div class="digital-art-slide hidden">
+                                <div class="art-image">
+                                    <img src="images/abstract_art/IMG_9225.JPG" alt="紫の水面">
+                                </div>
+                                <div class="art-content">
+                                    <h4 class="art-title" data-ja="紫の水面 ― 光と水の対話" data-en="Purple Waters — A Dialogue of Light and Water">紫の水面 ― 光と水の対話</h4>
+                                    <p class="art-text" data-ja="紫色に染まった水面の光の反射を捉えた抽象作品。水の揺らぎが作り出す自然なパターンと幻想的な色彩が、現実と夢の境界を曖昧にする。" data-en="An abstract work capturing light reflections on water tinted in purple. Natural patterns from the water's ripples blend with fantastical colors, blurring the boundary between reality and dream.">紫色に染まった水面の光の反射を捉えた抽象作品。水の揺らぎが作り出す自然なパターンと幻想的な色彩が、現実と夢の境界を曖昧にする。</p>
+                                </div>
+                            </div>
+                            <div class="digital-art-slide hidden">
+                                <div class="art-image">
+                                    <img src="images/abstract_art/IMG_0300.JPG" alt="抽象作品">
+                                </div>
+                                <div class="art-content">
+                                    <h4 class="art-title" data-ja="光の粒子 ― 春のざわめき" data-en="Particles of Light — Whispers of Spring">光の粒子 ― 春のざわめき</h4>
+                                    <p class="art-text" data-ja="緑・青・黄の光の玉が空間に舞う抽象作品。焦点を外したレンズが捉えた光の粒子は、春の息吹のような生命感と、見る者の記憶の奥にある景色を呼び起こす。" data-en="An abstract work where orbs of green, blue, and yellow light dance through space. Particles caught by an out-of-focus lens evoke the breath of spring and stir landscapes buried deep within the viewer's memory.">緑・青・黄の光の玉が空間に舞う抽象作品。焦点を外したレンズが捉えた光の粒子は、春の息吹のような生命感と、見る者の記憶の奥にある景色を呼び起こす。</p>
+                                </div>
+                            </div>
+                            <div class="digital-art-slide hidden">
+                                <div class="art-image">
+                                    <img src="images/abstract_art/IMG_0857.JPG" alt="抽象作品">
+                                </div>
+                                <div class="art-content">
+                                    <h4 class="art-title" data-ja="桜の渦 ― 儚さの記憶" data-en="Cherry Vortex — Memory of Ephemerality">桜の渦 ― 儚さの記憶</h4>
+                                    <p class="art-text" data-ja="ピンクの色彩が渦を巻くように溶け合う抽象作品。ぼかしの中で形を失った桜は、儚く美しい春の一瞬と、過ぎ去る時間の余韻を映し出す。" data-en="An abstract work where pink hues melt into a swirling vortex. Cherry blossoms, dissolved within the blur, reflect the fleeting beauty of spring and the lingering trace of time as it passes.">ピンクの色彩が渦を巻くように溶け合う抽象作品。ぼかしの中で形を失った桜は、儚く美しい春の一瞬と、過ぎ去る時間の余韻を映し出す。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="digital-art-prev" onclick="moveDigitalArtCarousel(-1)">
+                            <span>‹</span>
+                        </button>
+                        <button class="digital-art-next" onclick="moveDigitalArtCarousel(1)">
+                            <span>›</span>
+                        </button>
+                        <div class="digital-art-dots">
+                            <span class="digital-art-dot active" onclick="currentDigitalArtSlide(0)"></span>
+                            <span class="digital-art-dot" onclick="currentDigitalArtSlide(1)"></span>
+                            <span class="digital-art-dot" onclick="currentDigitalArtSlide(2)"></span>
+                            <span class="digital-art-dot" onclick="currentDigitalArtSlide(3)"></span>
+                            <span class="digital-art-dot" onclick="currentDigitalArtSlide(4)"></span>
+                            <span class="digital-art-dot" onclick="currentDigitalArtSlide(5)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photography Tab -->
+            <div class="art-tab-content" id="art-photography-tab">
+                <div class="digital-art-carousel-wrapper">
+                    <div class="digital-art-carousel-container photo-carousel">
+                        <div class="digital-art-carousel-track">
+                            <div class="digital-art-slide left">
                                 <div class="art-image">
                                     <img src="images/photography/IMG_0034.JPG" alt="無垢なまなざし">
                                 </div>
@@ -440,9 +497,7 @@
                                     <p class="art-text" data-ja="リボンを付けた幼い少女の純粋な表情を捉えたポートレート。柔らかな自然光が生み出す温かみのあるトーンが、子どもの無邪気さと好奇心を引き立てる。" data-en="A portrait capturing the pure expression of a young girl with a ribbon. The warm tones created by soft natural light accentuate the child's innocence and curiosity.">リボンを付けた幼い少女の純粋な表情を捉えたポートレート。柔らかな自然光が生み出す温かみのあるトーンが、子どもの無邪気さと好奇心を引き立てる。</p>
                                 </div>
                             </div>
-
-                            <!-- Slide 5: Photography -->
-                            <div class="digital-art-slide hidden">
+                            <div class="digital-art-slide center">
                                 <div class="art-image">
                                     <img src="images/photography/IMG_0090.JPG" alt="夕陽に想う">
                                 </div>
@@ -451,19 +506,15 @@
                                     <p class="art-text" data-ja="黄金色の逆光に包まれた少女の横顔。三つ編みの髪が夕陽に照らされ、物思いにふけるその静かな表情が、一日の終わりの穏やかな感情を映し出す。" data-en="A girl's profile bathed in golden backlight. Her braided hair catches the sunset glow, and her quiet, contemplative expression reflects the gentle emotions at the close of the day.">黄金色の逆光に包まれた少女の横顔。三つ編みの髪が夕陽に照らされ、物思いにふけるその静かな表情が、一日の終わりの穏やかな感情を映し出す。</p>
                                 </div>
                             </div>
-
-                            <!-- Slide 6: Photography -->
-                            <div class="digital-art-slide hidden">
+                            <div class="digital-art-slide right">
                                 <div class="art-image">
-                                    <img src="images/photography/IMG_0107.JPG" alt="光の軌跡">
+                                    <img src="images/photography/IMG_0200.JPG" alt="Photography">
                                 </div>
                                 <div class="art-content">
-                                    <h4 class="art-title" data-ja="光の軌跡 ― 夜空に描く抽象" data-en="Trails of Light — Abstractions in the Night Sky">光の軌跡 ― 夜空に描く抽象</h4>
-                                    <p class="art-text" data-ja="長時間露光によって夜の光を抽象的に捉えた実験的写真。街灯や車のライトが流れるように描かれ、深い青の空間の中で白い光の奔流が爆発するように広がる。偶然と意図の間に生まれるアート。" data-en="An experimental long-exposure photograph abstractly capturing light at night. Streetlights and car headlights flow like brushstrokes, with torrents of white light bursting across a deep blue void — art born between chance and intention.">長時間露光によって夜の光を抽象的に捉えた実験的写真。街灯や車のライトが流れるように描かれ、深い青の空間の中で白い光の奔流が爆発するように広がる。偶然と意図の間に生まれるアート。</p>
+                                    <h4 class="art-title" data-ja="日常の一片" data-en="A Slice of Everyday">日常の一片</h4>
+                                    <p class="art-text" data-ja="さりげない瞬間に宿る美しさを切り取ったポートレート作品。" data-en="A portrait capturing the beauty hidden within an unassuming moment.">さりげない瞬間に宿る美しさを切り取ったポートレート作品。</p>
                                 </div>
                             </div>
-
-                            <!-- Slide 7: Photography -->
                             <div class="digital-art-slide hidden">
                                 <div class="art-image">
                                     <img src="images/photography/IMG_0133.JPG" alt="遊びの瞬間">
@@ -473,19 +524,6 @@
                                     <p class="art-text" data-ja="縄跳びで遊ぶ少女を捉えた一枚。緑の背景に映えるモノトーンの衣装と、真剣な眼差しのコントラストが、子どもの無限のエネルギーと集中力を表現している。" data-en="A shot capturing a girl playing jump rope. The contrast between her monochrome outfit against the green backdrop and her focused gaze expresses the boundless energy and concentration of childhood.">縄跳びで遊ぶ少女を捉えた一枚。緑の背景に映えるモノトーンの衣装と、真剣な眼差しのコントラストが、子どもの無限のエネルギーと集中力を表現している。</p>
                                 </div>
                             </div>
-
-                            <!-- Slide 8: Photography -->
-                            <div class="digital-art-slide hidden">
-                                <div class="art-image">
-                                    <img src="images/photography/IMG_0162.JPG" alt="苔とデジタルの共存">
-                                </div>
-                                <div class="art-content">
-                                    <h4 class="art-title" data-ja="苔とデジタルの共存" data-en="Coexistence of Moss and Digital">苔とデジタルの共存</h4>
-                                    <p class="art-text" data-ja="木製の器に植えられた苔と枯れ木の盆栽を中心に、背景にデジタルアート作品が並ぶインスタレーション。自然素材とデジタル表現の融合が、伝統と革新の調和を物語る。" data-en="An installation centered on a moss and driftwood bonsai in a wooden vessel, framed by digital artworks. The fusion of natural materials and digital expression tells a story of harmony between tradition and innovation.">木製の器に植えられた苔と枯れ木の盆栽を中心に、背景にデジタルアート作品が並ぶインスタレーション。自然素材とデジタル表現の融合が、伝統と革新の調和を物語る。</p>
-                                </div>
-                            </div>
-
-                            <!-- Slide 9: Photography -->
                             <div class="digital-art-slide hidden">
                                 <div class="art-image">
                                     <img src="images/photography/IMG_2616.JPG" alt="祭りの子">
@@ -495,8 +533,6 @@
                                     <p class="art-text" data-ja="神社の祭りの賑わいの中、赤い柱に手を伸ばす幼い少女。色鮮やかな背景のボケ味が祭りの華やかさを映し出し、少女の真剣な表情が日本の伝統文化との出会いの瞬間を切り取っている。" data-en="A young girl reaching toward a red shrine pillar amidst the bustle of a festival. The vivid bokeh reflects the festivity's vibrancy, while her earnest expression captures the moment of encountering Japanese traditional culture.">神社の祭りの賑わいの中、赤い柱に手を伸ばす幼い少女。色鮮やかな背景のボケ味が祭りの華やかさを映し出し、少女の真剣な表情が日本の伝統文化との出会いの瞬間を切り取っている。</p>
                                 </div>
                             </div>
-
-                            <!-- Slide 10: Photography -->
                             <div class="digital-art-slide hidden">
                                 <div class="art-image">
                                     <img src="images/photography/IMG_2685.JPG" alt="神社の微笑み">
@@ -506,19 +542,15 @@
                                     <p class="art-text" data-ja="神社の境内で振り返る女性の自然な笑顔。白い着物と提灯のぼかしが調和し、日本の伝統的な空間の中で生まれる温かく親しみやすい一瞬を記録している。" data-en="A woman's natural smile as she turns back at a shrine. The white kimono and soft lantern bokeh harmonize, documenting a warm and approachable moment born within a traditional Japanese setting.">神社の境内で振り返る女性の自然な笑顔。白い着物と提灯のぼかしが調和し、日本の伝統的な空間の中で生まれる温かく親しみやすい一瞬を記録している。</p>
                                 </div>
                             </div>
-
-                            <!-- Slide 11: Photography -->
                             <div class="digital-art-slide hidden">
                                 <div class="art-image">
-                                    <img src="images/photography/IMG_9225.JPG" alt="紫の水面">
+                                    <img src="images/photography/IMG_1673.JPG" alt="Photography">
                                 </div>
                                 <div class="art-content">
-                                    <h4 class="art-title" data-ja="紫の水面 ― 光と水の対話" data-en="Purple Waters — A Dialogue of Light and Water">紫の水面 ― 光と水の対話</h4>
-                                    <p class="art-text" data-ja="紫色に染まった水面の光の反射を捉えた抽象的な写真。水の揺らぎが作り出す自然なパターンと幻想的な色彩が、現実と夢の境界を曖昧にする。" data-en="An abstract photograph capturing light reflections on water dyed in purple. The natural patterns created by the water's ripples and the fantastical colors blur the boundary between reality and dream.">紫色に染まった水面の光の反射を捉えた抽象的な写真。水の揺らぎが作り出す自然なパターンと幻想的な色彩が、現実と夢の境界を曖昧にする。</p>
+                                    <h4 class="art-title" data-ja="静かな視線" data-en="A Quiet Gaze">静かな視線</h4>
+                                    <p class="art-text" data-ja="言葉のない瞬間に込められた静けさと感情を捉えた一枚。" data-en="A single frame capturing the silence and emotion held within a wordless moment.">言葉のない瞬間に込められた静けさと感情を捉えた一枚。</p>
                                 </div>
                             </div>
-
-                            <!-- Slide 12: Photography -->
                             <div class="digital-art-slide hidden">
                                 <div class="art-image">
                                     <img src="images/photography/IMG_9352.JPG" alt="弾ける笑顔">
@@ -528,8 +560,6 @@
                                     <p class="art-text" data-ja="自然体で弾けるような笑顔を見せる女性のポートレート。飾らない表情の中に溢れる温かさと親しみが、見る者にもその幸福感を伝える。" data-en="A portrait of a woman with a naturally radiant, bursting smile. The warmth and approachability overflowing from her unposed expression conveys a sense of happiness to the viewer.">自然体で弾けるような笑顔を見せる女性のポートレート。飾らない表情の中に溢れる温かさと親しみが、見る者にもその幸福感を伝える。</p>
                                 </div>
                             </div>
-
-                            <!-- Slide 13: Photography -->
                             <div class="digital-art-slide hidden">
                                 <div class="art-image">
                                     <img src="images/photography/Jio_Sakura.JPG" alt="桜の冒険">
@@ -540,16 +570,12 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Navigation Arrows -->
                         <button class="digital-art-prev" onclick="moveDigitalArtCarousel(-1)">
                             <span>‹</span>
                         </button>
                         <button class="digital-art-next" onclick="moveDigitalArtCarousel(1)">
                             <span>›</span>
                         </button>
-                        
-                        <!-- Dots Indicator -->
                         <div class="digital-art-dots">
                             <span class="digital-art-dot active" onclick="currentDigitalArtSlide(0)"></span>
                             <span class="digital-art-dot" onclick="currentDigitalArtSlide(1)"></span>
@@ -560,21 +586,46 @@
                             <span class="digital-art-dot" onclick="currentDigitalArtSlide(6)"></span>
                             <span class="digital-art-dot" onclick="currentDigitalArtSlide(7)"></span>
                             <span class="digital-art-dot" onclick="currentDigitalArtSlide(8)"></span>
-                            <span class="digital-art-dot" onclick="currentDigitalArtSlide(9)"></span>
-                            <span class="digital-art-dot" onclick="currentDigitalArtSlide(10)"></span>
-                            <span class="digital-art-dot" onclick="currentDigitalArtSlide(11)"></span>
-                            <span class="digital-art-dot" onclick="currentDigitalArtSlide(12)"></span>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Video Production -->
-            <div class="creative-category video-category" id="video-production">
-                <h4 class="creative-subheading" data-ja="Video Production" data-en="Video Production">Video Production</h4>
-                <p class="creative-intro" data-ja="映像制作スキルを活用したビデオコンテンツ。" data-en="Video content utilizing video production skills.">映像制作スキルを活用したビデオコンテンツ。</p>
-                
+
+            <!-- Video Production Tab -->
+            <div class="art-tab-content" id="art-video-tab">
                 <div class="video-showcase">
+                    <a href="https://youtu.be/qrDoANs6Ei8" class="video-link" target="_blank" rel="noopener noreferrer">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/qrDoANs6Ei8/maxresdefault.jpg" alt="YouTube Video" class="video-thumbnail-image">
+                            <div class="video-play-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="video-overlay">
+                                <i class="fab fa-youtube"></i>
+                                <span data-ja="YouTubeで視聴" data-en="Watch on YouTube">Watch on YouTube</span>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h4 class="video-title" data-ja="オリジナル映像作品" data-en="Original Video Work">Original Video Work</h4>
+                            <p class="video-description" data-ja="自身で制作した映像作品。" data-en="An original video work I produced.">自身で制作した映像作品。</p>
+                        </div>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=jLtZLn0FAbk" class="video-link" target="_blank" rel="noopener noreferrer">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/jLtZLn0FAbk/maxresdefault.jpg" alt="Universal Truth" class="video-thumbnail-image">
+                            <div class="video-play-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="video-overlay">
+                                <i class="fab fa-youtube"></i>
+                                <span data-ja="YouTubeで視聴" data-en="Watch on YouTube">Watch on YouTube</span>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h4 class="video-title" data-ja="オリジナル映像作品" data-en="Original Video Work">Original Video Work</h4>
+                            <p class="video-description" data-ja="自身で制作した映像作品。" data-en="An original video work I produced.">自身で制作した映像作品。</p>
+                        </div>
+                    </a>
                     <a href="https://drive.google.com/file/d/1NXVXe64skOaWabsLrClWIP7_WuyibWMH/view" class="video-link" target="_blank" rel="noopener noreferrer">
                         <div class="video-thumbnail">
                             <img src="images/video.png" alt="Video Showcase" class="video-thumbnail-image">
@@ -585,50 +636,62 @@
                                 <i class="fab fa-google-drive"></i>
                                 <span data-ja="Watch on Google Drive" data-en="Watch on Google Drive">Watch on Google Drive</span>
                             </div>
-                            </div>
+                        </div>
                         <div class="video-info">
                             <h4 class="video-title" data-ja="Video Showcase" data-en="Video Showcase">Video Showcase</h4>
                             <p class="video-description" data-ja="映像制作の作品をご覧いただけます。" data-en="You can view video production works.">映像制作の作品をご覧いただけます。</p>
                         </div>
-                            </a>
-                    </div>
-                </div>
-
-            <!-- Music Links -->
-            <div class="creative-category music-category" id="music">
-                <h4 class="creative-subheading" data-ja="Music" data-en="Music">Music</h4>
-                <p class="creative-intro" data-ja="デジタルミュージシャンとしての音楽作品。" data-en="Musical works as a digital musician.">デジタルミュージシャンとしての音楽作品。</p>
-                
-                <div class="music-links">
-                    <!-- YouTube -->
-                    <a href="https://www.youtube.com/@DijiiKaze" class="music-link" target="_blank" rel="noopener noreferrer">
-                        <div class="music-icon">
-                            <i class="fab fa-youtube"></i>
-                        </div>
-                        <div class="music-info">
-                            <h4 class="music-platform" data-ja="YouTube" data-en="YouTube">YouTube</h4>
-                            <p class="music-description" data-ja="音楽作品をYouTubeで視聴" data-en="Watch musical works on YouTube">音楽作品をYouTubeで視聴</p>
-                        </div>
-                        <i class="fas fa-external-link-alt music-arrow"></i>
                     </a>
-
-                    <!-- Google Drive -->
-                    <a href="https://drive.google.com/drive/folders/1ZEetC5hbppGTC2w80LZn8RGunL503-hY?usp=sharing" class="music-link" target="_blank" rel="noopener noreferrer">
-                        <div class="music-icon">
-                            <i class="fab fa-google-drive"></i>
-                    </div>
-                        <div class="music-info">
-                            <h4 class="music-platform" data-ja="Google Drive" data-en="Google Drive">Google Drive</h4>
-                            <p class="music-description" data-ja="音楽アーカイブにアクセス" data-en="Access music archive">音楽アーカイブにアクセス</p>
-                            </div>
-                        <i class="fas fa-external-link-alt music-arrow"></i>
-                    </a>
-                    </div>
                 </div>
             </div>
+
+            <!-- Music Tab -->
+            <div class="art-tab-content" id="art-music-tab">
+                <div class="video-showcase">
+                    <a href="https://www.youtube.com/watch?v=DuJtwVZLLrY" class="video-link" target="_blank" rel="noopener noreferrer">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/DuJtwVZLLrY/maxresdefault.jpg" alt="Music" class="video-thumbnail-image">
+                            <div class="video-play-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="video-overlay">
+                                <i class="fab fa-youtube"></i>
+                                <span data-ja="YouTubeで視聴" data-en="Watch on YouTube">Watch on YouTube</span>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h4 class="video-title" data-ja="オリジナル楽曲" data-en="Original Song">Original Song</h4>
+                            <p class="video-description" data-ja="自身で制作した音楽作品。" data-en="An original music work I produced.">自身で制作した音楽作品。</p>
+                        </div>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=18CZiUUZLDc" class="video-link" target="_blank" rel="noopener noreferrer">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/18CZiUUZLDc/maxresdefault.jpg" alt="Music" class="video-thumbnail-image">
+                            <div class="video-play-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="video-overlay">
+                                <i class="fab fa-youtube"></i>
+                                <span data-ja="YouTubeで視聴" data-en="Watch on YouTube">Watch on YouTube</span>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h4 class="video-title" data-ja="オリジナル楽曲" data-en="Original Song">Original Song</h4>
+                            <p class="video-description" data-ja="自身で制作した音楽作品。" data-en="An original music work I produced.">自身で制作した音楽作品。</p>
+                        </div>
+                    </a>
+                </div>
+                </div>
         </div>
     </section>
 
+
+    <!-- Image Lightbox -->
+    <div id="image-lightbox" class="image-lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" class="lightbox-img" alt="" onclick="event.stopPropagation()">
+        <p id="lightbox-caption" class="lightbox-caption" onclick="event.stopPropagation()"></p>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -654,7 +717,7 @@
                             </div>
                             <div class="contact-details">
                                 <h4 data-ja="Email" data-en="Email">Email</h4>
-                            <a href="mailto:furugaki.denpota.ic.edu" class="contact-link">furugaki.denpota.ic.edu</a>
+                            <a href="mailto:denpotafurugaki@gmail.com" class="contact-link">denpotafurugaki@gmail.com</a>
                             </div>
                         </div>
                         
@@ -679,14 +742,15 @@
                         </div>
 
                     <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                            <div class="contact-icon">
+                                <i class="fab fa-facebook"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 data-ja="Facebook" data-en="Facebook">Facebook</h4>
+                            <a href="https://www.facebook.com/denpota.furugaki" target="_blank" class="contact-link">Facebook Profile</a>
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <h4 data-ja="Phone" data-en="Phone">Phone</h4>
-                            <a href="tel:+81-80-2466-0377" class="contact-link">080-2466-0377</a>
-                        </div>
-                    </div>
+
                 </div>
                 
                 <!-- Contact Form -->
@@ -724,7 +788,7 @@
                 <h2 class="thank-you-title">Thank you for reading!</h2>
                 <p class="thank-you-subtitle japanese-subtitle">ご覧いただき、ありがとうございます</p>
                 <div class="thank-you-footer">
-                    <p class="footer-text">© 2024 Denpota Furugaki. All rights reserved.</p>
+                    <p class="footer-text">© 2026 Denpota Furugaki. All rights reserved.</p>
         </div>
                         </div>
                         </div>

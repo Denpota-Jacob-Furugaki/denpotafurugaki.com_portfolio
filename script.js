@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const cursor = document.querySelector('.cursor');
     
     if (typingElement && cursor) {
-        const japaneseText = "ソフトウェア開発者 × マーケティングディレクター × デジタルアーティスト";
-        const englishText = "Software Developer × Marketing Director × Digital Artist";
+        const japaneseText = "どのような多様性も、テクノロジーで尊重される時代を作る";
+        const englishText = "Building an era where all diversity is honored through technology.";
         
         let currentText = isEnglish ? englishText : japaneseText;
         
@@ -402,97 +402,139 @@ function closeModal(modalId) {
     }
 }
 
-// Digital Art Carousel - 3D Style Auto-Rotation
-let currentDigitalArtIndex = 0;
-let digitalArtAutoRotate;
+// Digital Art Carousel - 3D Style Auto-Rotation (supports multiple carousels)
+const carouselInstances = [];
 
-function updateDigitalArtPositions() {
-    const slides = document.querySelectorAll('.digital-art-slide');
-    const dots = document.querySelectorAll('.digital-art-dot');
-    
-    slides.forEach((slide, index) => {
-        slide.classList.remove('left', 'center', 'right', 'hidden');
-        
-        if (index === currentDigitalArtIndex) {
-            slide.classList.add('center');
-        } else if (index === (currentDigitalArtIndex + 1) % slides.length) {
-            slide.classList.add('right');
-        } else if (index === (currentDigitalArtIndex - 1 + slides.length) % slides.length) {
-            slide.classList.add('left');
-        } else {
-            slide.classList.add('hidden');
-        }
+function initCarousel(container) {
+    const instance = {
+        container: container,
+        currentIndex: 0,
+        autoRotate: null,
+        slides: container.querySelectorAll('.digital-art-slide'),
+        dots: container.querySelectorAll('.digital-art-dot')
+    };
+
+    function updatePositions() {
+        instance.slides.forEach((slide, index) => {
+            slide.classList.remove('left', 'center', 'right', 'hidden');
+            if (index === instance.currentIndex) {
+                slide.classList.add('center');
+            } else if (index === (instance.currentIndex + 1) % instance.slides.length) {
+                slide.classList.add('right');
+            } else if (index === (instance.currentIndex - 1 + instance.slides.length) % instance.slides.length) {
+                slide.classList.add('left');
+            } else {
+                slide.classList.add('hidden');
+            }
+        });
+        instance.dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === instance.currentIndex);
+        });
+    }
+
+    function move(direction) {
+        instance.currentIndex = (instance.currentIndex + direction + instance.slides.length) % instance.slides.length;
+        updatePositions();
+    }
+
+    function goTo(index) {
+        instance.currentIndex = index;
+        updatePositions();
+    }
+
+    function startAuto() {
+        instance.autoRotate = setInterval(() => move(1), 4000);
+    }
+
+    function stopAuto() {
+        clearInterval(instance.autoRotate);
+    }
+
+    // Initialize
+    updatePositions();
+    startAuto();
+
+    // Pause on hover
+    container.addEventListener('mouseenter', stopAuto);
+    container.addEventListener('mouseleave', startAuto);
+
+    // Navigation buttons
+    const prevBtn = container.querySelector('.digital-art-prev');
+    const nextBtn = container.querySelector('.digital-art-next');
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => { stopAuto(); move(-1); startAuto(); });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => { stopAuto(); move(1); startAuto(); });
+    }
+
+    // Dot navigation
+    instance.dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => { stopAuto(); goTo(index); startAuto(); });
     });
-    
-    // Update dots
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentDigitalArtIndex);
+
+    // Click on center slide to open lightbox
+    instance.slides.forEach(slide => {
+        slide.addEventListener('click', function() {
+            if (!this.classList.contains('center')) return;
+            const img = this.querySelector('.art-image img');
+            const title = this.querySelector('.art-title');
+            if (img) {
+                openLightbox(img.src, title ? title.textContent : '');
+            }
+        });
     });
+
+    // Expose for global onclick handlers
+    instance.move = move;
+    instance.goTo = goTo;
+    carouselInstances.push(instance);
+    return instance;
 }
 
+// Global functions for onclick handlers in HTML
 function moveDigitalArtCarousel(direction) {
-    const slides = document.querySelectorAll('.digital-art-slide');
-    currentDigitalArtIndex = (currentDigitalArtIndex + direction + slides.length) % slides.length;
-    updateDigitalArtPositions();
+    const activeTab = document.querySelector('.art-tab-content.active') || document;
+    const container = activeTab.querySelector('.digital-art-carousel-container');
+    if (!container) return;
+    const inst = carouselInstances.find(i => i.container === container);
+    if (inst) inst.move(direction);
 }
 
 function currentDigitalArtSlide(index) {
-    currentDigitalArtIndex = index;
-    updateDigitalArtPositions();
+    const activeTab = document.querySelector('.art-tab-content.active') || document;
+    const container = activeTab.querySelector('.digital-art-carousel-container');
+    if (!container) return;
+    const inst = carouselInstances.find(i => i.container === container);
+    if (inst) inst.goTo(index);
 }
 
-function startDigitalArtAutoRotate() {
-    digitalArtAutoRotate = setInterval(() => {
-        moveDigitalArtCarousel(1);
-    }, 4000);
+// Image Lightbox
+function openLightbox(imgSrc, caption) {
+    const lightbox = document.getElementById('image-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    lightboxImg.src = imgSrc;
+    lightboxCaption.textContent = caption || '';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
 
-function stopDigitalArtAutoRotate() {
-    clearInterval(digitalArtAutoRotate);
+function closeLightbox() {
+    const lightbox = document.getElementById('image-lightbox');
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
 }
 
-// Initialize Digital Art Carousel
+// Close lightbox with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+});
+
+// Initialize all carousels
 document.addEventListener('DOMContentLoaded', function() {
-    const digitalArtCarousel = document.querySelector('.digital-art-carousel-container');
-    if (!digitalArtCarousel) return;
-    
-    // Initialize positions
-    updateDigitalArtPositions();
-    startDigitalArtAutoRotate();
-    
-    // Pause on hover
-    digitalArtCarousel.addEventListener('mouseenter', stopDigitalArtAutoRotate);
-    digitalArtCarousel.addEventListener('mouseleave', startDigitalArtAutoRotate);
-    
-    // Manual navigation
-    const prevBtn = document.querySelector('.digital-art-prev');
-    const nextBtn = document.querySelector('.digital-art-next');
-    
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            stopDigitalArtAutoRotate();
-            moveDigitalArtCarousel(-1);
-            startDigitalArtAutoRotate();
-        });
-    }
-    
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            stopDigitalArtAutoRotate();
-            moveDigitalArtCarousel(1);
-            startDigitalArtAutoRotate();
-        });
-    }
-    
-    // Dot navigation
-    const dots = document.querySelectorAll('.digital-art-dot');
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            stopDigitalArtAutoRotate();
-            currentDigitalArtSlide(index);
-            startDigitalArtAutoRotate();
-        });
-    });
+    const containers = document.querySelectorAll('.digital-art-carousel-container');
+    containers.forEach(container => initCarousel(container));
 });
 
 // Case Studies Carousel - Center Focus with Auto-Rotation
@@ -802,6 +844,29 @@ function showWorksTab(tabName) {
     
     // Add active class to clicked button
     const clickedButton = document.querySelector(`[onclick="showWorksTab('${tabName}')"]`);
+    if (clickedButton) {
+        clickedButton.classList.add('active');
+    }
+}
+
+// Tab functionality for Art section
+function showArtTab(tabName) {
+    const tabContents = document.querySelectorAll('.art-tab-content');
+    tabContents.forEach(content => {
+        content.classList.remove('active');
+    });
+
+    const tabButtons = document.querySelectorAll(`[onclick^="showArtTab"]`);
+    tabButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    const selectedTab = document.getElementById(tabName + '-tab');
+    if (selectedTab) {
+        selectedTab.classList.add('active');
+    }
+
+    const clickedButton = document.querySelector(`[onclick="showArtTab('${tabName}')"]`);
     if (clickedButton) {
         clickedButton.classList.add('active');
     }

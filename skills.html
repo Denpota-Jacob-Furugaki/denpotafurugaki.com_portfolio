@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Sheet | Jake Furugaki</title>
+    <meta name="description" content="古垣伝法太（Jake Furugaki）のスキルシート - 技術スタック・実務経験・プロジェクト実績">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h2 data-ja="共生、共栄、共義" data-en="Coexistence<br>Coprosperity<br>Co-righteousness">共生、共栄、共義</h2>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link" data-ja="ホーム" data-en="Home">Home</a>
+                <a href="about.html" class="nav-link" data-ja="自己紹介" data-en="About">About</a>
+                <a href="index.html#software-development" class="nav-link" data-ja="ソフトウェア開発" data-en="Software Development">Software Development</a>
+                <a href="index.html#marketing" class="nav-link" data-ja="マーケティング" data-en="Marketing">Marketing</a>
+                <a href="index.html#art" class="nav-link" data-ja="アート" data-en="Art">Art</a>
+                <a href="index.html#contact" class="nav-link" data-ja="お問い合わせ" data-en="Contact">Contact</a>
+                <button id="lang-toggle" class="lang-btn japanese" title="Switch Language / 言語を切り替え">
+                    <span class="lang-label en">EN</span>
+                    <span class="lang-label jp">JP</span>
+                </button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Skills Sheet Section -->
+    <section class="skills-sheet-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-ja="スキルシート" data-en="Skill Sheet">Skill Sheet</h2>
+                <p class="section-subtitle japanese-subtitle" data-ja="技術スタックと実務経験" data-en="Technical Stack & Experience">技術スタックと実務経験</p>
+            </div>
+
+            <!-- Basic Info -->
+            <div class="skill-block">
+                <h3 class="skill-block-title" data-ja="基本情報" data-en="Basic Information">基本情報</h3>
+                <table class="skill-table">
+                    <tr>
+                        <th data-ja="氏名" data-en="Name">氏名</th>
+                        <td>古垣 伝法太（Jake Furugaki）</td>
+                    </tr>
+                    <tr>
+                        <th data-ja="希望職種" data-en="Desired Role">希望職種</th>
+                        <td data-ja="フルスタックエンジニア／マーケティングエンジニア" data-en="Full-stack Engineer / Marketing Engineer">フルスタックエンジニア／マーケティングエンジニア</td>
+                    </tr>
+                    <tr>
+                        <th data-ja="稼働条件" data-en="Availability">稼働条件</th>
+                        <td data-ja="週30時間（平日9:00〜18:00の範囲で調整可）" data-en="30 hours/week (Weekdays 9:00–18:00, flexible)">週30時間（平日9:00〜18:00の範囲で調整可）</td>
+                    </tr>
+                    <tr>
+                        <th data-ja="契約形態" data-en="Contract Type">契約形態</th>
+                        <td data-ja="準委任（リモート中心）" data-en="Quasi-mandate (Remote-focused)">準委任（リモート中心）</td>
+                    </tr>
+                    <tr>
+                        <th data-ja="希望単価" data-en="Hourly Rate">希望単価</th>
+                        <td data-ja="¥3,000／時間（税抜）" data-en="¥3,000/hour (excluding tax)">¥3,000／時間（税抜）</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Skill Overview -->
+            <div class="skill-block">
+                <h3 class="skill-block-title" data-ja="スキル概要" data-en="Skill Overview">スキル概要</h3>
+
+                <!-- Backend -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <h4 data-ja="バックエンド" data-en="Backend">バックエンド</h4>
+                        <span class="skill-level">★★★☆☆</span>
+                    </div>
+                    <p class="skill-desc" data-ja="Pythonを用いたAPI構築、自動化スクリプト作成" data-en="API construction and automation scripting with Python">Pythonを用いたAPI構築、自動化スクリプト作成</p>
+                    <div class="skill-tech">Python · Flask · FastAPI · Supabase · Prisma</div>
+                    <a href="index.html#software-development" class="btn btn-secondary skill-case-btn" onclick="sessionStorage.setItem('targetTab', 'sw-ai-data')">
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-ja="事例を見る（InterviewX 等）" data-en="View Cases (InterviewX, etc.)">事例を見る（InterviewX 等）</span>
+                    </a>
+                </div>
+
+                <!-- Frontend -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <h4 data-ja="フロントエンド" data-en="Frontend">フロントエンド</h4>
+                        <span class="skill-level">★★★★☆</span>
+                    </div>
+                    <p class="skill-desc" data-ja="Webアプリ／UI構築、ReactベースでのSPA実装" data-en="Web app & UI development, React-based SPA implementation">Webアプリ／UI構築、ReactベースでのSPA実装</p>
+                    <div class="skill-tech">HTML · CSS · JavaScript · TypeScript · React · Next.js</div>
+                    <a href="index.html#software-development" class="btn btn-secondary skill-case-btn" onclick="sessionStorage.setItem('targetTab', 'sw-uiux')">
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-ja="事例を見る（Velobank, Freshh 等）" data-en="View Cases (Velobank, Freshh, etc.)">事例を見る（Velobank, Freshh 等）</span>
+                    </a>
+                </div>
+
+                <!-- DB & Server -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <h4 data-ja="DB・サーバー" data-en="DB & Server">DB・サーバー</h4>
+                        <span class="skill-level">★★★☆☆</span>
+                    </div>
+                    <p class="skill-desc" data-ja="Supabaseを中心にしたDB構築、接続設定、.env管理" data-en="DB construction, connection setup, and .env management with Supabase">Supabaseを中心にしたDB構築、接続設定、.env管理</p>
+                    <div class="skill-tech">PostgreSQL · Supabase · Prisma ORM</div>
+                    <a href="index.html#software-development" class="btn btn-secondary skill-case-btn" onclick="sessionStorage.setItem('targetTab', 'sw-cms-crm')">
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-ja="事例を見る（InsightHub, OEM CMS 等）" data-en="View Cases (InsightHub, OEM CMS, etc.)">事例を見る（InsightHub, OEM CMS 等）</span>
+                    </a>
+                </div>
+
+                <!-- AI & Automation -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <h4 data-ja="AI・自動化" data-en="AI & Automation">AI・自動化</h4>
+                        <span class="skill-level">★★★★☆</span>
+                    </div>
+                    <p class="skill-desc" data-ja="LLM（Groq, OpenAI）×Mailgun/Apollo/n8nによるアウトリーチ自動化" data-en="Outreach automation using LLM (Groq, OpenAI) × Mailgun/Apollo/n8n">LLM（Groq, OpenAI）×Mailgun/Apollo/n8nによるアウトリーチ自動化</p>
+                    <div class="skill-tech">Python · Node.js · REST API · n8n · Mailgun API</div>
+                    <a href="index.html#software-development" class="btn btn-secondary skill-case-btn" onclick="sessionStorage.setItem('targetTab', 'sw-ai-data')">
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-ja="事例を見る（AI Outreach Engine 等）" data-en="View Cases (AI Outreach Engine, etc.)">事例を見る（AI Outreach Engine 等）</span>
+                    </a>
+                </div>
+
+                <!-- Dev Environment -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <h4 data-ja="開発環境" data-en="Dev Environment">開発環境</h4>
+                        <span class="skill-level">★★★★☆</span>
+                    </div>
+                    <p class="skill-desc" data-ja="VSCodeを中心にGitHub運用、Vercel/Expoデプロイまで担当" data-en="VSCode-centered GitHub workflow, deployments via Vercel/Expo">VSCodeを中心にGitHub運用、Vercel/Expoデプロイまで担当</p>
+                    <div class="skill-tech">VSCode · GitHub · Supabase CLI · Vercel · Expo</div>
+                </div>
+
+                <!-- Cloud / AWS -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <h4 data-ja="クラウド・インフラ" data-en="Cloud & Infrastructure">クラウド・インフラ</h4>
+                        <span class="skill-level">★★★★☆</span>
+                    </div>
+                    <p class="skill-desc" data-ja="AWSを中心にクラウドインフラ設計・構築・運用を実務レベルで対応。EC2・S3・Lambda・RDS・CloudFront等を活用したスケーラブルなシステム構築。" data-en="Practical-level design, construction, and operation of cloud infrastructure centered on AWS. Building scalable systems with EC2, S3, Lambda, RDS, CloudFront, etc.">AWSを中心にクラウドインフラ設計・構築・運用を実務レベルで対応。EC2・S3・Lambda・RDS・CloudFront等を活用したスケーラブルなシステム構築。</p>
+                    <div class="skill-tech">AWS · EC2 · S3 · Lambda · RDS · CloudFront · IAM</div>
+                </div>
+
+                <!-- AI Tools / Claude Code -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <h4 data-ja="AIツール活用" data-en="AI Tools Mastery">AIツール活用</h4>
+                        <span class="skill-level">★★★★★</span>
+                    </div>
+                    <p class="skill-desc" data-ja="Claude Codeを軸にした高速開発、新しいAIツールが登場すれば即試して実務に取り入れる姿勢。AI関連ツールに月10万円以上を投資し、最新のワークフローを常にアップデート。" data-en="High-speed development centered on Claude Code, with a habit of trying new AI tools as soon as they're released and integrating them into real work. Invests over ¥100,000/month in AI tools, constantly updating workflows.">Claude Codeを軸にした高速開発、新しいAIツールが登場すれば即試して実務に取り入れる姿勢。AI関連ツールに月10万円以上を投資し、最新のワークフローを常にアップデート。</p>
+                    <div class="skill-tech">Claude Code · ChatGPT · Cursor · Manus · Groq · OpenAI API</div>
+                </div>
+
+                <!-- Design / UI -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <h4 data-ja="デザイン・UI" data-en="Design & UI">デザイン・UI</h4>
+                        <span class="skill-level">★★★★☆</span>
+                    </div>
+                    <p class="skill-desc" data-ja="LP/広告バナー/UX改善、Figma・Adobe Creative Suiteでの本格的な制作" data-en="LP, ad banners, UX improvements, professional production with Figma and Adobe Creative Suite">LP/広告バナー/UX改善、Figma・Adobe Creative Suiteでの本格的な制作</p>
+                    <div class="skill-tech">Figma · Photoshop · Illustrator · Premiere Pro · Canva · TailwindCSS</div>
+                    <a href="index.html#software-development" class="btn btn-secondary skill-case-btn" onclick="sessionStorage.setItem('targetTab', 'sw-uiux')">
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-ja="事例を見る（Velobank UI/UX 等）" data-en="View Cases (Velobank UI/UX, etc.)">事例を見る（Velobank UI/UX 等）</span>
+                    </a>
+                </div>
+
+                <!-- Marketing -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <h4 data-ja="マーケティング" data-en="Marketing">マーケティング</h4>
+                        <span class="skill-level">★★★★★</span>
+                    </div>
+                    <p class="skill-desc" data-ja="広告運用・データ分析・レポーティング" data-en="Ad operations, data analysis, and reporting">広告運用・データ分析・レポーティング</p>
+                    <div class="skill-tech">GA4 · Google Ads · Meta Ads · LinkedIn Campaign Manager</div>
+                    <a href="index.html#marketing" class="btn btn-secondary skill-case-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-ja="事例を見る（Onitsuka Tiger, CrowdStrike 等）" data-en="View Cases (Onitsuka Tiger, CrowdStrike, etc.)">事例を見る（Onitsuka Tiger, CrowdStrike 等）</span>
+                    </a>
+                </div>
+
+                <!-- Languages -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <h4 data-ja="言語" data-en="Languages">言語</h4>
+                        <span class="skill-level">★★★★★</span>
+                    </div>
+                    <p class="skill-desc" data-ja="日本語（ビジネス）／英語（ネイティブ）／韓国語（ビジネス）" data-en="Japanese (Business) / English (Native) / Korean (Business)">日本語（ビジネス）／英語（ネイティブ）／韓国語（ビジネス）</p>
+                </div>
+            </div>
+
+            <!-- Career History -->
+            <div class="skill-block">
+                <h3 class="skill-block-title" data-ja="職務経歴" data-en="Career History">職務経歴</h3>
+
+                <div class="skill-card">
+                    <h4 data-ja="2024〜現在：フリーランス" data-en="2024–Present: Freelance">2024〜現在：フリーランス</h4>
+                    <p class="career-role-text" data-ja="マーケティングエンジニア／DX推進リード" data-en="Marketing Engineer / DX Lead">マーケティングエンジニア／DX推進リード</p>
+                    <p class="skill-desc" data-ja="Python／Next.jsを用いたAIアウトリーチSaaS構築、Supabase/Mailgun連携。JETRO・大手企業（Daikin, Mitsui Fudosan等）とXR・AI導入PoC支援。" data-en="Built AI outreach SaaS using Python/Next.js with Supabase/Mailgun integration. Supported XR & AI implementation PoCs with JETRO and major companies (Daikin, Mitsui Fudosan, etc.).">Python／Next.jsを用いたAIアウトリーチSaaS構築、Supabase/Mailgun連携。JETRO・大手企業（Daikin, Mitsui Fudosan等）とXR・AI導入PoC支援。</p>
+                    <div class="skill-tech">Python · Next.js · Supabase · Prisma · Mailgun API · n8n · Groq API</div>
+                </div>
+
+                <div class="skill-card">
+                    <h4 data-ja="2022〜2024：トランスコスモス株式会社" data-en="2022–2024: Transcosmos Inc.">2022〜2024：トランスコスモス株式会社</h4>
+                    <p class="career-role-text" data-ja="マーケティングコンサルタント／広告運用マネージャー" data-en="Marketing Consultant / Ad Operations Manager">マーケティングコンサルタント／広告運用マネージャー</p>
+                    <p class="skill-desc" data-ja="案件：Onitsuka Tiger, CrowdStrike, Workday。Onitsuka TigerでROAS120%を10か月維持／CrowdStrikeでWeb流入166%増。" data-en="Clients: Onitsuka Tiger, CrowdStrike, Workday. Maintained 120% ROAS for 10 months on Onitsuka Tiger / Increased CrowdStrike web traffic by 166%.">案件：Onitsuka Tiger, CrowdStrike, Workday。Onitsuka TigerでROAS120%を10か月維持／CrowdStrikeでWeb流入166%増。</p>
+                    <div class="skill-tech">Google Ads · LinkedIn Ads · GA4 · Canva · Excel</div>
+                    <a href="index.html#marketing" class="btn btn-secondary skill-case-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-ja="マーケティング事例を見る" data-en="View Marketing Cases">マーケティング事例を見る</span>
+                    </a>
+                </div>
+
+                <div class="skill-card">
+                    <h4 data-ja="2021：Meta Platforms Inc." data-en="2021: Meta Platforms Inc.">2021：Meta Platforms Inc.</h4>
+                    <p class="career-role-text" data-ja="マーケティングアルゴリズムストラテジスト（日本）" data-en="Marketing Algorithm Strategist (Japan)">マーケティングアルゴリズムストラテジスト（日本）</p>
+                    <p class="skill-desc" data-ja="日本マーケットを中心に、広告アルゴリズムの設計を担当。Q1 Top Performer（34名中No.1）。クライアントKPI改善・データ最適化支援。" data-en="Designed advertising algorithms with a focus on the Japanese market. Q1 Top Performer (Ranked #1 among 34 consultants). Improved client KPIs through data optimization.">日本マーケットを中心に、広告アルゴリズムの設計を担当。Q1 Top Performer（34名中No.1）。クライアントKPI改善・データ最適化支援。</p>
+                </div>
+            </div>
+
+            <!-- Development Projects -->
+            <div class="skill-block">
+                <h3 class="skill-block-title" data-ja="開発実績" data-en="Development Projects">開発実績</h3>
+
+                <div class="skill-card">
+                    <h4>InterviewX – AI-Based Business Model Consulting Platform</h4>
+                    <p class="career-role-text">UserConnect</p>
+                    <p class="skill-desc" data-ja="スタートアップ向けAIビジネスモデル分析／コンサルティング支援プラットフォーム。AIを活用してスタートアップ経営者が戦略的明確性を確立できるよう支援するWebプラットフォーム。" data-en="An AI business model analysis & consulting platform for startups. A web platform that helps startup founders achieve strategic clarity through AI.">スタートアップ向けAIビジネスモデル分析／コンサルティング支援プラットフォーム。AIを活用してスタートアップ経営者が戦略的明確性を確立できるよう支援するWebプラットフォーム。</p>
+                    <ul class="skill-process">
+                        <li data-ja="① 要件定義：ステークホルダーと課題共有ワークショップを実施" data-en="① Requirements: Conducted stakeholder workshops to clarify challenges">① 要件定義：ステークホルダーと課題共有ワークショップを実施</li>
+                        <li data-ja="② AIアルゴリズム設計：TensorFlowでユーザー行動・アンケートデータを解析" data-en="② AI algorithm design: Built models with TensorFlow analyzing user behavior and survey data">② AIアルゴリズム設計：TensorFlowでユーザー行動・アンケートデータを解析</li>
+                        <li data-ja="③ UI/UX設計：ビジネス専門家向けダッシュボードをFigmaで設計" data-en="③ UI/UX: Designed dashboards for business experts in Figma">③ UI/UX設計：ビジネス専門家向けダッシュボードをFigmaで設計</li>
+                        <li data-ja="④ フロントエンド：Next.js + Tailwindで分析結果を可視化" data-en="④ Frontend: Visualized analysis results with Next.js + Tailwind">④ フロントエンド：Next.js + Tailwindで分析結果を可視化</li>
+                        <li data-ja="⑤ PDF自動生成レポート機能をFlaskで構築" data-en="⑤ Built PDF auto-generation reporting with Flask">⑤ PDF自動生成レポート機能をFlaskで構築</li>
+                    </ul>
+                    <div class="skill-tech">Python · TensorFlow · Flask · Next.js · AWS · Tailwind CSS</div>
+                    <p class="skill-result" data-ja="成果：データ駆動型意思決定を促進／10社超のスタートアップで導入／分析工数を従来比60%削減" data-en="Result: Promoted data-driven decision making / Adopted by 10+ startups / Reduced analysis time by 60%">成果：データ駆動型意思決定を促進／10社超のスタートアップで導入／分析工数を従来比60%削減</p>
+                    <a href="index.html#software-development" class="btn btn-secondary skill-case-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-ja="プロジェクト詳細を見る" data-en="View Project Details">プロジェクト詳細を見る</span>
+                    </a>
+                </div>
+
+                <div class="skill-card">
+                    <h4>Freshh – Fashion Marketplace Dashboard</h4>
+                    <p class="skill-desc" data-ja="ファッション業界向けeコマース管理ダッシュボード。ベンダーが商品登録、注文管理、売上追跡、顧客エンゲージメントを一元管理できるプラットフォーム。" data-en="An e-commerce management dashboard for the fashion industry. A platform where vendors can centrally manage product registration, orders, sales tracking, and customer engagement.">ファッション業界向けeコマース管理ダッシュボード。ベンダーが商品登録、注文管理、売上追跡、顧客エンゲージメントを一元管理できるプラットフォーム。</p>
+                    <ul class="skill-process">
+                        <li data-ja="① 要件整理：ベンダー運用者のKPIをヒアリングし、構造化" data-en="① Requirements: Interviewed vendor operators on KPIs and structured them">① 要件整理：ベンダー運用者のKPIをヒアリングし、構造化</li>
+                        <li data-ja="② UI/UX設計：Figmaでワイヤーフレーム制作 → コンポーネント設計" data-en="② UI/UX: Wireframes in Figma → component design">② UI/UX設計：Figmaでワイヤーフレーム制作 → コンポーネント設計</li>
+                        <li data-ja="③ 実装：React + TypeScript + Tailwind、Rechartsで売上グラフ" data-en="③ Implementation: React + TypeScript + Tailwind, Recharts for sales graphs">③ 実装：React + TypeScript + Tailwind、Rechartsで売上グラフ</li>
+                        <li data-ja="④ Firebaseでリアルタイムデータ更新と認証を実装" data-en="④ Implemented real-time data updates and auth with Firebase">④ Firebaseでリアルタイムデータ更新と認証を実装</li>
+                        <li data-ja="⑤ 表示速度を25%改善、ユーザーエラー率60%削減" data-en="⑤ Improved load speed by 25%, reduced user errors by 60%">⑤ 表示速度を25%改善、ユーザーエラー率60%削減</li>
+                    </ul>
+                    <div class="skill-tech">React · TypeScript · Tailwind CSS · Recharts · Firebase</div>
+                    <p class="skill-result" data-ja="成果：操作性とデザイン性を両立／ベンダー管理効率を大幅改善" data-en="Result: Combined usability and design / Significantly improved vendor management efficiency">成果：操作性とデザイン性を両立／ベンダー管理効率を大幅改善</p>
+                    <a href="index.html#software-development" class="btn btn-secondary skill-case-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-ja="プロジェクト詳細を見る" data-en="View Project Details">プロジェクト詳細を見る</span>
+                    </a>
+                </div>
+
+                <div class="skill-card">
+                    <h4>InsightHub – KPI & Project Management Dashboard</h4>
+                    <p class="career-role-text">Acote Group LTD</p>
+                    <p class="skill-desc" data-ja="複数プロジェクトとKPIを一元管理するプロジェクトマネジメントダッシュボード。経営層・PM・実務担当者の情報を統合。" data-en="A project management dashboard that centrally manages multiple projects and KPIs, integrating information for executives, PMs, and team members.">複数プロジェクトとKPIを一元管理するプロジェクトマネジメントダッシュボード。経営層・PM・実務担当者の情報を統合。</p>
+                    <ul class="skill-process">
+                        <li data-ja="① 要件定義：KPI指標とタスク進行管理の共通化要件を設計" data-en="① Requirements: Designed unified KPI and task management requirements">① 要件定義：KPI指標とタスク進行管理の共通化要件を設計</li>
+                        <li data-ja="② 情報設計：ロール別ビュー構造を設計（経営層・PM・チーム）" data-en="② Info architecture: Designed role-based view structures">② 情報設計：ロール別ビュー構造を設計（経営層・PM・チーム）</li>
+                        <li data-ja="③ UI設計：RechartsでKPI可視化、Tailwindでドラッグ&ドロップ実装" data-en="③ UI: Recharts for KPI visualization, Tailwind for drag & drop">③ UI設計：RechartsでKPI可視化、Tailwindでドラッグ&ドロップ実装</li>
+                        <li data-ja="④ 実装：React+Redux状態管理、Node.js API、PostgreSQL" data-en="④ Implementation: React+Redux state, Node.js API, PostgreSQL">④ 実装：React+Redux状態管理、Node.js API、PostgreSQL</li>
+                        <li data-ja="⑤ パフォーマンス20%改善" data-en="⑤ Improved performance by 20%">⑤ パフォーマンス20%改善</li>
+                    </ul>
+                    <div class="skill-tech">React · Redux · Tailwind CSS · Recharts · Node.js · PostgreSQL</div>
+                    <p class="skill-result" data-ja="成果：KPI可視化でタスク遅延40%削減／部門横断の情報整合性を実現" data-en="Result: 40% reduction in task delays through KPI visualization / Achieved cross-department information consistency">成果：KPI可視化でタスク遅延40%削減／部門横断の情報整合性を実現</p>
+                    <a href="index.html#software-development" class="btn btn-secondary skill-case-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-ja="プロジェクト詳細を見る" data-en="View Project Details">プロジェクト詳細を見る</span>
+                    </a>
+                </div>
+
+                <div class="skill-card">
+                    <h4>OEM Corporate Website Development with CMS and Dashboard</h4>
+                    <p class="skill-desc" data-ja="健康機能食品OEM企業向けWebサイト再構築（CMS＋ダッシュボード実装）。CMS導入・SEO最適化・会員ダッシュボード構築により、ブランド価値と運用効率を両立。" data-en="Web rebuild for a health functional food OEM (CMS + dashboard). Combined brand value and operational efficiency through CMS adoption, SEO optimization, and member dashboard.">健康機能食品OEM企業向けWebサイト再構築（CMS＋ダッシュボード実装）。CMS導入・SEO最適化・会員ダッシュボード構築により、ブランド価値と運用効率を両立。</p>
+                    <ul class="skill-process">
+                        <li data-ja="① 要件定義：UX・SEO・更新負荷の課題分析、CMS導入設計" data-en="① Analyzed UX, SEO, update load issues; designed CMS adoption">① 要件定義：UX・SEO・更新負荷の課題分析、CMS導入設計</li>
+                        <li data-ja="② UX設計：管理者・会員・閲覧者の導線を分離" data-en="② UX: Separated admin, member, and viewer flows">② UX設計：管理者・会員・閲覧者の導線を分離</li>
+                        <li data-ja="③ 実装：Next.js + Tailwind + TanStack Query, Zustand状態管理" data-en="③ Implementation: Next.js + Tailwind + TanStack Query, Zustand state">③ 実装：Next.js + Tailwind + TanStack Query, Zustand状態管理</li>
+                        <li data-ja="④ CMS構築：管理画面、会員ステータス追跡を実装" data-en="④ CMS: Built admin panel and member status tracking">④ CMS構築：管理画面、会員ステータス追跡を実装</li>
+                        <li data-ja="⑤ SEO対策：検索流入30%増加" data-en="⑤ SEO: 30% increase in search traffic">⑤ SEO対策：検索流入30%増加</li>
+                    </ul>
+                    <div class="skill-tech">Next.js · Zustand · TanStack Query · Tailwind CSS · Google Analytics</div>
+                    <p class="skill-result" data-ja="成果：CMS更新時間80%削減／モバイル滞在時間1.6倍／検索流入+30%" data-en="Result: 80% reduction in CMS update time / 1.6× mobile dwell time / +30% search traffic">成果：CMS更新時間80%削減／モバイル滞在時間1.6倍／検索流入+30%</p>
+                    <a href="index.html#software-development" class="btn btn-secondary skill-case-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-ja="プロジェクト詳細を見る" data-en="View Project Details">プロジェクト詳細を見る</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Marketing Projects -->
+            <div class="skill-block">
+                <h3 class="skill-block-title" data-ja="マーケティング実績" data-en="Marketing Projects">マーケティング実績</h3>
+
+                <div class="skill-card">
+                    <h4>Onitsuka Tiger – Global Advertising Distribution Support</h4>
+                    <p class="career-role-text" data-ja="Onitsuka Tiger（ASICS Group）" data-en="Onitsuka Tiger (ASICS Group)">Onitsuka Tiger（ASICS Group）</p>
+                    <p class="skill-desc" data-ja="17か国×4媒体（Google、META、LinkedIn、YouTube）の広告配信を統括。各国代理店およびブランド本部とのハブとして、成果分析と戦略提言を担当。" data-en="Managed ad distribution across 17 countries × 4 media (Google, META, LinkedIn, YouTube). Served as the hub between local agencies and brand HQ for performance analysis and strategy.">17か国×4媒体（Google、META、LinkedIn、YouTube）の広告配信を統括。各国代理店およびブランド本部とのハブとして、成果分析と戦略提言を担当。</p>
+                    <ul class="skill-process">
+                        <li data-ja="① グローバル媒体運用体制の統合設計（17か国×時差スケジュール）" data-en="① Integrated global media operations across 17 countries">① グローバル媒体運用体制の統合設計（17か国×時差スケジュール）</li>
+                        <li data-ja="② 国別KPIダッシュボードでROAS・CTR・CVRを可視化" data-en="② Built per-country KPI dashboards for ROAS/CTR/CVR">② 国別KPIダッシュボードでROAS・CTR・CVRを可視化</li>
+                        <li data-ja="③ 現地チーム・代理店との英語・韓国語による調整" data-en="③ Coordinated with local teams in English and Korean">③ 現地チーム・代理店との英語・韓国語による調整</li>
+                        <li data-ja="④ 配信国の文脈に合わせたクリエイティブで CTR+18%" data-en="④ Localized creatives drove CTR +18%">④ 配信国の文脈に合わせたクリエイティブで CTR+18%</li>
+                        <li data-ja="⑤ 旗艦店強化やSNS戦略などブランド施策へ展開" data-en="⑤ Expanded results into flagship store and SNS strategies">⑤ 旗艦店強化やSNS戦略などブランド施策へ展開</li>
+                    </ul>
+                    <div class="skill-tech">Google Ads · Meta Ads · GA4 · Data Studio · Excel · Canva</div>
+                    <p class="skill-result" data-ja="成果：平均ROAS120%を10か月維持／2024年度売上954億円（前年比158.3%）／2025年Q1売上283億円" data-en="Result: Maintained 120% average ROAS for 10 months / FY2024 sales ¥95.4B (158.3% YoY) / Q1 2025 sales ¥28.3B">成果：平均ROAS120%を10か月維持／2024年度売上954億円（前年比158.3%）／2025年Q1売上283億円</p>
+                    <a href="index.html#marketing" class="btn btn-secondary skill-case-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-ja="マーケティング事例を見る" data-en="View Marketing Cases">マーケティング事例を見る</span>
+                    </a>
+                </div>
+
+                <div class="skill-card">
+                    <h4>CrowdStrike Japan – Cybersecurity Awareness & Demand Generation</h4>
+                    <p class="career-role-text">CrowdStrike Japan</p>
+                    <p class="skill-desc" data-ja="日本市場におけるB2Bマーケティング戦略設計／広告運用（Google・LinkedIn・Meta）／LP改善・レポート分析。検索・SNS・ディスプレイ広告を組み合わせた統合的デジタルキャンペーンを設計・実施。" data-en="B2B marketing strategy for the Japanese market / Ad operations (Google, LinkedIn, Meta) / LP optimization and reporting. Designed integrated campaigns combining search, SNS, and display ads.">日本市場におけるB2Bマーケティング戦略設計／広告運用（Google・LinkedIn・Meta）／LP改善・レポート分析。検索・SNS・ディスプレイ広告を組み合わせた統合的デジタルキャンペーンを設計・実施。</p>
+                    <ul class="skill-process">
+                        <li data-ja="① 日本市場のセキュリティ担当者ペルソナを再定義" data-en="① Redefined security manager personas for the Japanese market">① 日本市場のセキュリティ担当者ペルソナを再定義</li>
+                        <li data-ja="② Google・LinkedIn・Meta連携でターゲット別キャンペーン" data-en="② Targeted campaigns across Google, LinkedIn, Meta">② Google・LinkedIn・Meta連携でターゲット別キャンペーン</li>
+                        <li data-ja="③ LPを日本語ローカライズし、CTA・トーンを最適化" data-en="③ Localized LP into Japanese, optimized CTAs and tone">③ LPを日本語ローカライズし、CTA・トーンを最適化</li>
+                        <li data-ja="④ A/Bテストで CVR 1.8倍改善" data-en="④ A/B testing improved CVR by 1.8×">④ A/Bテストで CVR 1.8倍改善</li>
+                        <li data-ja="⑤ 成果を本社・APAC HQへ英語報告" data-en="⑤ Reported results to HQ and APAC HQ in English">⑤ 成果を本社・APAC HQへ英語報告</li>
+                    </ul>
+                    <div class="skill-tech">Google Ads · LinkedIn Ads · Meta Ads · GA4 · Google Data Studio</div>
+                    <p class="skill-result" data-ja="成果：CVR +80%／CPC -15%／CPL -25%／国内パートナー数 +200%" data-en="Result: CVR +80% / CPC -15% / CPL -25% / Domestic partners +200%">成果：CVR +80%／CPC -15%／CPL -25%／国内パートナー数 +200%</p>
+                    <a href="index.html#marketing" class="btn btn-secondary skill-case-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-ja="マーケティング事例を見る" data-en="View Marketing Cases">マーケティング事例を見る</span>
+                    </a>
+                </div>
+
+                <div class="skill-card">
+                    <h4>Workday Japan – LinkedIn Organic Engagement Project</h4>
+                    <p class="career-role-text">Workday Japan</p>
+                    <p class="skill-desc" data-ja="LinkedInオーガニック運用によるブランド認知・エンゲージメント向上施策。広告費ゼロでフォロワー獲得、HR・経営層への自然なリーチ拡大を実現。" data-en="LinkedIn organic engagement strategy to boost brand awareness. Achieved follower growth with zero ad spend and expanded organic reach to HR and executives.">LinkedInオーガニック運用によるブランド認知・エンゲージメント向上施策。広告費ゼロでフォロワー獲得、HR・経営層への自然なリーチ拡大を実現。</p>
+                    <ul class="skill-process">
+                        <li data-ja="① 投稿テーマを再構築（働き方・人材戦略・ダイバーシティ）" data-en="① Rebuilt post themes (work styles, talent strategy, diversity)">① 投稿テーマを再構築（働き方・人材戦略・ダイバーシティ）</li>
+                        <li data-ja="② ビジュアル＋テキストの最適比率をA/Bテスト" data-en="② A/B tested optimal visual-text ratios">② ビジュアル＋テキストの最適比率をA/Bテスト</li>
+                        <li data-ja="③ 英語コンテンツを日本語ローカライズ" data-en="③ Localized English content to Japanese">③ 英語コンテンツを日本語ローカライズ</li>
+                        <li data-ja="④ Google Data Studioで月次レポートを可視化" data-en="④ Visualized monthly reports in Google Data Studio">④ Google Data Studioで月次レポートを可視化</li>
+                        <li data-ja="⑤ 継続的PDCAでフォロワー増加を安定化" data-en="⑤ Stabilized follower growth through continuous PDCA">⑤ 継続的PDCAでフォロワー増加を安定化</li>
+                    </ul>
+                    <div class="skill-tech">LinkedIn Campaign Manager · Canva · Google Data Studio · Excel</div>
+                    <p class="skill-result" data-ja="成果：5か月で日本人フォロワー+450名／エンゲージメント率2.5倍／コンテンツ滞在時間+40%" data-en="Result: +450 Japanese followers in 5 months / 2.5× engagement rate / +40% content dwell time">成果：5か月で日本人フォロワー+450名／エンゲージメント率2.5倍／コンテンツ滞在時間+40%</p>
+                    <a href="index.html#marketing" class="btn btn-secondary skill-case-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        <span data-ja="マーケティング事例を見る" data-en="View Marketing Cases">マーケティング事例を見る</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Strengths -->
+            <div class="skill-block">
+                <h3 class="skill-block-title" data-ja="強み" data-en="Strengths">強み</h3>
+                <ul class="strengths-list">
+                    <li><strong data-ja="トリリンガル対応：" data-en="Trilingual:">トリリンガル対応：</strong><span data-ja="日英韓3言語でのプロジェクト推進が可能" data-en="Capable of running projects in Japanese, English, and Korean">日英韓3言語でのプロジェクト推進が可能</span></li>
+                    <li><strong data-ja="技術×マーケ融合：" data-en="Tech × Marketing:">技術×マーケ融合：</strong><span data-ja="開発とマーケティング両面から価値創出" data-en="Creates value from both development and marketing perspectives">開発とマーケティング両面から価値創出</span></li>
+                    <li><strong data-ja="調整力：" data-en="Coordination:">調整力：</strong><span data-ja="多国籍チームとの調整・プロジェクト管理が得意" data-en="Skilled at coordinating multinational teams and managing projects">多国籍チームとの調整・プロジェクト管理が得意</span></li>
+                    <li><strong data-ja="スタイル：" data-en="Style:">スタイル：</strong><span data-ja="&ldquo;指揮者型&rdquo;で全体最適を意識した進行管理" data-en="A &ldquo;conductor-style&rdquo; approach focused on holistic optimization">"指揮者型"で全体最適を意識した進行管理</span></li>
+                </ul>
+            </div>
+
+            <!-- Future Goals -->
+            <div class="skill-block">
+                <h3 class="skill-block-title" data-ja="今後の目標" data-en="Future Goals">今後の目標</h3>
+                <ul class="strengths-list">
+                    <li><strong data-ja="技術深化：" data-en="Technical depth:">技術深化：</strong><span data-ja="Next.js＋Supabaseを軸にSaaS構築スキル強化" data-en="Strengthening SaaS development with Next.js + Supabase">Next.js＋Supabaseを軸にSaaS構築スキル強化</span></li>
+                    <li><strong data-ja="AI連携：" data-en="AI integration:">AI連携：</strong><span data-ja="LLM（Groq/OpenAI）を用いた業務自動化開発" data-en="Business automation using LLMs (Groq/OpenAI)">LLM（Groq/OpenAI）を用いた業務自動化開発</span></li>
+                    <li><strong data-ja="キャリア：" data-en="Career:">キャリア：</strong><span data-ja="マーケ＋開発の両面でハイブリッド型フリーランスへ成長" data-en="Growing as a hybrid freelancer combining marketing and development">マーケ＋開発の両面でハイブリッド型フリーランスへ成長</span></li>
+                </ul>
+            </div>
+
+            <a href="about.html" class="btn btn-secondary skills-back-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span data-ja="自己紹介に戻る" data-en="Back to About">自己紹介に戻る</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Denpota Furugaki. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
