@@ -23,6 +23,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Fixed background image (behind everything) -->
+    <div class="site-bg" aria-hidden="true">
+        <picture>
+            <img src="images/commons/dummy-bg-image.png" alt="" decoding="async" loading="eager">
+        </picture>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -32,22 +39,64 @@
                 </a>
             </div>
             <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link active" data-ja="ホーム" data-en="Home">Home</a>
-                <a href="about.html" class="nav-link" data-ja="自己紹介" data-en="About">About</a>
-                <a href="#software-development" class="nav-link" data-ja="ソフトウェア開発" data-en="Software Development">Software Development</a>
-                <a href="#marketing" class="nav-link" data-ja="マーケティング" data-en="Marketing">Marketing</a>
-                <a href="#art" class="nav-link" data-ja="アート" data-en="Art">Art</a>
-                <a href="#contact" class="nav-link" data-ja="お問い合わせ" data-en="Contact">Contact</a>
+                <a href="#home" class="nav-link active">
+                    <span class="nav-link-dot" aria-hidden="true"></span>
+                    <span class="nav-link-inner">
+                        <span class="nav-link-text" data-ja="ホーム" data-en="Home">Home</span>
+                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="ホーム" data-en="Home">Home</span>
+                    </span>
+                </a>
+                <a href="about.html" class="nav-link">
+                    <span class="nav-link-dot" aria-hidden="true"></span>
+                    <span class="nav-link-inner">
+                        <span class="nav-link-text" data-ja="自己紹介" data-en="About">About</span>
+                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="自己紹介" data-en="About">About</span>
+                    </span>
+                </a>
+                <a href="#software-development" class="nav-link">
+                    <span class="nav-link-dot" aria-hidden="true"></span>
+                    <span class="nav-link-inner">
+                        <span class="nav-link-text" data-ja="ソフトウェア開発" data-en="Software Development">Software Development</span>
+                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="ソフトウェア開発" data-en="Software Development">Software Development</span>
+                    </span>
+                </a>
+                <a href="#marketing" class="nav-link">
+                    <span class="nav-link-dot" aria-hidden="true"></span>
+                    <span class="nav-link-inner">
+                        <span class="nav-link-text" data-ja="マーケティング" data-en="Marketing">Marketing</span>
+                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="マーケティング" data-en="Marketing">Marketing</span>
+                    </span>
+                </a>
+                <a href="#art" class="nav-link">
+                    <span class="nav-link-dot" aria-hidden="true"></span>
+                    <span class="nav-link-inner">
+                        <span class="nav-link-text" data-ja="アート" data-en="Art">Art</span>
+                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="アート" data-en="Art">Art</span>
+                    </span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <span class="nav-link-dot" aria-hidden="true"></span>
+                    <span class="nav-link-inner">
+                        <span class="nav-link-text" data-ja="お問い合わせ" data-en="Contact">Contact</span>
+                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="お問い合わせ" data-en="Contact">Contact</span>
+                    </span>
+                </a>
                 <button id="lang-toggle" class="lang-btn japanese" title="Switch Language / 言語を切り替え">
                     <span class="lang-label en">EN</span>
                     <span class="lang-label jp">JP</span>
                 </button>
             </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu" data-magnetic>
+                <span class="nav-toggle-inner">
+                    <svg class="nav-toggle-ring" viewBox="0 0 60 60" aria-hidden="true">
+                        <circle cx="30" cy="30" r="28"></circle>
+                    </svg>
+                    <span class="nav-toggle-lines" aria-hidden="true">
+                        <span class="nav-toggle-line"></span>
+                        <span class="nav-toggle-line"></span>
+                    </span>
+                </span>
+            </button>
         </div>
     </nav>
 

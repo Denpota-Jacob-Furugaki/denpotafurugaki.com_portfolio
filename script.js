@@ -127,18 +127,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Mobile navigation toggle
+// Mobile navigation toggle + scroll shrink + magnetic hamburger
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
-    
+    const navbar = document.querySelector('.navbar');
+
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
         });
-        
-        // Close menu when clicking on nav links
+
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
@@ -147,6 +147,39 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Scroll-shrink navbar
+    if (navbar) {
+        const onScroll = () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    // Magnetic effect for hamburger button
+    const magneticEls = document.querySelectorAll('[data-magnetic]');
+    magneticEls.forEach(el => {
+        const strength = 0.25;
+        const inner = el.querySelector('.nav-toggle-inner') || el;
+
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - (rect.left + rect.width / 2);
+            const y = e.clientY - (rect.top + rect.height / 2);
+            el.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+            inner.style.transform = `translate(${x * strength * 0.5}px, ${y * strength * 0.5}px)`;
+        });
+
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = '';
+            inner.style.transform = '';
+        });
+    });
 });
 
 // Intersection Observer for fade-in animations
