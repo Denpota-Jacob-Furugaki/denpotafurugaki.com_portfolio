@@ -41,46 +41,77 @@
                 </a>
             </div>
             <div class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link">
-                    <span class="nav-link-dot" aria-hidden="true"></span>
-                    <span class="nav-link-inner">
-                        <span class="nav-link-text" data-ja="ホーム" data-en="Home">Home</span>
-                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="ホーム" data-en="Home">Home</span>
-                    </span>
-                </a>
-                <a href="about.html" class="nav-link">
-                    <span class="nav-link-dot" aria-hidden="true"></span>
-                    <span class="nav-link-inner">
-                        <span class="nav-link-text" data-ja="自己紹介" data-en="About">About</span>
-                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="自己紹介" data-en="About">About</span>
-                    </span>
-                </a>
-                <a href="index.html#software-development" class="nav-link">
-                    <span class="nav-link-dot" aria-hidden="true"></span>
-                    <span class="nav-link-inner">
-                        <span class="nav-link-text" data-ja="ソフトウェア開発" data-en="Software Development">Software Development</span>
-                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="ソフトウェア開発" data-en="Software Development">Software Development</span>
-                    </span>
-                </a>
-                <a href="index.html#marketing" class="nav-link">
-                    <span class="nav-link-dot" aria-hidden="true"></span>
-                    <span class="nav-link-inner">
-                        <span class="nav-link-text" data-ja="マーケティング" data-en="Marketing">Marketing</span>
-                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="マーケティング" data-en="Marketing">Marketing</span>
-                    </span>
-                </a>
-                <a href="index.html#art" class="nav-link">
-                    <span class="nav-link-dot" aria-hidden="true"></span>
-                    <span class="nav-link-inner">
-                        <span class="nav-link-text" data-ja="アート" data-en="Art">Art</span>
-                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="アート" data-en="Art">Art</span>
-                    </span>
-                </a>
+                <div class="nav-dropdown">
+                    <a href="index.html" class="nav-link nav-link-stacked nav-link-has-children">
+                        <span class="nav-link-dot" aria-hidden="true"></span>
+                        <span class="nav-link-inner">
+                            <span class="nav-link-text" data-ja="フルガキ<br>デンポウタ" data-en="Denpota<br>Furugaki">フルガキ<br>デンポウタ</span>
+                            <span class="nav-link-text-ghost" aria-hidden="true" data-ja="フルガキ<br>デンポウタ" data-en="Denpota<br>Furugaki">フルガキ<br>デンポウタ</span>
+                        </span>
+                        <span class="nav-link-chevron" aria-hidden="true">▾</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="about.html" class="dropdown-item" data-ja="自己紹介" data-en="About">自己紹介</a>
+                        <a href="ai.html" class="dropdown-item" data-ja="AI（AI実装）" data-en="AI (Implementation)">AI（AI実装）</a>
+                        <a href="skills.html" class="dropdown-item active" data-ja="スキルシート" data-en="Skill Sheet">スキルシート</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="index.html#software-development" class="nav-link nav-link-has-children">
+                        <span class="nav-link-dot" aria-hidden="true"></span>
+                        <span class="nav-link-inner">
+                            <span class="nav-link-text" data-ja="ソフトウェア開発" data-en="Software">ソフトウェア開発</span>
+                            <span class="nav-link-text-ghost" aria-hidden="true" data-ja="ソフトウェア開発" data-en="Software">ソフトウェア開発</span>
+                        </span>
+                        <span class="nav-link-chevron" aria-hidden="true">▾</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html#software-development=sw-uiux" class="dropdown-item" data-ja="UI/UX デザイン" data-en="UI/UX Design">UI/UX デザイン</a>
+                        <a href="index.html#software-development=sw-ecommerce" class="dropdown-item" data-ja="E-commerce" data-en="E-commerce">E-commerce</a>
+                        <a href="index.html#software-development=sw-ai-data" class="dropdown-item" data-ja="AI & データ" data-en="AI & Data">AI & データ</a>
+                        <a href="index.html#software-development=sw-cms-crm" class="dropdown-item" data-ja="CMS / CRM" data-en="CMS / CRM">CMS / CRM</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="index.html#marketing" class="nav-link nav-link-has-children">
+                        <span class="nav-link-dot" aria-hidden="true"></span>
+                        <span class="nav-link-inner">
+                            <span class="nav-link-text" data-ja="マーケティング" data-en="Marketing">マーケティング</span>
+                            <span class="nav-link-text-ghost" aria-hidden="true" data-ja="マーケティング" data-en="Marketing">マーケティング</span>
+                        </span>
+                        <span class="nav-link-chevron" aria-hidden="true">▾</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html#marketing=brand-strategy" class="dropdown-item" data-ja="ブランド戦略" data-en="Brand Strategy">ブランド戦略</a>
+                        <a href="index.html#marketing=performance-marketing" class="dropdown-item" data-ja="パフォーマンスマーケティング" data-en="Performance Marketing">パフォーマンスマーケティング</a>
+                        <a href="index.html#marketing=seo-content" class="dropdown-item" data-ja="SEO & コンテンツ" data-en="SEO & Content">SEO & コンテンツ</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="index.html#art" class="nav-link nav-link-has-children">
+                        <span class="nav-link-dot" aria-hidden="true"></span>
+                        <span class="nav-link-inner">
+                            <span class="nav-link-text" data-ja="アート" data-en="Art">アート</span>
+                            <span class="nav-link-text-ghost" aria-hidden="true" data-ja="アート" data-en="Art">アート</span>
+                        </span>
+                        <span class="nav-link-chevron" aria-hidden="true">▾</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html#art=art-digital" class="dropdown-item" data-ja="Abstract Art" data-en="Abstract Art">Abstract Art</a>
+                        <a href="index.html#art=art-photography" class="dropdown-item" data-ja="写真" data-en="Photography">写真</a>
+                        <a href="index.html#art=art-video" class="dropdown-item" data-ja="映像制作" data-en="Video Production">映像制作</a>
+                        <a href="index.html#art=art-music" class="dropdown-item" data-ja="音楽" data-en="Music">音楽</a>
+                    </div>
+                </div>
+
                 <a href="index.html#contact" class="nav-link">
                     <span class="nav-link-dot" aria-hidden="true"></span>
                     <span class="nav-link-inner">
-                        <span class="nav-link-text" data-ja="お問い合わせ" data-en="Contact">Contact</span>
-                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="お問い合わせ" data-en="Contact">Contact</span>
+                        <span class="nav-link-text" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</span>
+                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</span>
                     </span>
                 </a>
                 <button id="lang-toggle" class="lang-btn japanese" title="Switch Language / 言語を切り替え">

@@ -39,46 +39,77 @@
                 </a>
             </div>
             <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link active">
-                    <span class="nav-link-dot" aria-hidden="true"></span>
-                    <span class="nav-link-inner">
-                        <span class="nav-link-text" data-ja="ホーム" data-en="Home">Home</span>
-                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="ホーム" data-en="Home">Home</span>
-                    </span>
-                </a>
-                <a href="about.html" class="nav-link">
-                    <span class="nav-link-dot" aria-hidden="true"></span>
-                    <span class="nav-link-inner">
-                        <span class="nav-link-text" data-ja="自己紹介" data-en="About">About</span>
-                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="自己紹介" data-en="About">About</span>
-                    </span>
-                </a>
-                <a href="#software-development" class="nav-link">
-                    <span class="nav-link-dot" aria-hidden="true"></span>
-                    <span class="nav-link-inner">
-                        <span class="nav-link-text" data-ja="ソフトウェア開発" data-en="Software Development">Software Development</span>
-                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="ソフトウェア開発" data-en="Software Development">Software Development</span>
-                    </span>
-                </a>
-                <a href="#marketing" class="nav-link">
-                    <span class="nav-link-dot" aria-hidden="true"></span>
-                    <span class="nav-link-inner">
-                        <span class="nav-link-text" data-ja="マーケティング" data-en="Marketing">Marketing</span>
-                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="マーケティング" data-en="Marketing">Marketing</span>
-                    </span>
-                </a>
-                <a href="#art" class="nav-link">
-                    <span class="nav-link-dot" aria-hidden="true"></span>
-                    <span class="nav-link-inner">
-                        <span class="nav-link-text" data-ja="アート" data-en="Art">Art</span>
-                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="アート" data-en="Art">Art</span>
-                    </span>
-                </a>
+                <div class="nav-dropdown">
+                    <a href="#home" class="nav-link nav-link-stacked nav-link-has-children active">
+                        <span class="nav-link-dot" aria-hidden="true"></span>
+                        <span class="nav-link-inner">
+                            <span class="nav-link-text" data-ja="フルガキ<br>デンポウタ" data-en="Denpota<br>Furugaki">フルガキ<br>デンポウタ</span>
+                            <span class="nav-link-text-ghost" aria-hidden="true" data-ja="フルガキ<br>デンポウタ" data-en="Denpota<br>Furugaki">フルガキ<br>デンポウタ</span>
+                        </span>
+                        <span class="nav-link-chevron" aria-hidden="true">▾</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="about.html" class="dropdown-item" data-ja="自己紹介" data-en="About">自己紹介</a>
+                        <a href="ai.html" class="dropdown-item" data-ja="AI（AI実装）" data-en="AI (Implementation)">AI（AI実装）</a>
+                        <a href="skills.html" class="dropdown-item" data-ja="スキルシート" data-en="Skill Sheet">スキルシート</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="#software-development" class="nav-link nav-link-has-children">
+                        <span class="nav-link-dot" aria-hidden="true"></span>
+                        <span class="nav-link-inner">
+                            <span class="nav-link-text" data-ja="ソフトウェア開発" data-en="Software">ソフトウェア開発</span>
+                            <span class="nav-link-text-ghost" aria-hidden="true" data-ja="ソフトウェア開発" data-en="Software">ソフトウェア開発</span>
+                        </span>
+                        <span class="nav-link-chevron" aria-hidden="true">▾</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html#software-development=sw-uiux" class="dropdown-item" data-ja="UI/UX デザイン" data-en="UI/UX Design">UI/UX デザイン</a>
+                        <a href="index.html#software-development=sw-ecommerce" class="dropdown-item" data-ja="E-commerce" data-en="E-commerce">E-commerce</a>
+                        <a href="index.html#software-development=sw-ai-data" class="dropdown-item" data-ja="AI & データ" data-en="AI & Data">AI & データ</a>
+                        <a href="index.html#software-development=sw-cms-crm" class="dropdown-item" data-ja="CMS / CRM" data-en="CMS / CRM">CMS / CRM</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="#marketing" class="nav-link nav-link-has-children">
+                        <span class="nav-link-dot" aria-hidden="true"></span>
+                        <span class="nav-link-inner">
+                            <span class="nav-link-text" data-ja="マーケティング" data-en="Marketing">マーケティング</span>
+                            <span class="nav-link-text-ghost" aria-hidden="true" data-ja="マーケティング" data-en="Marketing">マーケティング</span>
+                        </span>
+                        <span class="nav-link-chevron" aria-hidden="true">▾</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html#marketing=brand-strategy" class="dropdown-item" data-ja="ブランド戦略" data-en="Brand Strategy">ブランド戦略</a>
+                        <a href="index.html#marketing=performance-marketing" class="dropdown-item" data-ja="パフォーマンスマーケティング" data-en="Performance Marketing">パフォーマンスマーケティング</a>
+                        <a href="index.html#marketing=seo-content" class="dropdown-item" data-ja="SEO & コンテンツ" data-en="SEO & Content">SEO & コンテンツ</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="#art" class="nav-link nav-link-has-children">
+                        <span class="nav-link-dot" aria-hidden="true"></span>
+                        <span class="nav-link-inner">
+                            <span class="nav-link-text" data-ja="アート" data-en="Art">アート</span>
+                            <span class="nav-link-text-ghost" aria-hidden="true" data-ja="アート" data-en="Art">アート</span>
+                        </span>
+                        <span class="nav-link-chevron" aria-hidden="true">▾</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html#art=art-digital" class="dropdown-item" data-ja="Abstract Art" data-en="Abstract Art">Abstract Art</a>
+                        <a href="index.html#art=art-photography" class="dropdown-item" data-ja="写真" data-en="Photography">写真</a>
+                        <a href="index.html#art=art-video" class="dropdown-item" data-ja="映像制作" data-en="Video Production">映像制作</a>
+                        <a href="index.html#art=art-music" class="dropdown-item" data-ja="音楽" data-en="Music">音楽</a>
+                    </div>
+                </div>
+
                 <a href="#contact" class="nav-link">
                     <span class="nav-link-dot" aria-hidden="true"></span>
                     <span class="nav-link-inner">
-                        <span class="nav-link-text" data-ja="お問い合わせ" data-en="Contact">Contact</span>
-                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="お問い合わせ" data-en="Contact">Contact</span>
+                        <span class="nav-link-text" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</span>
+                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</span>
                     </span>
                 </a>
                 <button id="lang-toggle" class="lang-btn japanese" title="Switch Language / 言語を切り替え">
@@ -105,8 +136,8 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">
-                    <span class="title-line" data-ja="「0→1 を、一人で。」" data-en="From Zero to One, Solo.">From Zero to One, Solo.</span>
-                    <span class="title-line" data-ja="古垣 伝法太" data-en="Denpota Furugaki">Denpota Furugaki</span>
+                    <span class="title-line" data-ja="「0→1 を、一人で。」" data-en="From Zero to One, Solo.">「0→1 を、一人で。」</span>
+                    <span class="title-line" data-ja="古垣 伝法太" data-en="Denpota Furugaki">古垣 伝法太</span>
                 </h1>
                 <p class="hero-subtitle">
                     <span class="typing-text" id="typing-text"></span>
@@ -115,11 +146,11 @@
                 <div class="hero-buttons">
                     <a href="#software-development" class="btn btn-primary">
                         <i class="fas fa-rocket"></i>
-                        <span data-ja="作品を見る" data-en="View My Work">View My Work</span>
+                        <span data-ja="作品を見る" data-en="View My Work">作品を見る</span>
                     </a>
                     <a href="#contact" class="btn btn-secondary">
                         <i class="fas fa-envelope"></i>
-                        <span data-ja="お問い合わせ" data-en="Get In Touch">Get In Touch</span>
+                        <span data-ja="お問い合わせ" data-en="Get In Touch">お問い合わせ</span>
                     </a>
                 </div>
             </div>
@@ -140,7 +171,7 @@
     <section id="software-development" class="work">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-ja="ソフトウェア開発" data-en="Software Development">Software Development</h2>
+                <h2 class="section-title" data-ja="ソフトウェア開発" data-en="Software Development">ソフトウェア開発</h2>
                 <p class="section-subtitle japanese-subtitle" data-ja="プロジェクト" data-en="">プロジェクト</p>
             </div>
             
@@ -284,7 +315,7 @@
     <section id="marketing" class="work">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-ja="マーケティング" data-en="Marketing">Marketing</h2>
+                <h2 class="section-title" data-ja="マーケティング" data-en="Marketing">マーケティング</h2>
                 <p class="section-subtitle japanese-subtitle" data-ja="主な実績" data-en="Achievements">主な実績</p>
             </div>
                 
@@ -441,7 +472,7 @@
     <section id="art" class="work">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-ja="アート" data-en="Art">Art</h2>
+                <h2 class="section-title" data-ja="アート" data-en="Art">アート</h2>
                 <p class="section-subtitle japanese-subtitle" data-ja="クリエイティブ活動" data-en="">クリエイティブ活動</p>
             </div>
             
@@ -546,38 +577,83 @@
                         <div class="digital-art-carousel-track">
                             <div class="digital-art-slide left">
                                 <div class="art-image">
-                                    <img loading="lazy" src="images/photography/IMG_0034.JPG" alt="無垢なまなざし">
+                                    <img loading="lazy" src="images/photography/IMG_3817.JPG" alt="桜爛漫">
                                 </div>
                                 <div class="art-content">
-                                    <h4 class="art-title" data-ja="無垢なまなざし" data-en="Innocent Gaze">無垢なまなざし</h4>
-                                    <p class="art-text" data-ja="リボンを付けた幼い少女の純粋な表情を捉えたポートレート。柔らかな自然光が生み出す温かみのあるトーンが、子どもの無邪気さと好奇心を引き立てる。" data-en="A portrait capturing the pure expression of a young girl with a ribbon. The warm tones created by soft natural light accentuate the child's innocence and curiosity.">リボンを付けた幼い少女の純粋な表情を捉えたポートレート。柔らかな自然光が生み出す温かみのあるトーンが、子どもの無邪気さと好奇心を引き立てる。</p>
+                                    <h4 class="art-title" data-ja="桜爛漫" data-en="Sakura in Full Bloom">桜爛漫</h4>
+                                    <p class="art-text" data-ja="満開の桜にレンズを近づけ、花びら一枚一枚の繊細な色合いを捉えた一枚。儚さと生命力が同居する春の象徴。" data-en="Up close with cherry blossoms at full bloom — each petal's delicate hue captured in detail. A symbol of spring where fragility and vitality coexist.">満開の桜にレンズを近づけ、花びら一枚一枚の繊細な色合いを捉えた一枚。儚さと生命力が同居する春の象徴。</p>
                                 </div>
                             </div>
                             <div class="digital-art-slide center">
                                 <div class="art-image">
-                                    <img loading="lazy" src="images/photography/IMG_0090.JPG" alt="夕陽に想う">
+                                    <img loading="lazy" src="images/photography/IMG_4751.JPG" alt="春を抱いて">
                                 </div>
                                 <div class="art-content">
-                                    <h4 class="art-title" data-ja="夕陽に想う" data-en="Thoughts in the Golden Hour">夕陽に想う</h4>
-                                    <p class="art-text" data-ja="黄金色の逆光に包まれた少女の横顔。三つ編みの髪が夕陽に照らされ、物思いにふけるその静かな表情が、一日の終わりの穏やかな感情を映し出す。" data-en="A girl's profile bathed in golden backlight. Her braided hair catches the sunset glow, and her quiet, contemplative expression reflects the gentle emotions at the close of the day.">黄金色の逆光に包まれた少女の横顔。三つ編みの髪が夕陽に照らされ、物思いにふけるその静かな表情が、一日の終わりの穏やかな感情を映し出す。</p>
+                                    <h4 class="art-title" data-ja="春を抱いて" data-en="Holding Spring">春を抱いて</h4>
+                                    <p class="art-text" data-ja="満開のつつじを背景に、母娘で寄り添うポートレート。穏やかな視線と優しい表情が、家族の時間の豊かさを伝える。" data-en="A mother and daughter portrait against a backdrop of azaleas in full bloom. Calm eyes and gentle expressions speak to the richness of family time.">満開のつつじを背景に、母娘で寄り添うポートレート。穏やかな視線と優しい表情が、家族の時間の豊かさを伝える。</p>
                                 </div>
                             </div>
                             <div class="digital-art-slide right">
                                 <div class="art-image">
-                                    <img loading="lazy" src="images/photography/IMG_0200.JPG" alt="Photography">
+                                    <img loading="lazy" src="images/photography/IMG_3789.JPG" alt="春の歓声">
                                 </div>
                                 <div class="art-content">
-                                    <h4 class="art-title" data-ja="日常の一片" data-en="A Slice of Everyday">日常の一片</h4>
-                                    <p class="art-text" data-ja="さりげない瞬間に宿る美しさを切り取ったポートレート作品。" data-en="A portrait capturing the beauty hidden within an unassuming moment.">さりげない瞬間に宿る美しさを切り取ったポートレート作品。</p>
+                                    <h4 class="art-title" data-ja="春の歓声" data-en="Spring Cheer">春の歓声</h4>
+                                    <p class="art-text" data-ja="春の柔らかな光の中で、屈託のない歓声を上げる少女。ピンクのワンピースが新緑に映え、子どもの生命力そのものが画面いっぱいに溢れる。" data-en="A young girl bursts into uninhibited cheer in soft spring light. Her pink dress glows against fresh green leaves, and a child's pure vitality fills the frame.">春の柔らかな光の中で、屈託のない歓声を上げる少女。ピンクのワンピースが新緑に映え、子どもの生命力そのものが画面いっぱいに溢れる。</p>
                                 </div>
                             </div>
                             <div class="digital-art-slide hidden">
                                 <div class="art-image">
-                                    <img loading="lazy" src="images/photography/IMG_0133.JPG" alt="遊びの瞬間">
+                                    <img loading="lazy" src="images/photography/IMG_4635.JPG" alt="微笑みの蕾">
                                 </div>
                                 <div class="art-content">
-                                    <h4 class="art-title" data-ja="遊びの瞬間" data-en="A Moment of Play">遊びの瞬間</h4>
-                                    <p class="art-text" data-ja="縄跳びで遊ぶ少女を捉えた一枚。緑の背景に映えるモノトーンの衣装と、真剣な眼差しのコントラストが、子どもの無限のエネルギーと集中力を表現している。" data-en="A shot capturing a girl playing jump rope. The contrast between her monochrome outfit against the green backdrop and her focused gaze expresses the boundless energy and concentration of childhood.">縄跳びで遊ぶ少女を捉えた一枚。緑の背景に映えるモノトーンの衣装と、真剣な眼差しのコントラストが、子どもの無限のエネルギーと集中力を表現している。</p>
+                                    <h4 class="art-title" data-ja="微笑みの蕾" data-en="A Small Smile">微笑みの蕾</h4>
+                                    <p class="art-text" data-ja="ピンクの帽子をかぶり、はにかむように微笑む少女のクローズアップ。背景の緑と紫のボケが、その表情の柔らかさをそっと包む。" data-en="A close-up of a girl in a pink hat, her shy smile barely contained. The soft green and purple bokeh wraps gently around the tenderness of her expression.">ピンクの帽子をかぶり、はにかむように微笑む少女のクローズアップ。背景の緑と紫のボケが、その表情の柔らかさをそっと包む。</p>
+                                </div>
+                            </div>
+                            <div class="digital-art-slide hidden">
+                                <div class="art-image">
+                                    <img loading="lazy" src="images/photography/IMG_4323.JPG" alt="木陰のかくれんぼ">
+                                </div>
+                                <div class="art-content">
+                                    <h4 class="art-title" data-ja="木陰のかくれんぼ" data-en="Hide and Seek">木陰のかくれんぼ</h4>
+                                    <p class="art-text" data-ja="桜の木の幹から顔を覗かせる少女。木に添えられた小さな花飾りと、子どものはにかむような表情が、春の日のひとときを印象的に切り取る。" data-en="A girl peeks out from behind a cherry tree trunk. The tiny flower decoration on the bark and her bashful expression frame an unforgettable spring moment.">桜の木の幹から顔を覗かせる少女。木に添えられた小さな花飾りと、子どものはにかむような表情が、春の日のひとときを印象的に切り取る。</p>
+                                </div>
+                            </div>
+                            <div class="digital-art-slide hidden">
+                                <div class="art-image">
+                                    <img loading="lazy" src="images/photography/IMG_4747.JPG" alt="母と娘の対話">
+                                </div>
+                                <div class="art-content">
+                                    <h4 class="art-title" data-ja="母と娘の対話" data-en="Mother & Daughter">母と娘の対話</h4>
+                                    <p class="art-text" data-ja="抱きかかえる母を見上げる娘。色とりどりの花々を背景に、何気ないやりとりが二人の絆を静かに物語る。" data-en="A daughter looks up at her mother in her arms. With brightly colored flowers as backdrop, an everyday exchange quietly tells the story of their bond.">抱きかかえる母を見上げる娘。色とりどりの花々を背景に、何気ないやりとりが二人の絆を静かに物語る。</p>
+                                </div>
+                            </div>
+                            <div class="digital-art-slide hidden">
+                                <div class="art-image">
+                                    <img loading="lazy" src="images/photography/IMG_4504.JPG" alt="雨の日の冒険">
+                                </div>
+                                <div class="art-content">
+                                    <h4 class="art-title" data-ja="雨の日の冒険" data-en="A Rainy Day Adventure">雨の日の冒険</h4>
+                                    <p class="art-text" data-ja="雨上がりの小道を歩く、黄色いレインコートの子ども。透明なフードの内側から覗く真剣な視線が、雨そのものを冒険に変える子どもの世界観を映す。" data-en="A child walks a misty path in a bright yellow raincoat. The earnest gaze peeking through the transparent hood reflects the world of a child who turns rain itself into adventure.">雨上がりの小道を歩く、黄色いレインコートの子ども。透明なフードの内側から覗く真剣な視線が、雨そのものを冒険に変える子どもの世界観を映す。</p>
+                                </div>
+                            </div>
+                            <div class="digital-art-slide hidden">
+                                <div class="art-image">
+                                    <img loading="lazy" src="images/photography/IMG_4611.JPG" alt="春風の中で">
+                                </div>
+                                <div class="art-content">
+                                    <h4 class="art-title" data-ja="春風の中で" data-en="In the Spring Breeze">春風の中で</h4>
+                                    <p class="art-text" data-ja="紫の花を背景に、風に髪をなびかせて俯く女性。柔らかな逆光と表情の繊細さが、静謐で詩的な情景を生んでいる。" data-en="A woman looks down as the breeze lifts her hair, set against a haze of purple blossoms. Soft backlight and the delicacy of her expression compose a quiet, poetic scene.">紫の花を背景に、風に髪をなびかせて俯く女性。柔らかな逆光と表情の繊細さが、静謐で詩的な情景を生んでいる。</p>
+                                </div>
+                            </div>
+                            <div class="digital-art-slide hidden">
+                                <div class="art-image">
+                                    <img loading="lazy" src="images/photography/Jio_Sakura.JPG" alt="桜の冒険">
+                                </div>
+                                <div class="art-content">
+                                    <h4 class="art-title" data-ja="桜の冒険" data-en="Cherry Blossom Adventure">桜の冒険</h4>
+                                    <p class="art-text" data-ja="満開の桜を背景に遊具で遊ぶ少年。ピンクの花びらと赤黄色の遊具が鮮やかなコントラストを生み、春の喜びと子どもの冒険心が一枚に凝縮されている。" data-en="A boy playing on equipment against a backdrop of cherry blossoms in full bloom. The vivid contrast between pink petals and red-yellow playground structures condenses the joy of spring and a child's sense of adventure into a single frame.">満開の桜を背景に遊具で遊ぶ少年。ピンクの花びらと赤黄色の遊具が鮮やかなコントラストを生み、春の喜びと子どもの冒険心が一枚に凝縮されている。</p>
                                 </div>
                             </div>
                             <div class="digital-art-slide hidden">
@@ -591,16 +667,43 @@
                             </div>
                             <div class="digital-art-slide hidden">
                                 <div class="art-image">
-                                    <img loading="lazy" src="images/photography/IMG_2685.JPG" alt="神社の微笑み">
+                                    <img loading="lazy" src="images/photography/IMG_0034.JPG" alt="無垢なまなざし">
                                 </div>
                                 <div class="art-content">
-                                    <h4 class="art-title" data-ja="神社の微笑み" data-en="Smile at the Shrine">神社の微笑み</h4>
-                                    <p class="art-text" data-ja="神社の境内で振り返る女性の自然な笑顔。白い着物と提灯のぼかしが調和し、日本の伝統的な空間の中で生まれる温かく親しみやすい一瞬を記録している。" data-en="A woman's natural smile as she turns back at a shrine. The white kimono and soft lantern bokeh harmonize, documenting a warm and approachable moment born within a traditional Japanese setting.">神社の境内で振り返る女性の自然な笑顔。白い着物と提灯のぼかしが調和し、日本の伝統的な空間の中で生まれる温かく親しみやすい一瞬を記録している。</p>
+                                    <h4 class="art-title" data-ja="無垢なまなざし" data-en="Innocent Gaze">無垢なまなざし</h4>
+                                    <p class="art-text" data-ja="リボンを付けた幼い少女の純粋な表情を捉えたポートレート。柔らかな自然光が生み出す温かみのあるトーンが、子どもの無邪気さと好奇心を引き立てる。" data-en="A portrait capturing the pure expression of a young girl with a ribbon. The warm tones created by soft natural light accentuate the child's innocence and curiosity.">リボンを付けた幼い少女の純粋な表情を捉えたポートレート。柔らかな自然光が生み出す温かみのあるトーンが、子どもの無邪気さと好奇心を引き立てる。</p>
                                 </div>
                             </div>
                             <div class="digital-art-slide hidden">
                                 <div class="art-image">
-                                    <img loading="lazy" src="images/photography/IMG_1673.JPG" alt="Photography">
+                                    <img loading="lazy" src="images/photography/IMG_0090.JPG" alt="夕陽に想う">
+                                </div>
+                                <div class="art-content">
+                                    <h4 class="art-title" data-ja="夕陽に想う" data-en="Thoughts in the Golden Hour">夕陽に想う</h4>
+                                    <p class="art-text" data-ja="黄金色の逆光に包まれた少女の横顔。三つ編みの髪が夕陽に照らされ、物思いにふけるその静かな表情が、一日の終わりの穏やかな感情を映し出す。" data-en="A girl's profile bathed in golden backlight. Her braided hair catches the sunset glow, and her quiet, contemplative expression reflects the gentle emotions at the close of the day.">黄金色の逆光に包まれた少女の横顔。三つ編みの髪が夕陽に照らされ、物思いにふけるその静かな表情が、一日の終わりの穏やかな感情を映し出す。</p>
+                                </div>
+                            </div>
+                            <div class="digital-art-slide hidden">
+                                <div class="art-image">
+                                    <img loading="lazy" src="images/photography/IMG_0133.JPG" alt="遊びの瞬間">
+                                </div>
+                                <div class="art-content">
+                                    <h4 class="art-title" data-ja="遊びの瞬間" data-en="A Moment of Play">遊びの瞬間</h4>
+                                    <p class="art-text" data-ja="縄跳びで遊ぶ少女を捉えた一枚。緑の背景に映えるモノトーンの衣装と、真剣な眼差しのコントラストが、子どもの無限のエネルギーと集中力を表現している。" data-en="A shot capturing a girl playing jump rope. The contrast between her monochrome outfit against the green backdrop and her focused gaze expresses the boundless energy and concentration of childhood.">縄跳びで遊ぶ少女を捉えた一枚。緑の背景に映えるモノトーンの衣装と、真剣な眼差しのコントラストが、子どもの無限のエネルギーと集中力を表現している。</p>
+                                </div>
+                            </div>
+                            <div class="digital-art-slide hidden">
+                                <div class="art-image">
+                                    <img loading="lazy" src="images/photography/IMG_0200.JPG" alt="日常の一片">
+                                </div>
+                                <div class="art-content">
+                                    <h4 class="art-title" data-ja="日常の一片" data-en="A Slice of Everyday">日常の一片</h4>
+                                    <p class="art-text" data-ja="さりげない瞬間に宿る美しさを切り取ったポートレート作品。" data-en="A portrait capturing the beauty hidden within an unassuming moment.">さりげない瞬間に宿る美しさを切り取ったポートレート作品。</p>
+                                </div>
+                            </div>
+                            <div class="digital-art-slide hidden">
+                                <div class="art-image">
+                                    <img loading="lazy" src="images/photography/IMG_1673.JPG" alt="静かな視線">
                                 </div>
                                 <div class="art-content">
                                     <h4 class="art-title" data-ja="静かな視線" data-en="A Quiet Gaze">静かな視線</h4>
@@ -609,20 +712,11 @@
                             </div>
                             <div class="digital-art-slide hidden">
                                 <div class="art-image">
-                                    <img loading="lazy" src="images/photography/IMG_9352.JPG" alt="弾ける笑顔">
+                                    <img loading="lazy" src="images/photography/IMG_0162.JPG" alt="苔のインスタレーション">
                                 </div>
                                 <div class="art-content">
-                                    <h4 class="art-title" data-ja="弾ける笑顔" data-en="Radiant Laughter">弾ける笑顔</h4>
-                                    <p class="art-text" data-ja="自然体で弾けるような笑顔を見せる女性のポートレート。飾らない表情の中に溢れる温かさと親しみが、見る者にもその幸福感を伝える。" data-en="A portrait of a woman with a naturally radiant, bursting smile. The warmth and approachability overflowing from her unposed expression conveys a sense of happiness to the viewer.">自然体で弾けるような笑顔を見せる女性のポートレート。飾らない表情の中に溢れる温かさと親しみが、見る者にもその幸福感を伝える。</p>
-                                </div>
-                            </div>
-                            <div class="digital-art-slide hidden">
-                                <div class="art-image">
-                                    <img loading="lazy" src="images/photography/Jio_Sakura.JPG" alt="桜の冒険">
-                                </div>
-                                <div class="art-content">
-                                    <h4 class="art-title" data-ja="桜の冒険" data-en="Cherry Blossom Adventure">桜の冒険</h4>
-                                    <p class="art-text" data-ja="満開の桜を背景に遊具で遊ぶ少年。ピンクの花びらと赤黄色の遊具が鮮やかなコントラストを生み、春の喜びと子どもの冒険心が一枚に凝縮されている。" data-en="A boy playing on equipment against a backdrop of cherry blossoms in full bloom. The vivid contrast between pink petals and red-yellow playground structures condenses the joy of spring and a child's sense of adventure into a single frame.">満開の桜を背景に遊具で遊ぶ少年。ピンクの花びらと赤黄色の遊具が鮮やかなコントラストを生み、春の喜びと子どもの冒険心が一枚に凝縮されている。</p>
+                                    <h4 class="art-title" data-ja="苔のインスタレーション" data-en="Moss Installation">苔のインスタレーション</h4>
+                                    <p class="art-text" data-ja="苔玉と背後のデジタルアート群が交錯する展示空間。自然と人工、有機と無機が静かに対話する瞬間を切り取った一枚。" data-en="An exhibition space where a moss sphere meets a grid of digital artworks. A frame capturing the quiet dialogue between nature and technology, organic and inorganic.">苔玉と背後のデジタルアート群が交錯する展示空間。自然と人工、有機と無機が静かに対話する瞬間を切り取った一枚。</p>
                                 </div>
                             </div>
                         </div>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI | Denpota Furugaki - 最先端AI技術を実装する人</title>
+    <meta name="description" content="古垣伝法太がどのようにAIを実務に組み込んできたか — Onitsuka Tiger 案件を含む実例とAIスタック">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="File/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="File/favicon_io/favicon-16x16.png">
+    <link rel="shortcut icon" href="File/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="File/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="File/favicon_io/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=DotGothic16&family=Kosugi+Maru&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fixed background image -->
+    <div class="site-bg" aria-hidden="true">
+        <picture>
+            <img src="images/commons/dummy-bg-image.png" alt="" decoding="async" loading="eager">
+        </picture>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h2 data-ja="共生、共栄、共義" data-en="Coexistence<br>Coprosperity<br>Co-righteousness">共生、共栄、共義</h2>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-dropdown">
+                    <a href="index.html" class="nav-link nav-link-stacked nav-link-has-children">
+                        <span class="nav-link-dot" aria-hidden="true"></span>
+                        <span class="nav-link-inner">
+                            <span class="nav-link-text" data-ja="フルガキ<br>デンポウタ" data-en="Denpota<br>Furugaki">フルガキ<br>デンポウタ</span>
+                            <span class="nav-link-text-ghost" aria-hidden="true" data-ja="フルガキ<br>デンポウタ" data-en="Denpota<br>Furugaki">フルガキ<br>デンポウタ</span>
+                        </span>
+                        <span class="nav-link-chevron" aria-hidden="true">▾</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="about.html" class="dropdown-item" data-ja="自己紹介" data-en="About">自己紹介</a>
+                        <a href="ai.html" class="dropdown-item active" data-ja="AI（AI実装）" data-en="AI (Implementation)">AI（AI実装）</a>
+                        <a href="skills.html" class="dropdown-item" data-ja="スキルシート" data-en="Skill Sheet">スキルシート</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="index.html#software-development" class="nav-link nav-link-has-children">
+                        <span class="nav-link-dot" aria-hidden="true"></span>
+                        <span class="nav-link-inner">
+                            <span class="nav-link-text" data-ja="ソフトウェア開発" data-en="Software">ソフトウェア開発</span>
+                            <span class="nav-link-text-ghost" aria-hidden="true" data-ja="ソフトウェア開発" data-en="Software">ソフトウェア開発</span>
+                        </span>
+                        <span class="nav-link-chevron" aria-hidden="true">▾</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html#software-development=sw-uiux" class="dropdown-item" data-ja="UI/UX デザイン" data-en="UI/UX Design">UI/UX デザイン</a>
+                        <a href="index.html#software-development=sw-ecommerce" class="dropdown-item" data-ja="E-commerce" data-en="E-commerce">E-commerce</a>
+                        <a href="index.html#software-development=sw-ai-data" class="dropdown-item" data-ja="AI & データ" data-en="AI & Data">AI & データ</a>
+                        <a href="index.html#software-development=sw-cms-crm" class="dropdown-item" data-ja="CMS / CRM" data-en="CMS / CRM">CMS / CRM</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="index.html#marketing" class="nav-link nav-link-has-children">
+                        <span class="nav-link-dot" aria-hidden="true"></span>
+                        <span class="nav-link-inner">
+                            <span class="nav-link-text" data-ja="マーケティング" data-en="Marketing">マーケティング</span>
+                            <span class="nav-link-text-ghost" aria-hidden="true" data-ja="マーケティング" data-en="Marketing">マーケティング</span>
+                        </span>
+                        <span class="nav-link-chevron" aria-hidden="true">▾</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html#marketing=brand-strategy" class="dropdown-item" data-ja="ブランド戦略" data-en="Brand Strategy">ブランド戦略</a>
+                        <a href="index.html#marketing=performance-marketing" class="dropdown-item" data-ja="パフォーマンスマーケティング" data-en="Performance Marketing">パフォーマンスマーケティング</a>
+                        <a href="index.html#marketing=seo-content" class="dropdown-item" data-ja="SEO & コンテンツ" data-en="SEO & Content">SEO & コンテンツ</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <a href="index.html#art" class="nav-link nav-link-has-children">
+                        <span class="nav-link-dot" aria-hidden="true"></span>
+                        <span class="nav-link-inner">
+                            <span class="nav-link-text" data-ja="アート" data-en="Art">アート</span>
+                            <span class="nav-link-text-ghost" aria-hidden="true" data-ja="アート" data-en="Art">アート</span>
+                        </span>
+                        <span class="nav-link-chevron" aria-hidden="true">▾</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html#art=art-digital" class="dropdown-item" data-ja="Abstract Art" data-en="Abstract Art">Abstract Art</a>
+                        <a href="index.html#art=art-photography" class="dropdown-item" data-ja="写真" data-en="Photography">写真</a>
+                        <a href="index.html#art=art-video" class="dropdown-item" data-ja="映像制作" data-en="Video Production">映像制作</a>
+                        <a href="index.html#art=art-music" class="dropdown-item" data-ja="音楽" data-en="Music">音楽</a>
+                    </div>
+                </div>
+
+                <a href="index.html#contact" class="nav-link">
+                    <span class="nav-link-dot" aria-hidden="true"></span>
+                    <span class="nav-link-inner">
+                        <span class="nav-link-text" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</span>
+                        <span class="nav-link-text-ghost" aria-hidden="true" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</span>
+                    </span>
+                </a>
+                <button id="lang-toggle" class="lang-btn japanese" title="Switch Language / 言語を切り替え">
+                    <span class="lang-label en">EN</span>
+                    <span class="lang-label jp">JP</span>
+                </button>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu" data-magnetic>
+                <span class="nav-toggle-inner">
+                    <svg class="nav-toggle-ring" viewBox="0 0 60 60" aria-hidden="true">
+                        <circle cx="30" cy="30" r="28"></circle>
+                    </svg>
+                    <span class="nav-toggle-lines" aria-hidden="true">
+                        <span class="nav-toggle-line"></span>
+                        <span class="nav-toggle-line"></span>
+                    </span>
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="ai-page">
+
+        <!-- Hero -->
+        <section class="ai-hero">
+            <div class="container">
+                <div class="ai-hero-eyebrow" data-ja="LIVING WITH AI" data-en="LIVING WITH AI">LIVING WITH AI</div>
+                <h1 class="ai-hero-title" data-ja="AIと共に、限界を毎日<br>押し広げている。" data-en="Pushing the limits with AI<br>every single day.">AIと共に、限界を毎日<br>押し広げている。</h1>
+                <p class="ai-hero-lead" data-ja="毎月20万円規模をAIに投資し、最新モデルを毎日業務に組み込む。「AIで何ができるか」を探求するのが、私の燃料です。" data-en="I invest ¥200,000+ monthly in AI tools and integrate the latest models into real work every day. Exploring 'what AI can newly do' is what fuels me.">毎月20万円規模をAIに投資し、最新モデルを毎日業務に組み込む。「AIで何ができるか」を探求するのが、私の燃料です。</p>
+
+                <div class="ai-hero-stats">
+                    <div class="ai-hero-stat">
+                        <span class="ai-stat-value">¥200K+</span>
+                        <span class="ai-stat-label" data-ja="月間 AI 投資" data-en="Monthly AI Spend">月間 AI 投資</span>
+                    </div>
+                    <div class="ai-hero-stat">
+                        <span class="ai-stat-value">2023〜</span>
+                        <span class="ai-stat-label" data-ja="GPT-4 から実務組込" data-en="Integrating since GPT-4">GPT-4 から実務組込</span>
+                    </div>
+                    <div class="ai-hero-stat">
+                        <span class="ai-stat-value">Daily</span>
+                        <span class="ai-stat-label" data-ja="新モデル検証" data-en="Trying new models">新モデル検証</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visual Overview Infographic -->
+        <section class="ai-overview">
+            <div class="container">
+                <div class="ai-section-header">
+                    <span class="ai-section-eyebrow" data-ja="VISUAL OVERVIEW" data-en="VISUAL OVERVIEW">VISUAL OVERVIEW</span>
+                    <h2 class="ai-section-title" data-ja="一目でわかるAI実装ポートフォリオ" data-en="The Whole Story at a Glance">一目でわかるAI実装ポートフォリオ</h2>
+                    <p class="ai-section-lead" data-ja="このページの内容を1枚に凝縮したサマリー。共有・ダウンロードしてご活用ください。" data-en="A single-page summary distilling everything on this page. Feel free to share or download.">このページの内容を1枚に凝縮したサマリー。共有・ダウンロードしてご活用ください。</p>
+                </div>
+
+                <figure class="ai-overview-figure">
+                    <a href="images/commons/Gemini_Generated_Image_rsz5wxrsz5wxrsz5.png" target="_blank" rel="noopener" class="ai-overview-link">
+                        <img src="images/commons/Gemini_Generated_Image_rsz5wxrsz5wxrsz5.png"
+                             alt="Denpota Furugaki — AI Implementation Portfolio Infographic"
+                             loading="lazy"
+                             class="ai-overview-image">
+                    </a>
+                    <figcaption class="ai-overview-caption">
+                        <a href="images/commons/Gemini_Generated_Image_rsz5wxrsz5wxrsz5.png" download class="ai-overview-download">
+                            <i class="fas fa-download"></i>
+                            <span data-ja="画像をダウンロード" data-en="Download Image">画像をダウンロード</span>
+                        </a>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- AI Stack -->
+        <section class="ai-stack-section">
+            <div class="container">
+                <div class="ai-section-header">
+                    <span class="ai-section-eyebrow" data-ja="MY AI STACK" data-en="MY AI STACK">MY AI STACK</span>
+                    <h2 class="ai-section-title" data-ja="毎日使っているAIの道具箱" data-en="The toolbox I use every day">毎日使っているAIの道具箱</h2>
+                </div>
+
+                <div class="ai-stack-grid">
+                    <!-- Conversational AIs -->
+                    <div class="ai-tool-card">
+                        <div class="ai-tool-icon"><i class="fas fa-brain"></i></div>
+                        <h3 class="ai-tool-name">Claude (Sonnet 4.6 / Opus 4.7)</h3>
+                        <p class="ai-tool-use" data-ja="開発・戦略立案・長文ドキュメント分析の主軸" data-en="Primary engine for dev, strategy, and long-doc analysis">開発・戦略立案・長文ドキュメント分析の主軸</p>
+                    </div>
+                    <div class="ai-tool-card">
+                        <div class="ai-tool-icon"><i class="fas fa-comments"></i></div>
+                        <h3 class="ai-tool-name">ChatGPT-4 / 5</h3>
+                        <p class="ai-tool-use" data-ja="ブレスト・コード生成・画像理解" data-en="Brainstorming, code generation, image understanding">ブレスト・コード生成・画像理解</p>
+                    </div>
+                    <div class="ai-tool-card">
+                        <div class="ai-tool-icon"><i class="fas fa-bolt"></i></div>
+                        <h3 class="ai-tool-name">Grok</h3>
+                        <p class="ai-tool-use" data-ja="リアルタイム情報・X連携の検証用" data-en="For real-time info checks & X integration">リアルタイム情報・X連携の検証用</p>
+                    </div>
+
+                    <!-- AI-First Coding -->
+                    <div class="ai-tool-card">
+                        <div class="ai-tool-icon"><i class="fas fa-terminal"></i></div>
+                        <h3 class="ai-tool-name">Claude Code</h3>
+                        <p class="ai-tool-use" data-ja="このサイトもこれで作った。CLI型コーディングエージェント" data-en="Built this very site. Agentic CLI coding workflow">このサイトもこれで作った。CLI型コーディングエージェント</p>
+                    </div>
+                    <div class="ai-tool-card">
+                        <div class="ai-tool-icon"><i class="fas fa-mouse-pointer"></i></div>
+                        <h3 class="ai-tool-name">Cursor</h3>
+                        <p class="ai-tool-use" data-ja="エディタ統合型のAIペアプログラミング" data-en="Editor-integrated AI pair programming">エディタ統合型のAIペアプログラミング</p>
+                    </div>
+                    <div class="ai-tool-card">
+                        <div class="ai-tool-icon"><i class="fas fa-water"></i></div>
+                        <h3 class="ai-tool-name">Windsurf</h3>
+                        <p class="ai-tool-use" data-ja="Codeium製のエージェント統合IDE。文脈把握が強い" data-en="Codeium's agentic IDE — strong context awareness">Codeium製のエージェント統合IDE。文脈把握が強い</p>
+                    </div>
+                    <div class="ai-tool-card">
+                        <div class="ai-tool-icon"><i class="fab fa-github"></i></div>
+                        <h3 class="ai-tool-name">GitHub Copilot</h3>
+                        <p class="ai-tool-use" data-ja="補完速度重視。日々の細かい実装作業で活用" data-en="Speed-first completion. Used for everyday small implementation tasks">補完速度重視。日々の細かい実装作業で活用</p>
+                    </div>
+                    <div class="ai-tool-card">
+                        <div class="ai-tool-icon"><i class="fas fa-code"></i></div>
+                        <h3 class="ai-tool-name">VS Code</h3>
+                        <p class="ai-tool-use" data-ja="AI拡張群を組み込んだベースエディタ" data-en="Base editor wired with multiple AI extensions">AI拡張群を組み込んだベースエディタ</p>
+                    </div>
+
+                    <!-- Agentic / Automation -->
+                    <div class="ai-tool-card">
+                        <div class="ai-tool-icon"><i class="fas fa-robot"></i></div>
+                        <h3 class="ai-tool-name">OpenClaw + Qwen</h3>
+                        <p class="ai-tool-use" data-ja="複数のバッチ処理を Qwen に並列委譲し、画面操作の時間を最小化" data-en="Delegate batch tasks to Qwen in parallel — minimize time spent on screen operations">複数のバッチ処理を Qwen に並列委譲し、画面操作の時間を最小化</p>
+                    </div>
+                    <div class="ai-tool-card">
+                        <div class="ai-tool-icon"><i class="fas fa-hand-sparkles"></i></div>
+                        <h3 class="ai-tool-name">Manus</h3>
+                        <p class="ai-tool-use" data-ja="自律型エージェント。長時間タスクを丸ごと委譲する用途で検証中" data-en="Autonomous agent — testing it for handing off long-running multi-step tasks end-to-end">自律型エージェント。長時間タスクを丸ごと委譲する用途で検証中</p>
+                    </div>
+
+                    <!-- Prototyping -->
+                    <div class="ai-tool-card">
+                        <div class="ai-tool-icon"><i class="fas fa-paint-brush"></i></div>
+                        <h3 class="ai-tool-name">v0 / Lovable</h3>
+                        <p class="ai-tool-use" data-ja="UIプロトタイピングを分単位で" data-en="UI prototyping in minutes">UIプロトタイピングを分単位で</p>
+                    </div>
+
+                    <!-- API -->
+                    <div class="ai-tool-card">
+                        <div class="ai-tool-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3 class="ai-tool-name">Anthropic / OpenAI API</h3>
+                        <p class="ai-tool-use" data-ja="プロダクト組込・自社ツールにAIを直結" data-en="Embedding AI directly into products & internal tools">プロダクト組込・自社ツールにAIを直結</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Case Study: Onitsuka Tiger -->
+        <section class="ai-case-featured">
+            <div class="container">
+                <div class="ai-section-header">
+                    <span class="ai-section-eyebrow" data-ja="CASE STUDY #1" data-en="CASE STUDY #1">CASE STUDY #1</span>
+                    <h2 class="ai-section-title" data-ja="Onitsuka Tiger × ChatGPT-4" data-en="Onitsuka Tiger × ChatGPT-4">Onitsuka Tiger × ChatGPT-4</h2>
+                    <p class="ai-section-lead" data-ja="GPT-4公開直後、社内に存在しなかったプラットフォームをAIと共に構築。17か国の広告運用を一人で回せる仕組みに変えた。" data-en="Just after GPT-4 launched, I built — with AI as my pair — the internal platform that didn't exist before, turning 17-country ad ops into something one person could orchestrate.">GPT-4公開直後、社内に存在しなかったプラットフォームをAIと共に構築。17か国の広告運用を一人で回せる仕組みに変えた。</p>
+                </div>
+
+                <!-- Before/Pivot/After Flow Infographic -->
+                <div class="ai-flow">
+
+                    <!-- Before -->
+                    <div class="ai-flow-stage ai-flow-before">
+                        <div class="ai-flow-stage-header">
+                            <span class="ai-flow-step">01</span>
+                            <h3 data-ja="Before — 当時の実態" data-en="Before — How it really was">Before — 当時の実態</h3>
+                        </div>
+                        <ul class="ai-flow-list">
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong data-ja="議事録なし、Eメールスレッドだけ" data-en="No meeting notes — just bloated email threads">議事録なし、Eメールスレッドだけ</strong>
+                                    <span data-ja="クライアントとのやりとりが流れて消える状態" data-en="Client conversations disappeared into the void">クライアントとのやりとりが流れて消える状態</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-language"></i>
+                                <div>
+                                    <strong data-ja="社内共有の言語がバラバラ" data-en="No common language for internal handoffs">社内共有の言語がバラバラ</strong>
+                                    <span data-ja="クライアントの状況を伝えるたび翻訳工数が発生" data-en="Every status update required re-translating context">クライアントの状況を伝えるたび翻訳工数が発生</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-user-times"></i>
+                                <div>
+                                    <strong data-ja="中間に立つPM不在" data-en="No project manager in the middle">中間に立つPM不在</strong>
+                                    <span data-ja="ハブ役がおらず、情報が点在" data-en="No hub — knowledge stayed siloed">ハブ役がおらず、情報が点在</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-times-circle"></i>
+                                <div>
+                                    <strong data-ja="共有プラットフォームなし" data-en="No shared platform">共有プラットフォームなし</strong>
+                                    <span data-ja="マーケットインサイトを社内に展開する手段がない" data-en="No way to surface market insights across the team">マーケットインサイトを社内に展開する手段がない</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Pivot -->
+                    <div class="ai-flow-stage ai-flow-pivot">
+                        <div class="ai-flow-stage-header">
+                            <span class="ai-flow-step">02</span>
+                            <h3 data-ja="The Pivot — 転機" data-en="The Pivot">The Pivot — 転機</h3>
+                        </div>
+                        <div class="ai-pivot-card">
+                            <div class="ai-pivot-icon"><i class="fas fa-bolt"></i></div>
+                            <p class="ai-pivot-text" data-ja="OpenAIが <strong>ChatGPT-4</strong> を公開、コード生成能力が実用域へ。<br>「マーケもエンジニアもできる」自分の強みと、<strong>AIの進化</strong>がちょうど交差した瞬間。" data-en="OpenAI released <strong>ChatGPT-4</strong>, and code generation crossed the usability line.<br>My hybrid 'marketer + engineer' background and <strong>AI's leap</strong> intersected at exactly the right time.">OpenAIが <strong>ChatGPT-4</strong> を公開、コード生成能力が実用域へ。<br>「マーケもエンジニアもできる」自分の強みと、<strong>AIの進化</strong>がちょうど交差した瞬間。</p>
+                        </div>
+                    </div>
+
+                    <!-- After -->
+                    <div class="ai-flow-stage ai-flow-after">
+                        <div class="ai-flow-stage-header">
+                            <span class="ai-flow-step">03</span>
+                            <h3 data-ja="After — AIと共に構築したもの" data-en="After — What I built with AI">After — AIと共に構築したもの</h3>
+                        </div>
+                        <div class="ai-build-grid">
+                            <div class="ai-build-item">
+                                <div class="ai-build-icon"><i class="fas fa-share-alt"></i></div>
+                                <h4 data-ja="社内共有プラットフォーム" data-en="Internal sharing platform">社内共有プラットフォーム</h4>
+                                <p data-ja="ChatGPT-4とペアを組んで実装。クライアント状況を全員が一元的に追える場所を新設。" data-en="Built pair-coding with ChatGPT-4. A single source of truth where the whole team could follow client context.">ChatGPT-4とペアを組んで実装。クライアント状況を全員が一元的に追える場所を新設。</p>
+                            </div>
+                            <div class="ai-build-item">
+                                <div class="ai-build-icon"><i class="fas fa-chart-line"></i></div>
+                                <h4 data-ja="マーケットインサイト・ダッシュボード" data-en="Market insight dashboard">マーケットインサイト・ダッシュボード</h4>
+                                <p data-ja="自分が見やすい形で17か国のデータを一画面に。気づきがすぐに次の打ち手に変換できるUIを設計。" data-en="17-country data on one screen, designed for fast pattern recognition. Insights flowed directly into next-week decisions.">自分が見やすい形で17か国のデータを一画面に。気づきがすぐに次の打ち手に変換できるUIを設計。</p>
+                            </div>
+                            <div class="ai-build-item">
+                                <div class="ai-build-icon"><i class="fas fa-file-pdf"></i></div>
+                                <h4 data-ja="ワンクリックPDF出力" data-en="One-click PDF export">ワンクリックPDF出力</h4>
+                                <p data-ja="以前は定例ごとにPowerPointを手作りしていた工数を、ボタン1つに圧縮。" data-en="What used to be hours of manual PowerPoint became a single click before each meeting.">以前は定例ごとにPowerPointを手作りしていた工数を、ボタン1つに圧縮。</p>
+                            </div>
+                            <div class="ai-build-item">
+                                <div class="ai-build-icon"><i class="fas fa-handshake"></i></div>
+                                <h4 data-ja="定例会の質的進化" data-en="Better client meetings">定例会の質的進化</h4>
+                                <p data-ja="ダッシュボードを開いてクライアントへ即共有。資料作成ではなく対話に時間を使えるように。" data-en="Open the dashboard, share live with the client. Time spent on conversation, not deck-making.">ダッシュボードを開いてクライアントへ即共有。資料作成ではなく対話に時間を使えるように。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Outcomes Stats -->
+                <div class="ai-outcomes">
+                    <div class="ai-outcome-card">
+                        <div class="ai-outcome-arrow ai-outcome-down"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ai-outcome-text">
+                            <strong data-ja="残業時間 大幅減" data-en="Overtime sharply reduced">残業時間 大幅減</strong>
+                            <span data-ja="少人数チームでも回るオペレーションに" data-en="A small team could finally keep up">少人数チームでも回るオペレーションに</span>
+                        </div>
+                    </div>
+                    <div class="ai-outcome-card">
+                        <div class="ai-outcome-arrow ai-outcome-up"><i class="fas fa-arrow-up"></i></div>
+                        <div class="ai-outcome-text">
+                            <strong data-ja="チーム理解度 向上" data-en="Team alignment deepened">チーム理解度 向上</strong>
+                            <span data-ja="共通言語と共通画面が出来た結果" data-en="Shared language + shared screen = shared brain">共通言語と共通画面が出来た結果</span>
+                        </div>
+                    </div>
+                    <div class="ai-outcome-card">
+                        <div class="ai-outcome-arrow ai-outcome-down"><i class="fas fa-arrow-down"></i></div>
+                        <div class="ai-outcome-text">
+                            <strong data-ja="委託先への教育コスト 削減" data-en="Outsourcing onboarding cost cut">委託先への教育コスト 削減</strong>
+                            <span data-ja="プラットフォーム自体が説明書になった" data-en="The platform itself became the manual">プラットフォーム自体が説明書になった</span>
+                        </div>
+                    </div>
+                    <div class="ai-outcome-card ai-outcome-headline">
+                        <div class="ai-outcome-arrow ai-outcome-up"><i class="fas fa-trophy"></i></div>
+                        <div class="ai-outcome-text">
+                            <strong data-ja="ROAS 120% を10か月連続維持" data-en="ROAS 120% sustained 10 months">ROAS 120% を10か月連続維持</strong>
+                            <span data-ja="仕組みが出来た結果、数字が安定して伸びた" data-en="Once the system existed, the numbers got predictable">仕組みが出来た結果、数字が安定して伸びた</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Case Studies (compact) -->
+        <section class="ai-cases-other">
+            <div class="container">
+                <div class="ai-section-header">
+                    <span class="ai-section-eyebrow" data-ja="MORE CASES" data-en="MORE CASES">MORE CASES</span>
+                    <h2 class="ai-section-title" data-ja="他のAI×実務 事例" data-en="More AI × work integrations">他のAI×実務 事例</h2>
+                </div>
+
+                <div class="ai-other-grid">
+                    <div class="ai-other-card">
+                        <span class="ai-other-tag" data-ja="No.1Solutions" data-en="No.1Solutions">No.1Solutions</span>
+                        <h3 data-ja="InsightHub × AI" data-en="InsightHub × AI">InsightHub × AI</h3>
+                        <p data-ja="KPIダッシュボードに意思決定支援AIを組み込み、判断速度を1.5倍に。タスク遅延を40%削減。" data-en="Embedded decision-support AI into a KPI dashboard, lifting decision speed by 1.5× and cutting task delays 40%.">KPIダッシュボードに意思決定支援AIを組み込み、判断速度を1.5倍に。タスク遅延を40%削減。</p>
+                    </div>
+                    <div class="ai-other-card">
+                        <span class="ai-other-tag" data-ja="進行中 / FLARETECH" data-en="In progress / FLARETECH">進行中 / FLARETECH</span>
+                        <h3 data-ja="採用ファネル × AI" data-en="Recruiting Funnel × AI">採用ファネル × AI</h3>
+                        <p data-ja="応募者のAIスコアリング、求人原稿のAB大量生成、スカウト文面の自動パーソナライズ、競合SES求人の自動モニタリング。" data-en="AI-driven applicant scoring, mass A/B-tested job copy, personalized scout messages, and automated competitor monitoring.">応募者のAIスコアリング、求人原稿のAB大量生成、スカウト文面の自動パーソナライズ、競合SES求人の自動モニタリング。</p>
+                    </div>
+                    <div class="ai-other-card">
+                        <span class="ai-other-tag" data-ja="このサイト" data-en="This site">このサイト</span>
+                        <h3 data-ja="Portfolio × Claude Code" data-en="Portfolio × Claude Code">Portfolio × Claude Code</h3>
+                        <p data-ja="このポートフォリオサイト自体、Claude Codeとの対話で構築・運用されています。新機能はほぼリアルタイムで実装。" data-en="This portfolio itself is built and maintained through dialog with Claude Code. New features ship nearly in real time.">このポートフォリオサイト自体、Claude Codeとの対話で構築・運用されています。新機能はほぼリアルタイムで実装。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operating Principle -->
+        <section class="ai-principle">
+            <div class="container">
+                <div class="ai-section-header">
+                    <span class="ai-section-eyebrow" data-ja="OPERATING PRINCIPLE" data-en="OPERATING PRINCIPLE">OPERATING PRINCIPLE</span>
+                    <h2 class="ai-section-title" data-ja="忙しくない状態を、常に保つ" data-en="Always keep myself unbusy">忙しくない状態を、常に保つ</h2>
+                    <p class="ai-section-lead" data-ja="めんどくさいことや単純作業はAIに委譲し、自分の手と脳は「AIが考えられないこと」のために空けておく。これが私の働き方の核です。" data-en="I delegate the tedious and the routine to AI so that my hands and mind stay free for what AI cannot think of. This is the core of how I work.">めんどくさいことや単純作業はAIに委譲し、自分の手と脳は「AIが考えられないこと」のために空けておく。これが私の働き方の核です。</p>
+                </div>
+
+                <!-- Workflow visualization -->
+                <div class="ai-workflow">
+                    <div class="ai-workflow-step ai-workflow-input">
+                        <div class="ai-workflow-icon"><i class="fas fa-list-check"></i></div>
+                        <h3 data-ja="めんどくさいこと・単純作業" data-en="Tedious & repetitive tasks">めんどくさいこと・単純作業</h3>
+                        <p data-ja="画面操作・繰り返し業務・調査作業" data-en="Screen ops, repetitive work, research grunt">画面操作・繰り返し業務・調査作業</p>
+                    </div>
+
+                    <div class="ai-workflow-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 60 24"><path d="M0 12 L52 12 M44 4 L56 12 L44 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+
+                    <div class="ai-workflow-step ai-workflow-delegate">
+                        <div class="ai-workflow-icon"><i class="fas fa-robot"></i></div>
+                        <h3 data-ja="OpenClaw + Qwen に委譲" data-en="Delegate to OpenClaw + Qwen">OpenClaw + Qwen に委譲</h3>
+                        <p data-ja="複数のバッチ処理を AI に並列で任せる" data-en="Multiple batch jobs run in parallel by AI">複数のバッチ処理を AI に並列で任せる</p>
+                    </div>
+
+                    <div class="ai-workflow-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 60 24"><path d="M0 12 L52 12 M44 4 L56 12 L44 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+
+                    <div class="ai-workflow-step ai-workflow-result">
+                        <div class="ai-workflow-icon"><i class="fas fa-feather"></i></div>
+                        <h3 data-ja="私の手と脳が空く" data-en="My hands & mind go free">私の手と脳が空く</h3>
+                        <p data-ja="AIが考えられないことを考える時間" data-en="Time to think what AI cannot think">AIが考えられないことを考える時間</p>
+                    </div>
+                </div>
+
+                <!-- Manifesto -->
+                <blockquote class="ai-manifesto">
+                    <p class="ai-manifesto-headline" data-ja="賢いのは、人間のおまけ。" data-en="Being smart is just a side feature of being human.">賢いのは、人間のおまけ。</p>
+                    <p class="ai-manifesto-body" data-ja="本質は「心の声」を伝えること。<br>その時間を確保するために、自分を忙しくさせない。<br>それが私の働き方の指針です。" data-en="The essence is conveying the voice of the heart.<br>To protect that time, I refuse to let myself get busy.<br>That is the principle behind how I work.">本質は「心の声」を伝えること。<br>その時間を確保するために、自分を忙しくさせない。<br>それが私の働き方の指針です。</p>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Philosophy -->
+        <section class="ai-philosophy">
+            <div class="container">
+                <div class="ai-section-header">
+                    <span class="ai-section-eyebrow" data-ja="PHILOSOPHY" data-en="PHILOSOPHY">PHILOSOPHY</span>
+                    <h2 class="ai-section-title" data-ja="AIと共生する" data-en="Coexisting with AI">AIと共生する</h2>
+                </div>
+
+                <div class="ai-philosophy-content">
+                    <p class="ai-philosophy-quote" data-ja="「共生・共栄・共義」— AIは人を置き換える道具ではなく、人を解放する道具。" data-en="'Coexistence, Coprosperity, Co-righteousness' — AI is not a tool to replace people. It is a tool to free them.">「共生・共栄・共義」— AIは人を置き換える道具ではなく、人を解放する道具。</p>
+                    <p class="ai-philosophy-body" data-ja="単純作業から人間を解放した先に、対話・創造・意思決定など「人にしかできない仕事」の時間が生まれる。私はその転換を、毎日の実装の中で起こし続けたい。" data-en="When humans are freed from rote work, what's left is dialogue, creation, and judgment — the work only humans can do. I want to keep triggering that transition, one implementation at a time.">単純作業から人間を解放した先に、対話・創造・意思決定など「人にしかできない仕事」の時間が生まれる。私はその転換を、毎日の実装の中で起こし続けたい。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Now -->
+        <section class="ai-now">
+            <div class="container">
+                <div class="ai-section-header">
+                    <span class="ai-section-eyebrow" data-ja="NOW" data-en="NOW">NOW</span>
+                    <h2 class="ai-section-title" data-ja="今、触っているAI" data-en="What I'm exploring right now">今、触っているAI</h2>
+                </div>
+
+                <ul class="ai-now-list">
+                    <li>
+                        <span class="ai-now-dot"></span>
+                        <span data-ja="<strong>Claude Opus 4.7 (1M context)</strong> — 数千行のコードを一度に読ませて設計判断" data-en="<strong>Claude Opus 4.7 (1M context)</strong> — feeding it thousands of lines at once for architectural decisions"><strong>Claude Opus 4.7 (1M context)</strong> — 数千行のコードを一度に読ませて設計判断</span>
+                    </li>
+                    <li>
+                        <span class="ai-now-dot"></span>
+                        <span data-ja="<strong>Claude Code + MCP</strong> — Gmail / Calendar / Figma を直接操作するワークフロー検証" data-en="<strong>Claude Code + MCP</strong> — testing workflows that directly drive Gmail / Calendar / Figma"><strong>Claude Code + MCP</strong> — Gmail / Calendar / Figma を直接操作するワークフロー検証</span>
+                    </li>
+                    <li>
+                        <span class="ai-now-dot"></span>
+                        <span data-ja="<strong>採用エージェント</strong> — 競合SES求人の自動収集・分析・差分レポート" data-en="<strong>Recruiting agent</strong> — auto-scraping competitor SES job postings, analyzing diffs, weekly reports"><strong>採用エージェント</strong> — 競合SES求人の自動収集・分析・差分レポート</span>
+                    </li>
+                    <li>
+                        <span class="ai-now-dot"></span>
+                        <span data-ja="<strong>音声 → signal 抽出</strong> — 面談録音から候補者の通過確率を予測" data-en="<strong>Voice → signal extraction</strong> — predicting candidate pass-through probability from interview recordings"><strong>音声 → signal 抽出</strong> — 面談録音から候補者の通過確率を予測</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="ai-cta">
+            <div class="container">
+                <h2 class="ai-cta-title" data-ja="AIで何ができるか、一緒に話しませんか？" data-en="Curious what AI can newly do for you?">AIで何ができるか、一緒に話しませんか？</h2>
+                <p class="ai-cta-lead" data-ja="採用・マーケティング・データ分析・社内オペレーションのAI実装、ご相談ください。" data-en="Open to conversations about AI implementation in recruiting, marketing, analytics, and internal ops.">採用・マーケティング・データ分析・社内オペレーションのAI実装、ご相談ください。</p>
+                <a href="index.html#contact" class="ai-cta-btn" data-ja="お問い合わせ" data-en="Get in touch">お問い合わせ</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Denpota Furugaki. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

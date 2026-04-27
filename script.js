@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navToggle.classList.toggle('active');
         });
 
-        const navLinks = document.querySelectorAll('.nav-link');
+        const navLinks = document.querySelectorAll('.nav-link, .dropdown-item');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
@@ -161,23 +161,140 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', onScroll, { passive: true });
     }
 
-    // Magnetic effect for hamburger button
-    const magneticEls = document.querySelectorAll('[data-magnetic]');
-    magneticEls.forEach(el => {
-        const strength = 0.25;
-        const inner = el.querySelector('.nav-toggle-inner') || el;
+    // Magnetic effect — follows cursor with falloff outside element
+    const applyMagnetic = (el, opts = {}) => {
+        const {
+            strength = 0.6,
+            innerStrength = 0.3,
+            detectRadius = 80,
+            innerSelector = null,
+        } = opts;
+        const inner = innerSelector ? el.querySelector(innerSelector) : null;
+
+        el.addEventListener('mouseenter', () => {
+            el.dataset.magActive = '1';
+        });
 
         el.addEventListener('mousemove', (e) => {
             const rect = el.getBoundingClientRect();
-            const x = e.clientX - (rect.left + rect.width / 2);
-            const y = e.clientY - (rect.top + rect.height / 2);
-            el.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
-            inner.style.transform = `translate(${x * strength * 0.5}px, ${y * strength * 0.5}px)`;
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const dx = e.clientX - cx;
+            const dy = e.clientY - cy;
+            el.style.transform = `translate(${dx * strength}px, ${dy * strength}px)`;
+            if (inner) {
+                inner.style.transform = `translate(${dx * innerStrength}px, ${dy * innerStrength}px)`;
+            }
         });
 
         el.addEventListener('mouseleave', () => {
+            delete el.dataset.magActive;
             el.style.transform = '';
-            inner.style.transform = '';
+            if (inner) inner.style.transform = '';
+        });
+    };
+
+    document.querySelectorAll('[data-magnetic]').forEach(el => {
+        applyMagnetic(el, {
+            strength: 0.7,
+            innerStrength: 0.4,
+            innerSelector: '.nav-toggle-inner',
+        });
+    });
+
+    // Lighter magnetic effect on nav links (desktop only)
+    if (window.matchMedia('(min-width: 1025px)').matches) {
+        document.querySelectorAll('.nav-menu > .nav-link, .nav-dropdown > .nav-link').forEach(link => {
+            applyMagnetic(link, {
+                strength: 0.4,
+                innerStrength: 0.2,
+                innerSelector: '.nav-link-inner',
+            });
+        });
+    }
+
+    // Hash-based tab activation: #section=tab-id
+    const scrollToSectionWithOffset = (target) => {
+        if (!target) return;
+        const navbar = document.querySelector('.navbar');
+        const navHeight = navbar ? navbar.offsetHeight : 84;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
+    };
+
+    const activateTabFromHash = () => {
+        const raw = window.location.hash.slice(1);
+        if (!raw.includes('=')) return;
+        const [section, tabKey] = raw.split('=');
+        if (!section || !tabKey) return;
+
+        // Activate the tab first so layout updates
+        try {
+            if (section === 'software-development' && typeof showWorksTab === 'function') {
+                showWorksTab(tabKey);
+            } else if (section === 'marketing' && typeof showCaseStudyTab === 'function') {
+                showCaseStudyTab(tabKey);
+            } else if (section === 'art' && typeof showArtTab === 'function') {
+                showArtTab(tabKey);
+            }
+        } catch (err) {
+            console.error('Tab activation failed:', err);
+        }
+
+        // Scroll after a brief delay so the layout settles
+        const target = document.getElementById(section);
+        setTimeout(() => scrollToSectionWithOffset(target), 180);
+    };
+
+    window.addEventListener('hashchange', activateTabFromHash);
+    if (window.location.hash.includes('=')) {
+        // On initial page load, wait a bit longer for fonts/images
+        setTimeout(activateTabFromHash, 250);
+    }
+
+    // Direct click handler on dropdown items so it works regardless of browser nav quirks
+    const isOnIndexPage = location.pathname.endsWith('index.html') ||
+                         location.pathname === '/' ||
+                         location.pathname.endsWith('/');
+
+    document.querySelectorAll('.dropdown-item[href*="="]').forEach(link => {
+        link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href') || '';
+            if (!href.includes('#') || !href.includes('=')) return;
+            const hashPart = href.slice(href.indexOf('#'));
+            const pathPart = href.split('#')[0];
+            const targetIsIndex = !pathPart || pathPart === 'index.html';
+
+            if (targetIsIndex && isOnIndexPage) {
+                e.preventDefault();
+                if (location.hash === hashPart) {
+                    // Same hash — manually activate
+                    activateTabFromHash();
+                } else {
+                    // Different hash — set it (triggers hashchange handler)
+                    location.hash = hashPart;
+                }
+            }
+            // else: let the browser navigate to index.html with the hash (other page)
+        });
+    });
+
+    // Plain anchor links (e.g., #contact, #software-development without tab) — also offset for navbar
+    document.querySelectorAll('a[href^="#"], a[href*="index.html#"]').forEach(link => {
+        link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (!href) return;
+            // Only handle same-page anchor links here
+            const hashPart = href.includes('#') ? href.slice(href.indexOf('#') + 1) : '';
+            if (!hashPart || hashPart.includes('=')) return; // tabs handled separately
+            const onSamePage = href.startsWith('#') ||
+                               (href.startsWith('index.html#') && (location.pathname.endsWith('index.html') || location.pathname === '/' || location.pathname.endsWith('/')));
+            if (!onSamePage) return;
+            const target = document.getElementById(hashPart);
+            if (!target) return;
+            e.preventDefault();
+            scrollToSectionWithOffset(target);
+            history.replaceState(null, '', '#' + hashPart);
         });
     });
 });
