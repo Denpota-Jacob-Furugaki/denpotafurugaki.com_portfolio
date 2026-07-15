@@ -5478,6 +5478,164 @@ section {
     font-weight: 400;
 }
 
+/* ===== Flagship Case Study (Onitsuka Tiger) ===== */
+/* Full-width hero that elevates the signature project above the tab grid. */
+.flagship-case {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 0;
+    margin: 0 0 2.5rem;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #16324f 0%, #1f4b7a 100%);
+    border: 1px solid rgba(66, 153, 225, 0.35);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+    cursor: pointer;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.flagship-case:hover {
+    transform: translateY(-4px);
+    border-color: rgba(66, 153, 225, 0.75);
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.38);
+}
+
+.flagship-media {
+    position: relative;
+    min-height: 340px;
+    overflow: hidden;
+}
+
+.flagship-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.flagship-case:hover .flagship-media img {
+    transform: scale(1.04);
+}
+
+.flagship-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #4299e1;
+    border-radius: 999px;
+    padding: 0.32rem 0.85rem;
+    box-shadow: 0 4px 14px rgba(66, 153, 225, 0.5);
+}
+
+.flagship-body {
+    padding: 2rem 2.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.flagship-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7fb9ec;
+    margin-bottom: 0.55rem;
+}
+
+.flagship-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 0.6rem;
+    line-height: 1.15;
+}
+
+.flagship-lede {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: #d6e4f2;
+    margin: 0 0 1.4rem;
+    font-weight: 500;
+}
+
+.flagship-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    margin-bottom: 1.2rem;
+}
+
+.flagship-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+}
+
+.flagship-metric-value {
+    font-size: 1.28rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.flagship-metric-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #9dc4e6;
+    line-height: 1.3;
+}
+
+.flagship-cta {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #7fb9ec;
+    transition: color 0.3s ease, transform 0.3s ease;
+    align-self: flex-start;
+}
+
+.flagship-case:hover .flagship-cta {
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+    .flagship-case {
+        grid-template-columns: 1fr;
+    }
+
+    .flagship-media {
+        min-height: 220px;
+    }
+
+    .flagship-body {
+        padding: 1.5rem 1.35rem;
+    }
+
+    .flagship-title {
+        font-size: 1.6rem;
+    }
+
+    .flagship-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+    }
+}
+
 /* ===== Structured Case-Study Section Labels (marketing detail) ===== */
 /* Shared across all marketing case-study modals so a hiring manager can
    quickly scan Role / Strategy / Platforms / Team for each project. */

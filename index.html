@@ -319,6 +319,38 @@
                 <p class="section-subtitle japanese-subtitle" data-ja="主な実績" data-en="Achievements">主な実績</p>
             </div>
                 
+                <!-- Flagship Case Study: Onitsuka Tiger -->
+                <div class="flagship-case" onclick="openModal('caseStudyModal9')">
+                    <div class="flagship-media">
+                        <img loading="lazy" src="images/brands/onitsuka/IMG_8237.JPG" alt="Onitsuka Tiger">
+                        <span class="flagship-badge" data-ja="代表実績" data-en="Flagship Project">代表実績</span>
+                    </div>
+                    <div class="flagship-body">
+                        <span class="flagship-eyebrow" data-ja="最大規模のプロジェクト｜グローバルマーケティング統括" data-en="Largest Project I've Led | Global Marketing">最大規模のプロジェクト｜グローバルマーケティング統括</span>
+                        <h3 class="flagship-title">Onitsuka Tiger</h3>
+                        <p class="flagship-lede" data-ja="17カ国の統合広告を統括し、月1億円の予算をROAS120%で運用。対象国の選定からブランドの再定義まで、戦略の設計と実行を一貫して主導しました。" data-en="I directed integrated advertising across 17 countries on a ¥100M/month budget at 120% ROAS — owning everything from selecting the markets themselves to redefining what the brand stood for.">17カ国の統合広告を統括し、月1億円の予算をROAS120%で運用。対象国の選定からブランドの再定義まで、戦略の設計と実行を一貫して主導しました。</p>
+                        <div class="flagship-metrics">
+                            <div class="flagship-metric">
+                                <span class="flagship-metric-value">17</span>
+                                <span class="flagship-metric-label" data-ja="担当国" data-en="Countries">担当国</span>
+                            </div>
+                            <div class="flagship-metric">
+                                <span class="flagship-metric-value">¥100M</span>
+                                <span class="flagship-metric-label" data-ja="月間予算" data-en="Monthly Budget">月間予算</span>
+                            </div>
+                            <div class="flagship-metric">
+                                <span class="flagship-metric-value">120%</span>
+                                <span class="flagship-metric-label" data-ja="ROAS・10ヶ月連続" data-en="ROAS · 10 Months">ROAS・10ヶ月連続</span>
+                            </div>
+                            <div class="flagship-metric">
+                                <span class="flagship-metric-value">+58.3%</span>
+                                <span class="flagship-metric-label" data-ja="ブランド売上・2024年度" data-en="Brand Sales · FY2024">ブランド売上・2024年度</span>
+                            </div>
+                        </div>
+                        <span class="flagship-cta" data-ja="ケーススタディを見る →" data-en="View the full case study →">ケーススタディを見る →</span>
+                    </div>
+                </div>
+
                 <!-- Case Studies Tab Navigation -->
                 <div class="case-studies-tab-navigation">
                     <button class="case-study-tab-btn active" onclick="showCaseStudyTab('all')">
@@ -339,25 +371,6 @@
                 <div class="case-study-tab-content active" id="all-tab">
                     <div class="case-studies-grid">
 
-                        <!-- Fishing Superstore -->
-                        <div class="case-study-item fishing-case" onclick="openModal('caseStudyModal5')">
-                            <div class="case-study-image">
-                                <img loading="lazy" src="images/brands/fishstore/fishingsuperstore.webp" alt="Fishing Superstore">
-                                <div class="case-study-category">SEO</div>
-                            </div>
-                            <div class="case-study-title">Fishing Superstore</div>
-                        </div>
-                        
-                        
-                        <!-- Koala Living -->
-                        <div class="case-study-item koala-case" onclick="openModal('caseStudyModal4')">
-                            <div class="case-study-image">
-                                <img loading="lazy" src="images/brands/koalaliving/koalaliving.jpeg" alt="Koala Living">
-                                <div class="case-study-category">Omnichannel Marketing</div>
-                            </div>
-                            <div class="case-study-title">Koala Living</div>
-                        </div>
-                        
                         <!-- Simply for Strings -->
                         <div class="case-study-item simply-case" onclick="openModal('caseStudyModal6')">
                             <div class="case-study-image">
@@ -365,15 +378,6 @@
                                 <div class="case-study-category">Email Marketing</div>
                             </div>
                             <div class="case-study-title">Simply for Strings</div>
-                        </div>
-
-                        <!-- Meta -->
-                        <div class="case-study-item meta-case" onclick="openModal('caseStudyModal7')">
-                            <div class="case-study-image">
-                                <img loading="lazy" src="images/brands/meta/meta_optimized.jpg" alt="Meta">
-                                <div class="case-study-category">Performance Marketing</div>
-                            </div>
-                            <div class="case-study-title">Meta</div>
                         </div>
 
                         <!-- CrowdStrike Japan -->
@@ -385,6 +389,15 @@
                             <div class="case-study-title">CrowdStrike Japan</div>
                         </div>
 
+                        <!-- Meta -->
+                        <div class="case-study-item meta-case" onclick="openModal('caseStudyModal7')">
+                            <div class="case-study-image">
+                                <img loading="lazy" src="images/brands/meta/meta_optimized.jpg" alt="Meta">
+                                <div class="case-study-category">Performance Marketing</div>
+                            </div>
+                            <div class="case-study-title">Meta</div>
+                        </div>
+
                         <!-- Workday -->
                         <div class="case-study-item workday-case" onclick="openModal('caseStudyModal10')">
                             <div class="case-study-image">
@@ -394,13 +407,13 @@
                             <div class="case-study-title">Workday</div>
                         </div>
 
-                        <!-- Onitsuka Tiger -->
-                        <div class="case-study-item onitsuka-case" onclick="openModal('caseStudyModal9')">
+                        <!-- Fishing Superstore -->
+                        <div class="case-study-item fishing-case" onclick="openModal('caseStudyModal5')">
                             <div class="case-study-image">
-                                <img loading="lazy" src="images/brands/onitsuka/onitsuka.png" alt="Onitsuka Tiger">
-                                <div class="case-study-category">Global Marketing</div>
+                                <img loading="lazy" src="images/brands/fishstore/fishingsuperstore.webp" alt="Fishing Superstore">
+                                <div class="case-study-category">SEO</div>
                             </div>
-                            <div class="case-study-title">Onitsuka Tiger</div>
+                            <div class="case-study-title">Fishing Superstore</div>
                         </div>
                             </div>
                         </div>
@@ -472,15 +485,6 @@
                             <div class="case-study-title">Fishing Superstore</div>
                         </div>
                         
-                        <!-- Koala Living -->
-                        <div class="case-study-item koala-case" onclick="openModal('caseStudyModal4')">
-                            <div class="case-study-image">
-                                <img loading="lazy" src="images/brands/koalaliving/koalaliving.jpeg" alt="Koala Living">
-                                <div class="case-study-category">Omnichannel Marketing</div>
-                            </div>
-                            <div class="case-study-title">Koala Living</div>
-                        </div>
-
                     </div>
                 </div>
         </div>
@@ -1162,43 +1166,6 @@
                     </div>
                 </div>
                 
-    <div id="caseStudyModal4" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('caseStudyModal4')">&times;</span>
-            <h2 data-ja="Koala Living" data-en="Koala Living">Koala Living</h2>
-            <p class="project-subtitle" data-ja="SEO・SEM・SNS統合による広告成果最大化" data-en="Maximizing Ad Performance through Integrated SEO, SEM, and Social Strategy">SEO・SEM・SNS統合による広告成果最大化</p>
-            <div class="modal-body">
-                <div class="modal-body-left">
-                    <div class="koala-image-container">
-                        <img loading="lazy" src="images/brands/koalaliving/koalaliving.jpeg" alt="Koala Living Logo">
-                    </div>
-                    <a href="https://liondigital.com.au/case-studies/koala-living/" class="full-article-link" target="_blank">
-                        <i class="fas fa-arrow-right"></i>
-                        <span data-ja="記事をフルで見る" data-en="Read Full Article">記事をフルで見る</span>
-                    </a>
-                </div>
-                <div class="modal-body-right">
-                    <div class="project-description koala-case-content">
-                        <p data-ja="高品質なラグジュアリー家具を提供する Koala Living は、2店舗の新規出店後、在庫過多と店舗・オンライン来店数の減少という課題に直面していました。適切なリードを獲得し、売上の安定化を図るため、私たちはデータドリブンな広告戦略とUX改善を組み合わせたフルファネル施策を実行しました。" data-en="Koala Living, which provides high-quality luxury furniture, faced challenges of inventory overstock and declining foot traffic at both stores and online after opening two new locations. To acquire qualified leads and stabilize sales, we executed a full-funnel strategy combining data-driven advertising with UX improvements.">高品質なラグジュアリー家具を提供する Koala Living は、2店舗の新規出店後、在庫過多と店舗・オンライン来店数の減少という課題に直面していました。適切なリードを獲得し、売上の安定化を図るため、私たちはデータドリブンな広告戦略とUX改善を組み合わせたフルファネル施策を実行しました。</p>
-                        
-                        <h4 class="case-section-label" data-ja="アプローチ・戦略" data-en="Approach &amp; Strategy">アプローチ・戦略</h4>
-                        <p data-ja="まず、既存の「ストアオファー」ページを分析し、コンバージョン導線の欠如を特定。モバイル最適化されたランディングページを新たに構築し、ブランドの世界観と購入体験を直感的に伝えるデザインへと刷新しました。続いて、高精度のPPC広告で購買意欲の高い層を獲得し、さらにFacebookリターゲティングでは動画とバナー広告を活用してブランド認知を強化。オンラインとオフラインを横断したオムニチャネル・ファネルを形成しました。" data-en="First, we analyzed the existing 'Store Offer' page and identified gaps in the conversion funnel. We built a new mobile-optimized landing page, refreshing it with a design that intuitively communicates the brand's world and purchase experience. Next, we acquired high-purchase-intent audiences through high-precision PPC advertising, and strengthened brand awareness using video and banner ads in Facebook retargeting. This formed an omnichannel funnel spanning online and offline.">まず、既存の「ストアオファー」ページを分析し、コンバージョン導線の欠如を特定。モバイル最適化されたランディングページを新たに構築し、ブランドの世界観と購入体験を直感的に伝えるデザインへと刷新しました。続いて、高精度のPPC広告で購買意欲の高い層を獲得し、さらにFacebookリターゲティングでは動画とバナー広告を活用してブランド認知を強化。オンラインとオフラインを横断したオムニチャネル・ファネルを形成しました。</p>
-                        
-                        <h4 class="case-section-label" data-ja="使用プラットフォーム・ツール" data-en="Platforms &amp; Tools">使用プラットフォーム・ツール</h4>
-                        <ul class="case-tools">
-                            <li>Google Ads (PPC)</li>
-                            <li>Facebook Ads</li>
-                            <li>Landing Page / UX</li>
-                            <li>SEO</li>
-                        </ul>
-
-                        <p class="highlight-results" data-ja="結果、<strong>コンバージョン率49%達成</strong>、<strong>Facebookで21,000人リーチ</strong>、<strong>Google平均掲載順位210％改善</strong>と、短期間で顕著な成果を実現。停滞していた売上基盤を再構築し、Koala Livingのブランド価値を再び市場に浸透させました。" data-en="As a result, we achieved remarkable results in a short period: <strong>49% conversion rate</strong>, <strong>21,000 people reached on Facebook</strong>, and <strong>210% improvement in Google average ranking position</strong>. We rebuilt the stagnant sales foundation and once again permeated Koala Living's brand value into the market.">結果、<strong>コンバージョン率49%達成</strong>、<strong>Facebookで21,000人リーチ</strong>、<strong>Google平均掲載順位210％改善</strong>と、短期間で顕著な成果を実現。停滞していた売上基盤を再構築し、Koala Livingのブランド価値を再び市場に浸透させました。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Case Study Modal 5: Fishing Superstore -->
     <div id="caseStudyModal5" class="modal">
         <div class="modal-content">
@@ -1280,10 +1247,12 @@
                         <p data-ja="オーストラリアの弦楽器ブランド Simply for Strings のCRM戦略リデザインプロジェクト。Klaviyoを活用し、データドリブンなマーケティングオートメーションをゼロから設計・構築しました。" data-en="A CRM strategy redesign for Simply for Strings, an Australian string-instrument brand — designing and building data-driven marketing automation from the ground up with Klaviyo.">オーストラリアの弦楽器ブランド Simply for Strings のCRM戦略リデザインプロジェクト。Klaviyoを活用し、データドリブンなマーケティングオートメーションをゼロから設計・構築しました。</p>
 
                         <h4 class="case-section-label" data-ja="担当役割" data-en="My Role">担当役割</h4>
-                        <p data-ja="CRM戦略のリデザインに携わり、Klaviyoによるマーケティングオートメーション構築を担当。ブランドのトーン＆マナーに基づくクリエイティブ最適化と、ファネル全体のパーソナライゼーション設計を主導しました。" data-en="I was involved in the CRM strategy redesign and responsible for building the Klaviyo marketing automation — leading creative optimization grounded in the brand's tone and manner, plus personalization design across the entire funnel.">CRM戦略のリデザインに携わり、Klaviyoによるマーケティングオートメーション構築を担当。ブランドのトーン＆マナーに基づくクリエイティブ最適化と、ファネル全体のパーソナライゼーション設計を主導しました。</p>
+                        <p data-ja="マーケティング部門の<strong>プロジェクトマネージャー</strong>として、<strong>リードジェネレーションの改善</strong>を担当。CRM戦略のリデザインとKlaviyoによるマーケティングオートメーション構築を主導し、ブランドのトーン＆マナーに基づくクリエイティブ最適化と、ファネル全体のパーソナライゼーション設計を担いました。" data-en="As <strong>Project Manager</strong> in the marketing department, I owned <strong>improving lead generation</strong>. I led the CRM strategy redesign and the Klaviyo marketing-automation build, along with creative optimization grounded in the brand's tone and manner and personalization design across the entire funnel.">マーケティング部門の<strong>プロジェクトマネージャー</strong>として、<strong>リードジェネレーションの改善</strong>を担当。CRM戦略のリデザインとKlaviyoによるマーケティングオートメーション構築を主導し、ブランドのトーン＆マナーに基づくクリエイティブ最適化と、ファネル全体のパーソナライゼーション設計を担いました。</p>
 
                         <h4 class="case-section-label" data-ja="アプローチ・戦略" data-en="Approach &amp; Strategy">アプローチ・戦略</h4>
-                        <p data-ja="データキャプチャ設計、セグメンテーション、メール／SMSフローの自動化を通じて、顧客一人ひとりに最適化された体験を構築。エモーショナルなブランド体験とデータ活用を両立させ、顧客のライフサイクル価値（LTV）の最大化を狙いました。" data-en="Through data-capture design, segmentation, and automated email/SMS flows, I built experiences optimized for each customer — balancing an emotional brand experience with data to maximize customer lifetime value (LTV).">データキャプチャ設計、セグメンテーション、メール／SMSフローの自動化を通じて、顧客一人ひとりに最適化された体験を構築。エモーショナルなブランド体験とデータ活用を両立させ、顧客のライフサイクル価値（LTV）の最大化を狙いました。</p>
+                        <p data-ja="Eメールマーケティングを起点に、複数の新しい打ち手を設計。中でも、楽器そのものを売り込むのではなく<strong>オンラインのライブレッスン</strong>を企画し、&quot;弦楽器メーカーの新しい魅せ方&quot;としてオーストラリア全土で大きな注目を獲得しました。Webサイト開発キャンペーンと組み合わせることで、集めた関心をサイトへのリードへと転換。「楽器を売る」から「演奏する体験を届ける」へと訴求を転換した、0→1の発想です。" data-en="Starting from email marketing, I designed several new plays. The standout: rather than pushing the instruments themselves, I ran <strong>online live lessons</strong> — a genuinely new way to present a string-instrument maker — which captured significant attention right across Australia. Paired with a website development campaign, that attention converted into leads on the site. It was a 0→1 shift in the pitch: from &quot;selling instruments&quot; to &quot;delivering the experience of playing.&quot;">Eメールマーケティングを起点に、複数の新しい打ち手を設計。中でも、楽器そのものを売り込むのではなく<strong>オンラインのライブレッスン</strong>を企画し、"弦楽器メーカーの新しい魅せ方"としてオーストラリア全土で大きな注目を獲得しました。Webサイト開発キャンペーンと組み合わせることで、集めた関心をサイトへのリードへと転換。「楽器を売る」から「演奏する体験を届ける」へと訴求を転換した、0→1の発想です。</p>
+
+                        <p data-ja="その上で、データキャプチャ設計、セグメンテーション、メール／SMSフローの自動化を通じて、顧客一人ひとりに最適化された体験を構築。エモーショナルなブランド体験とデータ活用を両立させ、顧客のライフサイクル価値（LTV）の最大化を狙いました。" data-en="On top of that, through data-capture design, segmentation, and automated email/SMS flows, I built experiences optimized for each individual customer — balancing an emotional brand experience with data to maximize customer lifetime value (LTV).">その上で、データキャプチャ設計、セグメンテーション、メール／SMSフローの自動化を通じて、顧客一人ひとりに最適化された体験を構築。エモーショナルなブランド体験とデータ活用を両立させ、顧客のライフサイクル価値（LTV）の最大化を狙いました。</p>
 
                         <h4 class="case-section-label" data-ja="使用プラットフォーム・ツール" data-en="Platforms &amp; Tools">使用プラットフォーム・ツール</h4>
                         <ul class="case-tools">
@@ -1291,6 +1260,8 @@
                             <li>Email Marketing</li>
                             <li>SMS</li>
                             <li>Segmentation</li>
+                            <li>Live Lessons</li>
+                            <li>Website Campaign</li>
                         </ul>
                         
                         <p class="highlight-results" data-ja="成果として、2023年11月の月間売上が<strong>前月比＋90％</strong>、自社チャネル収益が<strong>＋228％増</strong>を達成。さらに、新ウェルカムフローの収益は<strong>従来比10倍</strong>に成長し、開封率・クリック率・CVRすべての主要KPIで前年同期比の改善を実現しました。" data-en="As a result, we achieved <strong>90% month-over-month growth in November 2023 sales</strong> and <strong>228% increase in owned channel revenue</strong>. Furthermore, the new welcome flow revenue grew to <strong>10 times the previous level</strong>, achieving improvements in all key KPIs including open rate, click rate, and CVR compared to the same period last year.">成果として、2023年11月の月間売上が<strong>前月比＋90％</strong>、自社チャネル収益が<strong>＋228％増</strong>を達成。さらに、新ウェルカムフローの収益は<strong>従来比10倍</strong>に成長し、開封率・クリック率・CVRすべての主要KPIで前年同期比の改善を実現しました。</p>
@@ -1430,13 +1401,17 @@
                         <h4 class="case-section-label" data-ja="戦略・思考プロセス" data-en="Strategy &amp; Thinking">戦略・思考プロセス</h4>
                         <p data-ja="世界各国のSNS利用データを分析し、&quot;売れ筋&quot;と&quot;目指すブランドの方向性&quot;のバランスを自ら設計。定番のMEXICO 66に頼ればROASはさらに上げられましたが、あえて奇抜な新ブランディングを優先しながらROAS120％を10ヶ月連続で維持しました（＝0→1の差別化）。&quot;スポーツシューズ&quot;の枠を超えた新しいスポーツファッションのトレンド創出を狙い、訪日客に日本限定モデルを訴求して帰国後の継続購買につなげるインバウンド戦略も設計しました。" data-en="I analyzed global social-media usage data and personally balanced &quot;what sells&quot; against the brand direction I wanted to build. Leaning on the safe best-seller (MEXICO 66) could have pushed ROAS even higher, but I deliberately prioritized a bold new branding while still holding 120% ROAS for 10 straight months — a 0→1 differentiation play. Aiming to break Onitsuka out of the &quot;sports shoe&quot; category into a new sports-fashion trend, I also built an inbound strategy targeting visitors to Japan with Japan-exclusive models and converting them into repeat overseas buyers.">世界各国のSNS利用データを分析し、"売れ筋"と"目指すブランドの方向性"のバランスを自ら設計。定番のMEXICO 66に頼ればROASはさらに上げられましたが、あえて奇抜な新ブランディングを優先しながらROAS120％を10ヶ月連続で維持しました（＝0→1の差別化）。"スポーツシューズ"の枠を超えた新しいスポーツファッションのトレンド創出を狙い、訪日客に日本限定モデルを訴求して帰国後の継続購買につなげるインバウンド戦略も設計しました。</p>
 
+                        <h4 class="case-section-label" data-ja="市場選定・ICP設計" data-en="Market Selection &amp; ICP">市場選定・ICP設計</h4>
+                        <p data-ja="対象国の選定も自分の担当でした。①一人当たりGDPが一定以上 ②人口規模が一定以上 ③ファッションに手が届く新興国、という基準を自ら設計。さらに「Facebookを&quot;使っている&quot;だけでなく&quot;実際にそこで購入している&quot;人がどれだけいるか」というソーシャルコマースの実データで絞り込み、ブラジル・UAE・カタール・アルゼンチン・南アフリカ・欧州数カ国など<strong>17カ国</strong>に厳選しました。運用とレポートの複雑さを見据え、<strong>あえて17カ国以上には広げない</strong>というスコープ判断も自分で下しています（日本国内は対象外。ミッションは「海外で売る」ことでした）。" data-en="Country selection was mine to own. I designed the criteria myself: (1) GDP per capita above a threshold, (2) population above a threshold, and (3) newly industrializing markets where fashion was within reach. I narrowed further using real social-commerce data — not just who uses Facebook, but who actually buys through it — landing on <strong>17 countries</strong> including Brazil, the UAE, Qatar, Argentina, South Africa, and several European markets. I also <strong>deliberately capped the scope there</strong>: any wider and the operational and reporting complexity would have outrun what one PM could hold. (Japan was out of scope — the mission was explicitly to sell overseas.)">対象国の選定も自分の担当でした。①一人当たりGDPが一定以上 ②人口規模が一定以上 ③ファッションに手が届く新興国、という基準を自ら設計。さらに「Facebookを"使っている"だけでなく"実際にそこで購入している"人がどれだけいるか」というソーシャルコマースの実データで絞り込み、ブラジル・UAE・カタール・アルゼンチン・南アフリカ・欧州数カ国など<strong>17カ国</strong>に厳選しました。運用とレポートの複雑さを見据え、<strong>あえて17カ国以上には広げない</strong>というスコープ判断も自分で下しています（日本国内は対象外。ミッションは「海外で売る」ことでした）。</p>
+
+                        <p data-ja="ICPは「ファッションに関心を持てる段階にあり、英語で広告を理解でき、ECで購入できる可処分所得を持つ、新興国の教育層」とシンプルに定義。ハイエンド志向かつユニセックス需要を狙いました。<strong>Metaでキャリアを始めた経験から広告配信アルゴリズムを内側から理解しており</strong>、機械学習が最も働く形にチューニングできたことも、ROAS維持を支えています。" data-en="I defined the ICP simply: educated consumers in newly industrializing markets who were at a stage to care about fashion, could understand English-language ads, and had the disposable income to buy via e-commerce — skewing high-end and unisex. <strong>Having started my career at Meta, I understood the ad-delivery algorithms from the inside</strong> and could tune campaigns so machine learning did the heavy lifting, which underpinned the sustained ROAS.">ICPは「ファッションに関心を持てる段階にあり、英語で広告を理解でき、ECで購入できる可処分所得を持つ、新興国の教育層」とシンプルに定義。ハイエンド志向かつユニセックス需要を狙いました。<strong>Metaでキャリアを始めた経験から広告配信アルゴリズムを内側から理解しており</strong>、機械学習が最も働く形にチューニングできたことも、ROAS維持を支えています。</p>
+
                         <h4 class="case-section-label" data-ja="使用プラットフォーム・ツール" data-en="Platforms &amp; Tools">使用プラットフォーム・ツール</h4>
                         <ul class="case-tools">
                             <li>Google Ads</li>
                             <li>Meta Ads</li>
                             <li>Google Analytics</li>
                             <li>Google Tag Manager</li>
-                            <li>Klaviyo</li>
                             <li>GPT-4</li>
                             <li>Self-Built Ops Tool</li>
                         </ul>
