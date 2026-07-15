@@ -5478,6 +5478,57 @@ section {
     font-weight: 400;
 }
 
+/* ===== Structured Case-Study Section Labels (marketing detail) ===== */
+/* Shared across all marketing case-study modals so a hiring manager can
+   quickly scan Role / Strategy / Platforms / Team for each project. */
+.case-section-label {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #4299e1;
+    margin: 1.25rem 0 0.4rem;
+}
+
+.case-section-label::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 2px;
+    background: #4299e1;
+    flex: 0 0 auto;
+}
+
+/* First label sits closer to the intro paragraph above it */
+.project-description .case-section-label:first-of-type {
+    margin-top: 1rem;
+}
+
+/* Platform / tool chips rendered inside a case-detail paragraph */
+.case-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.2rem 0 0.4rem;
+    padding: 0;
+    list-style: none;
+}
+
+.case-tools li {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #cbd5e0;
+    background: rgba(66, 153, 225, 0.12);
+    border: 1px solid rgba(66, 153, 225, 0.35);
+    border-radius: 999px;
+    padding: 0.18rem 0.6rem;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
 /* Fishing Carousel */
 .fishing-carousel {
     position: relative;
