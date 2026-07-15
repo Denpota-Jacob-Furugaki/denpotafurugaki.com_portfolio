@@ -11635,3 +11635,14 @@ span.close {
         border-radius: 12px;
     }
 }
+
+/* ===== Case-Study Conclusion Contrast =====
+   The site-wide #718096 measures 3.71:1 on the light modal surface, below the
+   WCAG AA 4.5:1 floor. Darkened to #4a5568 (~7:1) for the marketing case-study
+   modals only, leaving the rest of the site untouched. Still lighter than the
+   body copy, so the closing line stays visually secondary.
+   Scoped by id prefix and placed last so it wins over the equal-specificity
+   per-brand rules (.onitsuka-case-content .conclusion-text, etc.) above. */
+.modal[id^="caseStudyModal"] .conclusion-text {
+    color: #4a5568;
+}
