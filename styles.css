@@ -5648,7 +5648,9 @@ section {
     font-weight: 700;
     letter-spacing: 0.09em;
     text-transform: uppercase;
-    color: #4299e1;
+    /* #2b6cb0 on the light modal surface = 5.4:1 — passes WCAG AA for small text.
+       The brand #4299e1 only reaches 3.1:1 here, so it is reserved for large text. */
+    color: #2b6cb0;
     margin: 1.25rem 0 0.4rem;
 }
 
@@ -5657,7 +5659,7 @@ section {
     display: inline-block;
     width: 16px;
     height: 2px;
-    background: #4299e1;
+    background: #2b6cb0;
     flex: 0 0 auto;
 }
 
@@ -5679,9 +5681,11 @@ section {
 .case-tools li {
     font-size: 0.7rem;
     font-weight: 600;
-    color: #cbd5e0;
-    background: rgba(66, 153, 225, 0.12);
-    border: 1px solid rgba(66, 153, 225, 0.35);
+    /* #2c5282 on the tinted chip = 7.2:1 (WCAG AAA). Previously #cbd5e0, a
+       dark-theme grey that rendered light-on-light at ~1.4:1 and was unreadable. */
+    color: #2c5282;
+    background: rgba(66, 153, 225, 0.14);
+    border: 1px solid rgba(66, 153, 225, 0.5);
     border-radius: 999px;
     padding: 0.18rem 0.6rem;
     font-family: 'Noto Sans JP', sans-serif;
